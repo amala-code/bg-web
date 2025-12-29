@@ -1,0 +1,138 @@
+/* Parallax Scroll Animations */
+
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-20px) translateX(20px);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(20px) translateX(-20px);
+  }
+}
+
+.parallax-gradient {
+  background-size: 200% 200%;
+  animation: gradient 15s ease infinite;
+}
+
+.parallax-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.parallax-float-delayed {
+  animation: float-delayed 10s ease-in-out infinite;
+}
+
+.parallax-container {
+  min-height: 300vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-fixed-bg {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom right, #2563eb, #06b6d4, #22c55e);
+}
+
+.parallax-orb-layer {
+  position: fixed;
+  inset: 0;
+  opacity: 0.3;
+}
+
+.parallax-orb-blue {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 24rem;
+  height: 24rem;
+  background-color: #60a5fa;
+  border-radius: 9999px;
+  filter: blur(80px);
+}
+
+.parallax-orb-green {
+  position: absolute;
+  bottom: 25%;
+  right: 25%;
+  width: 24rem;
+  height: 24rem;
+  background-color: #4ade80;
+  border-radius: 9999px;
+  filter: blur(80px);
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 2rem;
+}
+
+.parallax-inner {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 8rem 0;
+}
+
+.parallax-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.parallax-text-container {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.parallax-word {
+  display: inline-block;
+  margin-right: 0.75rem;
+  margin-bottom: 1rem;
+  transition: all 700ms;
+  color: transparent;
+  opacity: 0;
+  transform: translateY(2rem);
+}
+
+.parallax-word.visible {
+  opacity: 1;
+  transform: translateY(0);
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .parallax-title {
+    font-size: 4.5rem;
+  }
+  
+  .parallax-text-container {
+    font-size: 3rem;
+  }
+}

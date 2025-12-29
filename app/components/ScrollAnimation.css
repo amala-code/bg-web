@@ -1,0 +1,78 @@
+/* Smooth Scroll Animation Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+.scroll-animation-container {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* SVG Text Animation */
+svg text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+/* Smooth stroke animation */
+svg path {
+  transition: stroke-dashoffset 0.3s ease-out;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Gradient background animation */
+.scroll-bg {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Animated background circles */
+.scroll-bg > div {
+  will-change: opacity;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Scroll indicator bounce */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite;
+}
+
+/* Smooth text appearance */
+text {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Testimonial card animations */
+.testimonial-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Smooth transitions */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
