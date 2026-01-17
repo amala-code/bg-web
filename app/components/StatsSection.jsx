@@ -1,5 +1,7 @@
 'use client';
+
 import { motion } from 'framer-motion';
+import { FaBookOpen, FaUsers, FaChartLine, FaComments } from 'react-icons/fa';
 
 export default function StatsSection() {
     return (
@@ -9,10 +11,13 @@ export default function StatsSection() {
                     <div className="w-full flex justify-center">
                         <div className="grid grid-cols-2 lg:flex lg:flex-wrap justify-center items-center gap-6 sm:gap-8 md:gap-12 lg:gap-16 xl:gap-20">
                             {[
-                                { value: '200+', label: 'Expert Courses', icon: '📚', color: 'from-blue-500 to-cyan-500' },
-                                { value: '50k+', label: 'Active Learners', icon: '👥', color: 'from-indigo-500 to-purple-500' },
-                                { value: '98%', label: 'Success Rate', icon: '📈', color: 'from-purple-500 to-pink-500' },
-                                { value: '24/7', label: 'Live Support', icon: '💬', color: 'from-pink-500 to-rose-500' }
+
+    { value: '1000+', label: 'Interview Questions', icon: <FaUsers />, color: 'from-blue-800 to-teal-700' },
+    { value: '150+', label: 'Assessment Problems', icon: <FaBookOpen />, color: 'from-blue-800 to-teal-700' },
+    { value: '200+', label: 'Watch Hour Content', icon: <FaChartLine />, color: 'from-blue-800 to-teal-700' },
+    { value: '24/7', label: 'Support — This is what we offer', icon: <FaComments />, color: 'from-blue-800 to-teal-700' }
+
+
                             ].map((stat, i) => (
                                 <motion.div
                                     key={i}
@@ -23,11 +28,15 @@ export default function StatsSection() {
                                     whileHover={{ y: -5 }}
                                     className="text-center"
                                 >
-                                    <div className="text-2xl sm:text-3xl mb-2">{stat.icon}</div>
+                                    <div className="text-2xl sm:text-3xl mb-2 flex justify-center items-center">
+                                        <span className={`inline-flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br ${stat.color}`}>
+                                            <span className="text-white text-xl">{stat.icon}</span>
+                                        </span>
+                                    </div>
                                     <h2 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-1 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
                                         {stat.value}
                                     </h2>
-                                    <p className="text-gray-600 font-medium text-xs sm:text-sm">{stat.label}</p>
+                                    <p className="text-gray-600 font-medium text-md sm:text-md">{stat.label}</p>
                                 </motion.div>
                             ))}
                         </div>

@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { motion } from 'framer-motion';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -218,7 +219,12 @@ export default function Community() {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Learn, grow, and thrive with thousands of passionate learners. Your success is our mission.
           </p>
+
+
+                 
+          
         </div>
+
 
         {/* Community Features */}
         {/* <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">

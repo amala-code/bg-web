@@ -15,6 +15,7 @@ import Community from './components/Community';
 import CompaniesScroll from './components/CompaniesScroll';
 import PricingComponent from './components/PricingSection';
 import BlogsSection from './components/BlogsSection';
+import VerticalScrollSection from './components/Verticalsection';
 
 export default function TechLearnLanding() {
   const cardsData = [
@@ -81,12 +82,13 @@ export default function TechLearnLanding() {
       <StatsSection />
       <CompaniesScroll />
       <ScrollTextFill/>
-      <HorizontalScrollSection cards={cardsData} />
+      <VerticalScrollSection/>
       <TestimonialsSection />
       <PricingComponent/>
-      <BlogsSection/>
       <Community/>
-      <Solutions />
+      <BlogsSection/>
+      {/* <Solutions /> */}
+      {/* <HorizontalScrollSection cards={cardsData} /> */}
       {/* <AboutSection /> */}
       {/* <FeaturesSection /> */}
       <Footer />

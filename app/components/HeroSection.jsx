@@ -1,9 +1,13 @@
 'use client';
+
 import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { FaDatabase, FaBrain, FaPaintBrush, FaProjectDiagram, FaNetworkWired, FaCogs } from 'react-icons/fa';
+import { useRouter } from 'next/navigation';
 import kidImage from '../images/kid.png';
 
 export default function HeroSection() {
+    const router = useRouter();
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
     useEffect(() => {
@@ -17,33 +21,42 @@ export default function HeroSection() {
         return () => window.removeEventListener('mousemove', handleMouseMove);
     }, []);
 
+    // Navigate to courses page
+    const handleCoursesNavigation = () => {
+        router.push('/courses');
+    };
+      const handleCommunityNavigation = () => {
+        router.push('/community');
+    };
+
+
     // Left side courses
     const leftCourses = [
         { 
-            icon: '📱', 
-            title: 'Mobile Dev', 
-            tech: 'React Native',
-            students: '12,450',
+            icon: <FaDatabase />, 
+            title: 'Data Science', 
+            tech: 'Build real-world ML models',
+            students: '200+ ',
             position: 'top-[5%]', 
             color: 'from-blue-400 to-cyan-500',
             bgColor: 'from-blue-50 to-cyan-50',
             delay: 0
         },
         { 
-            icon: '💻', 
-            title: 'Web Dev', 
-            tech: 'Next.js',
-            students: '25,680',
+            icon: <FaBrain />, 
+            title: 'Gen AI', 
+            tech: 'Create AI-powered solutions',
+            students: '120+ ',
             position: 'top-[40%]', 
             color: 'from-cyan-500 to-teal-500',
             bgColor: 'from-cyan-50 to-teal-50',
             delay: 0.2
         },
         { 
-            icon: '☁️', 
-            title: 'Cloud', 
-            tech: 'AWS/Azure',
-            students: '15,340',
+            icon: <FaPaintBrush />, 
+            title: 'UI/UX', 
+            tech: 'Design beautiful user experiences',
+            students: '70+ ',
             position: 'bottom-[5%]', 
             color: 'from-teal-500 to-blue-500',
             bgColor: 'from-teal-50 to-blue-50',
@@ -54,30 +67,30 @@ export default function HeroSection() {
     // Right side courses
     const rightCourses = [
         { 
-            icon: '🤖', 
-            title: 'AI & ML', 
-            tech: 'TensorFlow',
-            students: '18,230',
+            icon: <FaProjectDiagram />, 
+            title: 'Agentic RAG', 
+            tech: 'Deploy AI agents & pipelines',
+            students: '80+ ',
             position: 'top-[5%]', 
-            color: 'from-blue-500 to-cyan-400',
+            color: 'from-blue-500 to-cyan-500',
             bgColor: 'from-blue-50 to-cyan-50',
             delay: 0.1
         },
         { 
-            icon: '⛓️', 
-            title: 'Blockchain', 
-            tech: 'Web3',
-            students: '8,920',
+            icon: <FaNetworkWired />, 
+            title: 'GraphQL', 
+            tech: 'Design scalable APIs',
+            students: '60+      ',
             position: 'top-[40%]', 
             color: 'from-cyan-400 to-teal-400',
             bgColor: 'from-cyan-50 to-teal-50',
             delay: 0.3
         },
         { 
-            icon: '🎨', 
-            title: 'UI/UX', 
-            tech: 'Figma',
-            students: '20,150',
+            icon: <FaCogs />, 
+            title: 'N8N', 
+            tech: 'Automate business workflows',
+            students: '40+ ',
             position: 'bottom-[5%]', 
             color: 'from-teal-400 to-blue-500',
             bgColor: 'from-teal-50 to-blue-50',
@@ -205,33 +218,42 @@ export default function HeroSection() {
                     initial={{ opacity: 0, y: -30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="flex justify-center mb-6"
+                    className="flex justify-center mb-9"
                 >
                     <div className="relative overflow-hidden bg-gradient-to-r from-blue-50 to-cyan-50 border border-blue-100 rounded-full px-6 py-3 shadow-lg">
                         <div className="absolute inset-0 shimmer" />
                         <div className="relative flex items-center gap-2">
                             <div className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 animate-pulse" />
                             <span className="text-sm sm:text-base font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-teal-600">
-                                Join 50,000+ Students Learning Live
+                                Join 800+ Students Learning Live
                             </span>
                             <div className="w-2 h-2 rounded-full bg-gradient-to-r from-cyan-500 to-teal-500 animate-pulse" />
                         </div>
                     </div>
                 </motion.div>
 
-                {/* Main Heading */}
+                {/* Main Heading - SEO Optimized */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="text-center mb-4"
                 >
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-2 leading-none tracking-tight">
-                        Master The
-                    </h1>
-                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 leading-none tracking-tight">
-                        Future of Tech
-                    </h1>
+                    {/* <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 leading-tight tracking-tight mt-4 ">
+                        Online Courses with Live Classes, Job Placement & Career Tests
+                    </h1> */}
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 leading-tight tracking-tight mt-4 ">
+Job-Ready Courses for Freshers with Placement Support & Career Skill Tests</h1>
+
+                    {/* <p className="text-2xl sm:text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 leading-tight tracking-tight mt-4">
+                        Master Tech Skills & Get Hired
+                    </p> */}
+                    <p class="text-gray-600 mt-2" style={{display: "none"}}>
+  Online courses with live classes, hands-on projects, certification pathways,
+  and job placement support for freshers and working professionals,internships, courses.
+</p>
+
+                    
                 </motion.div>
 
                 {/* Subtitle */}
@@ -241,7 +263,7 @@ export default function HeroSection() {
                     transition={{ delay: 0.4, duration: 0.8 }}
                     className="text-center text-gray-600 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 leading-relaxed font-medium"
                 >
-                    Learn from industry experts with hands-on projects and live mentorship
+                    Learn from industry experts with hands-on projects, mentorship, placement assistance, internships, Resume and skill assessment tests
                 </motion.p>
 
                 {/* CTA Buttons */}
@@ -254,11 +276,12 @@ export default function HeroSection() {
                     <motion.button
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.98 }}
-                        className="relative overflow-hidden group px-8 py-4 bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 text-white rounded-2xl font-bold text-base shadow-2xl shadow-blue-500/30"
+                        onClick={handleCoursesNavigation}
+                        className="relative overflow-hidden group px-8 py-4 bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 text-white rounded-2xl font-bold text-base shadow-2xl shadow-blue-500/30 cursor-pointer"
                     >
                         <div className="absolute inset-0 shimmer" />
                         <span className="relative flex items-center gap-2">
-                            Start Learning Free
+                            Start Learning Now
                             <motion.span
                                 animate={{ x: [0, 5, 0] }}
                                 transition={{ duration: 1.5, repeat: Infinity }}
@@ -271,9 +294,10 @@ export default function HeroSection() {
                     <motion.button
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.98 }}
-                        className="px-8 py-4 bg-white border-2 border-gray-200 text-gray-700 rounded-2xl font-bold text-base shadow-xl hover:border-blue-300 hover:shadow-2xl hover:shadow-blue-100 transition-all"
+                        onClick={handleCommunityNavigation}
+                        className="px-8 py-4 bg-white border-2 border-gray-200 text-gray-700 rounded-2xl font-bold text-base shadow-xl hover:border-blue-300 hover:shadow-2xl hover:shadow-blue-100 transition-all cursor-pointer"
                     >
-                        Browse Courses
+                        Join Community
                     </motion.button>
                 </motion.div>
 
@@ -287,8 +311,8 @@ export default function HeroSection() {
                     {/* Container for the entire section */}
                     <div className="relative w-full flex justify-center items-center">
                         
-                        {/* LEFT SIDE FLOATING CARDS - PREMIUM GLASSMORPHISM */}
-                        <div className="absolute left-0 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-8 -translate-x-[45%]">
+                        {/* LEFT SIDE FLOATING CARDS - HORIZONTAL & PREMIUM GLASSMORPHISM */}
+                        <div className="absolute left-0 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-6 -translate-x-[40%]">
                             {leftCourses.map((course, idx) => (
                                 <motion.div
                                     key={idx}
@@ -311,19 +335,19 @@ export default function HeroSection() {
                                 >
                                     <motion.div
                                         whileHover={{ 
-                                            scale: 1.08,
+                                            scale: 1.05,
                                             x: 10,
                                             transition: { duration: 0.3 }
                                         }}
-                                        className="relative overflow-hidden backdrop-blur-3xl bg-white/20 rounded-3xl p-6 shadow-2xl cursor-pointer group min-w-[260px] border border-white/30"
+                                        onClick={handleCoursesNavigation}
+                                        className="relative overflow-hidden backdrop-blur-3xl bg-white/20 rounded-2xl p-4 shadow-2xl cursor-pointer group w-[280px] border border-white/30"
                                         style={{
                                             background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 100%)',
                                             boxShadow: '0 8px 32px 0 rgba(59, 130, 246, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1)',
                                         }}
                                     >
                                         {/* Premium Blue/Teal Reflection Overlays */}
-                                        <div className="absolute inset-0 overflow-hidden rounded-3xl pointer-events-none">
-                                            {/* Top blue reflection */}
+                                        <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
                                             <motion.div
                                                 animate={{
                                                     opacity: [0.3, 0.6, 0.3],
@@ -333,7 +357,6 @@ export default function HeroSection() {
                                                 className="absolute -top-10 -left-10 w-40 h-40 bg-gradient-to-br from-blue-400/40 via-blue-300/30 to-transparent rounded-full blur-2xl"
                                             />
                                             
-                                            {/* Teal reflection */}
                                             <motion.div
                                                 animate={{
                                                     opacity: [0.2, 0.5, 0.2],
@@ -342,25 +365,10 @@ export default function HeroSection() {
                                                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                                                 className="absolute top-1/2 -right-10 w-32 h-32 bg-gradient-to-br from-teal-400/40 via-cyan-300/30 to-transparent rounded-full blur-2xl"
                                             />
-                                            
-                                            {/* Bottom cyan reflection */}
-                                            <motion.div
-                                                animate={{
-                                                    opacity: [0.25, 0.5, 0.25],
-                                                    y: [0, -10, 0],
-                                                }}
-                                                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                                                className="absolute -bottom-10 left-1/2 w-36 h-36 bg-gradient-to-br from-cyan-400/40 via-teal-300/30 to-transparent rounded-full blur-2xl"
-                                            />
-
-                                            {/* Sweeping reflection light */}
-                                            <div className="absolute inset-0 reflection-animation">
-                                                <div className="w-20 h-full bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12" />
-                                            </div>
                                         </div>
 
-                                        {/* Frosted glass effect on top */}
-                                        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white/30 via-white/10 to-transparent rounded-t-3xl pointer-events-none" />
+                                        {/* Frosted glass effect */}
+                                        <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-white/30 via-white/10 to-transparent rounded-t-2xl pointer-events-none" />
 
                                         {/* Premium border glow */}
                                         <motion.div 
@@ -368,59 +376,56 @@ export default function HeroSection() {
                                                 opacity: [0.3, 0.7, 0.3],
                                             }}
                                             transition={{ duration: 3, repeat: Infinity }}
-                                            className="absolute inset-0 rounded-3xl pointer-events-none"
+                                            className="absolute inset-0 rounded-2xl pointer-events-none"
                                             style={{
                                                 boxShadow: '0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(6, 182, 212, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.1)'
                                             }}
                                         />
-                                        
-                                        <div className="relative z-10">
-                                            {/* Icon with animation */}
+
+                                        {/* Horizontal Layout */}
+                                        <div className="relative z-10 flex items-center gap-4">
+                                            {/* Icon with BLUE-TEAL gradient background */}
                                             <motion.div 
                                                 animate={{ 
-                                                    rotate: [0, -8, 8, 0],
-                                                    scale: [1, 1.15, 1]
+                                                    rotate: [0, -5, 5, 0],
+                                                    scale: [1, 1.05, 1]
                                                 }}
                                                 transition={{ 
                                                     duration: 4, 
                                                     repeat: Infinity,
                                                     delay: idx * 0.5 
                                                 }}
-                                                className="text-7xl mb-3 drop-shadow-lg filter brightness-110"
+                                                className="flex-shrink-0"
                                             >
-                                                {course.icon}
+                                                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 via-cyan-500 to-teal-500 flex items-center justify-center shadow-lg">
+                                                    <span className="text-white text-3xl">
+                                                        {course.icon}
+                                                    </span>
+                                                </div>
                                             </motion.div>
                                             
-                                            {/* Course Title */}
-                                            <h3 className="font-black text-gray-900 text-xl mb-1">
-                                                {course.title}
-                                            </h3>
-                                            
-                                            {/* Tech Stack */}
-                                            <p className="text-sm text-gray-700 font-semibold mb-4">
-                                                {course.tech}
-                                            </p>
-
-                                            {/* Stats Section */}
-                                            <div className="space-y-3 pt-4 border-t-2 border-white/30">
-                                                {/* Students Count - MASSIVE SIZE */}
-                                                <div className="relative overflow-hidden bg-gradient-to-br from-white/40 to-white/20 backdrop-blur-xl rounded-2xl p-4 border border-white/30 shadow-lg">
-                                                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-cyan-400/10" />
-                                                    <div className="relative">
-                                                        <div className="text-xs text-gray-700 font-bold mb-1 flex items-center gap-1">
-                                                            <span className="text-base">👥</span> Students
-                                                        </div>
-                                                        <motion.div 
-                                                            animate={{ scale: [1, 1.05, 1] }}
+                                            {/* Content */}
+                                            <div className="flex-1">
+                                                <h3 className="font-black text-gray-900 text-xl mb-0.5">
+                                                    {course.title}
+                                                </h3>
+                                                <p className="text-sm text-gray-700 font-semibold mb-2">
+                                                    {course.tech}
+                                                </p>
+                                                
+                                                {/* Students Count - Compact */}
+                                                <div className="relative overflow-hidden bg-gradient-to-br from-white/40 to-white/20 backdrop-blur-xl rounded-xl p-2 border border-white/30">
+                                                    <div className="flex items-center gap-2">
+                                                        <span className="text-sm text-gray-700 font-bold">👥</span>
+                                                        <motion.span 
+                                                            animate={{ scale: [1, 1.03, 1] }}
                                                             transition={{ duration: 2, repeat: Infinity }}
-                                                            className="text-4xl font-black bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 bg-clip-text text-transparent"
+                                                            className="text-2xl font-black bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 bg-clip-text text-transparent"
                                                         >
                                                             {course.students}
-                                                        </motion.div>
+                                                        </motion.span>
                                                     </div>
                                                 </div>
-                                                
-                                             
                                             </div>
                                         </div>
 
@@ -491,7 +496,7 @@ export default function HeroSection() {
                                 {/* MASSIVE Student Image */}
                                 <motion.img
                                     src={kidImage.src}
-                                    alt="Student Learning"
+                                    alt="Student Learning Online Courses with Job Placement"
                                     className="relative z-10 w-full max-w-none h-auto drop-shadow-2xl scale-125"
                                     animate={{ y: [0, -10, 0] }}
                                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -499,8 +504,8 @@ export default function HeroSection() {
                             </div>
                         </div>
 
-                        {/* RIGHT SIDE FLOATING CARDS - PREMIUM GLASSMORPHISM */}
-                        <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-8 translate-x-[45%]">
+                        {/* RIGHT SIDE FLOATING CARDS - HORIZONTAL & PREMIUM GLASSMORPHISM */}
+                        <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-6 translate-x-[40%]">
                             {rightCourses.map((course, idx) => (
                                 <motion.div
                                     key={idx}
@@ -523,19 +528,19 @@ export default function HeroSection() {
                                 >
                                     <motion.div
                                         whileHover={{ 
-                                            scale: 1.08,
+                                            scale: 1.05,
                                             x: -10,
                                             transition: { duration: 0.3 }
                                         }}
-                                        className="relative overflow-hidden backdrop-blur-3xl bg-white/20 rounded-3xl p-6 shadow-2xl cursor-pointer group min-w-[260px] border border-white/30"
+                                        onClick={handleCoursesNavigation}
+                                        className="relative overflow-hidden backdrop-blur-3xl bg-white/20 rounded-2xl p-4 shadow-2xl cursor-pointer group w-[280px] border border-white/30"
                                         style={{
                                             background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.1) 100%)',
                                             boxShadow: '0 8px 32px 0 rgba(59, 130, 246, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1)',
                                         }}
                                     >
                                         {/* Premium Blue/Teal Reflection Overlays */}
-                                        <div className="absolute inset-0 overflow-hidden rounded-3xl pointer-events-none">
-                                            {/* Top blue reflection */}
+                                        <div className="absolute inset-0 overflow-hidden rounded-2xl pointer-events-none">
                                             <motion.div
                                                 animate={{
                                                     opacity: [0.3, 0.6, 0.3],
@@ -545,7 +550,6 @@ export default function HeroSection() {
                                                 className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-blue-400/40 via-blue-300/30 to-transparent rounded-full blur-2xl"
                                             />
                                             
-                                            {/* Teal reflection */}
                                             <motion.div
                                                 animate={{
                                                     opacity: [0.2, 0.5, 0.2],
@@ -554,16 +558,6 @@ export default function HeroSection() {
                                                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                                                 className="absolute top-1/2 -left-10 w-32 h-32 bg-gradient-to-br from-teal-400/40 via-cyan-300/30 to-transparent rounded-full blur-2xl"
                                             />
-                                            
-                                            {/* Bottom cyan reflection */}
-                                            <motion.div
-                                                animate={{
-                                                    opacity: [0.25, 0.5, 0.25],
-                                                    y: [0, -10, 0],
-                                                }}
-                                                transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                                                className="absolute -bottom-10 left-1/2 w-36 h-36 bg-gradient-to-br from-cyan-400/40 via-teal-300/30 to-transparent rounded-full blur-2xl"
-                                            />
 
                                             {/* Sweeping reflection light */}
                                             <div className="absolute inset-0 reflection-animation">
@@ -571,8 +565,8 @@ export default function HeroSection() {
                                             </div>
                                         </div>
 
-                                        {/* Frosted glass effect on top */}
-                                        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white/30 via-white/10 to-transparent rounded-t-3xl pointer-events-none" />
+                                        {/* Frosted glass effect */}
+                                        <div className="absolute top-0 left-0 right-0 h-16 bg-gradient-to-b from-white/30 via-white/10 to-transparent rounded-t-2xl pointer-events-none" />
 
                                         {/* Premium border glow */}
                                         <motion.div 
@@ -580,60 +574,56 @@ export default function HeroSection() {
                                                 opacity: [0.3, 0.7, 0.3],
                                             }}
                                             transition={{ duration: 3, repeat: Infinity }}
-                                            className="absolute inset-0 rounded-3xl pointer-events-none"
+                                            className="absolute inset-0 rounded-2xl pointer-events-none"
                                             style={{
                                                 boxShadow: '0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(6, 182, 212, 0.2), inset 0 0 20px rgba(255, 255, 255, 0.1)'
                                             }}
                                         />
                                         
-                                        <div className="relative z-10">
-                                            {/* Icon with animation */}
+                                        {/* Horizontal Layout */}
+                                        <div className="relative z-10 flex items-center gap-4">
+                                            {/* Icon with BLUE-TEAL gradient background */}
                                             <motion.div 
                                                 animate={{ 
-                                                    rotate: [0, -8, 8, 0],
-                                                    scale: [1, 1.1, 1]
+                                                    rotate: [0, -5, 5, 0],
+                                                    scale: [1, 1.05, 1]
                                                 }}
                                                 transition={{ 
                                                     duration: 4, 
                                                     repeat: Infinity,
                                                     delay: idx * 0.5 
                                                 }}
-                                                className="text-6xl mb-4"
+                                                className="flex-shrink-0"
                                             >
-                                                {course.icon}
+                                                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 via-cyan-500 to-teal-500 flex items-center justify-center shadow-lg">
+                                                    <span className="text-white text-3xl">
+                                                        {course.icon}
+                                                    </span>
+                                                </div>
                                             </motion.div>
                                             
-                                            {/* Course Title */}
-                                            <h3 className="font-black text-gray-900 text-xl mb-1">
-                                                {course.title}
-                                            </h3>
-                                            
-                                            {/* Tech Stack */}
-                                            <p className="text-sm text-gray-700 font-semibold mb-4">
-                                                {course.tech}
-                                            </p>
-
-                                            {/* Stats Section */}
-                                            <div className="space-y-3 pt-4 border-t-2 border-white/30">
-                                                {/* Students Count - MASSIVE SIZE */}
-                                                <div className="relative overflow-hidden bg-gradient-to-br from-white/40 to-white/20 backdrop-blur-xl rounded-2xl p-4 border border-white/30 shadow-lg">
-                                                    <div className="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-cyan-400/10" />
-                                                    <div className="relative">
-                                                        <div className="text-xs text-gray-700 font-bold mb-1 flex items-center gap-1">
-                                                            <span className="text-base">👥</span> Students
-                                                        </div>
-                                                        <motion.div 
-                                                            animate={{ scale: [1, 1.05, 1] }}
+                                            {/* Content */}
+                                            <div className="flex-1">
+                                                <h3 className="font-black text-gray-900 text-xl mb-0.5">
+                                                    {course.title}
+                                                </h3>
+                                                <p className="text-sm text-gray-700 font-semibold mb-2">
+                                                    {course.tech}
+                                                </p>
+                                                
+                                                {/* Students Count - Compact */}
+                                                <div className="relative overflow-hidden bg-gradient-to-br from-white/40 to-white/20 backdrop-blur-xl rounded-xl p-2 border border-white/30">
+                                                    <div className="flex items-center gap-2">
+                                                        <span className="text-sm text-gray-700 font-bold">👥</span>
+                                                        <motion.span 
+                                                            animate={{ scale: [1, 1.03, 1] }}
                                                             transition={{ duration: 2, repeat: Infinity }}
-                                                            className="text-4xl font-black bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 bg-clip-text text-transparent"
+                                                            className="text-2xl font-black bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 bg-clip-text text-transparent"
                                                         >
                                                             {course.students}
-                                                        </motion.div>
+                                                        </motion.span>
                                                     </div>
                                                 </div>
-                                                
-                                                {/* Rating */}
-                                      
                                             </div>
                                         </div>
 

@@ -18,7 +18,7 @@ export default function Navbar() {
     };
 
     const navLinks = [
-        { href: '#courses', label: 'Courses' },
+        { href: '/courses', label: 'Courses' },
         { href: '/about', label: 'About' },
         { href: '/community', label: 'Community' },
         { href: '/recruiters', label: 'Recruiters' },
@@ -48,7 +48,7 @@ export default function Navbar() {
                         alt="Bridgegap Logo" 
                         width={400} 
                         height={400}
-                        className="w-50 sm:w-56 h-auto"
+                        className="w-50 sm:w-44 h-auto"
                     />
                 </a>
 
