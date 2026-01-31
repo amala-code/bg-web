@@ -194,7 +194,9 @@ const VerticalScrollSection = () => {
           We help students overcome every single one of these obstacles with personalized mentorship, 
           real projects, and interview preparation that actually works.
         </p>
-        <button className="cta-button">
+        
+        <button className="cta-button" onClick={() => window.location.href = '/courses'}>
+          
           <span>Start Your Journey</span>
           <span className="button-arrow ml-3" aria-hidden="true">→</span>
         </button>

@@ -1,5 +1,7 @@
-'use client';
+"use client";
 import { motion } from 'framer-motion';
+import { FiTarget, FiGlobe } from 'react-icons/fi';
+import { FaChalkboardTeacher, FaBriefcase, FaTrophy, FaMobileAlt } from 'react-icons/fa';
 
 export default function FeaturesSection() {
     return (
@@ -16,15 +18,15 @@ export default function FeaturesSection() {
                 </motion.div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                     {[
-                        { icon: '🎯', title: 'Personalized Learning Paths', desc: 'AI-powered recommendations tailored to your goals and skill level' },
-                        { icon: '👨‍🏫', title: 'Expert Instructors', desc: 'Learn from industry veterans with 10+ years of real-world experience' },
-                        { icon: '💼', title: 'Career Support', desc: 'Resume reviews, interview prep, and direct connections to employers' },
-                        { icon: '📱', title: 'Mobile Learning', desc: 'Study anywhere with our responsive mobile app and offline access' },
-                        { icon: '🏆', title: 'Certification', desc: 'Industry-recognized certificates upon course completion' },
-                        { icon: '🌐', title: 'Global Community', desc: 'Connect with learners worldwide and build your professional network' }
-                    ].map((feature, i) => (
+                        { icon: <FiTarget className="mx-auto" />, title: 'Personalized Learning Paths', desc: 'AI-powered recommendations tailored to your goals and skill level' },
+                        { icon: <FaChalkboardTeacher className="mx-auto" />, title: 'Expert Instructors', desc: 'Learn from industry veterans with 10+ years of real-world experience' },
+                        { icon: <FaBriefcase className="mx-auto" />, title: 'Career Support', desc: 'Resume reviews, interview prep, and direct connections to employers' },
+                        { icon: <FaMobileAlt className="mx-auto" />, title: 'Mobile Learning', desc: 'Study anywhere with our responsive mobile app and offline access' },
+                        { icon: <FaTrophy className="mx-auto" />, title: 'Certification', desc: 'Industry-recognized certificates upon course completion' },
+                        { icon: <FiGlobe className="mx-auto" />, title: 'Global Community', desc: 'Connect with learners worldwide and build your professional network' }
+                    ].map((feature) => (
                         <motion.div
-                            key={i}
+                            key={feature.title}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}

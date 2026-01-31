@@ -23,8 +23,7 @@ export default function Navbar() {
         { href: '/community', label: 'Community' },
         { href: '/recruiters', label: 'Recruiters' },
         { href: '/universities', label: 'Universities' },
-        { href: '#features', label: 'Features' },
-        { href: '#contact', label: 'Contact' },
+        { href: '/blogs', label: 'Blogs' },
     ];
 
     const products = [

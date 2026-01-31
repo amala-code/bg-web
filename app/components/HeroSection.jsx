@@ -100,7 +100,7 @@ export default function HeroSection() {
 
     return (
         <section className="relative w-full min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-20 overflow-hidden bg-white">
-            
+{/*             
             <style jsx global>{`
                 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
                 
@@ -136,7 +136,7 @@ export default function HeroSection() {
                 .reflection-animation {
                     animation: reflection-sweep 4s ease-in-out infinite;
                 }
-            `}</style>
+            `}</style> */}
 
             {/* Enhanced Background Elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -242,13 +242,13 @@ export default function HeroSection() {
                     {/* <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 leading-tight tracking-tight mt-4 ">
                         Online Courses with Live Classes, Job Placement & Career Tests
                     </h1> */}
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 leading-tight tracking-tight mt-4 ">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 leading-tight tracking-tight mt-4 ">
 Job-Ready Courses for Freshers with Placement Support & Career Skill Tests</h1>
 
                     {/* <p className="text-2xl sm:text-3xl md:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 leading-tight tracking-tight mt-4">
                         Master Tech Skills & Get Hired
                     </p> */}
-                    <p class="text-gray-600 mt-2" style={{display: "none"}}>
+                    <p className="text-gray-600 mt-2" style={{display: "none"}}>
   Online courses with live classes, hands-on projects, certification pathways,
   and job placement support for freshers and working professionals,internships, courses.
 </p>
@@ -277,7 +277,7 @@ Job-Ready Courses for Freshers with Placement Support & Career Skill Tests</h1>
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.98 }}
                         onClick={handleCoursesNavigation}
-                        className="relative overflow-hidden group px-8 py-4 bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 text-white rounded-2xl font-bold text-base shadow-2xl shadow-blue-500/30 cursor-pointer"
+                        className="relative z-10 cursor-pointer overflow-hidden group px-8 py-4 bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 text-white rounded-2xl font-bold text-base shadow-2xl shadow-blue-500/30"
                     >
                         <div className="absolute inset-0 shimmer" />
                         <span className="relative flex items-center gap-2">

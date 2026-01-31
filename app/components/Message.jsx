@@ -114,14 +114,12 @@ export default function AboutScrollReveal() {
               />
             </div>
             
-            {scrollProgress >= 95 && (
-              <div className="mt-8 text-center animate-fade-in">
+            <div className="mt-8 text-center animate-fade-in">
                 <p className="text-teal-300 text-lg mb-4">Ready to learn more?</p>
-                <button className="px-8 py-3 bg-teal-500 hover:bg-teal-400 text-white font-semibold rounded-full transition-all transform hover:scale-105">
+                <a href="/about" className="inline-block px-8 py-3 bg-teal-500 hover:bg-teal-400 text-white font-semibold rounded-full transition-all transform hover:scale-105">
                   Explore Our Story
-                </button>
+                </a>
               </div>
-            )}
           </div>
         </div>
       </div>

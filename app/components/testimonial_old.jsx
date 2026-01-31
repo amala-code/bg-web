@@ -582,7 +582,7 @@
 // // //                   </div>
 // // //                 </div>
 // // //                 <p className="text-slate-300 text-sm leading-relaxed mb-4">
-// // //                   "GraphQL completely changed my backend development approach. The course structure was perfect—theory, practice, then real-world implementation."
+// // //                   "GraphQL completely changed my backend development approach. The course structure was perfect theory, practice, then real-world implementation."
 // // //                 </p>
 // // //                 <span className="course-badge inline-block px-3 py-1 rounded-full text-xs font-medium text-cyan-200">
 // // //                   GraphQL
@@ -634,11 +634,11 @@
 // // //                     </div>
 
 // // //                     <h2 className="font-display text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: "'Fraunces', serif" }}>
-// // //                       "From Zero to AI Hero—This Course Changed Everything"
+// // //                       "From Zero to AI Hero This Course Changed Everything"
 // // //                     </h2>
 
 // // //                     <p className="text-blue-100 text-base lg:text-lg leading-relaxed mb-8">
-// // //                       I came in knowing nothing about AI, and now I'm building production-ready GenAI applications. The instructors didn't just teach theory—they showed us how to build real products. Within 3 months, I had a portfolio that got me interviews at top tech companies. The project-based learning and mentorship were game-changers. This investment in myself was the best decision I've ever made.
+// // //                       I came in knowing nothing about AI, and now I'm building production-ready GenAI applications. The instructors didn't just teach theory they showed us how to build real products. Within 3 months, I had a portfolio that got me interviews at top tech companies. The project-based learning and mentorship were game-changers. This investment in myself was the best decision I've ever made.
 // // //                     </p>
 
 // // //                     {/* Student Info */}
@@ -1148,7 +1148,7 @@
 // //                   </div>
 // //                 </div>
 // //                 <p className="text-gray-700 text-base leading-relaxed mb-5">
-// //                   "GraphQL completely changed my backend development approach. The course structure was perfect—theory, practice, then real-world implementation."
+// //                   "GraphQL completely changed my backend development approach. The course structure was perfect theory, practice, then real-world implementation."
 // //                 </p>
 // //                 <span className="course-badge inline-block px-4 py-2 rounded-full text-sm font-medium text-cyan-700">
 // //                   GraphQL
@@ -1199,11 +1199,11 @@
 // //                     </div>
 
 // //                     <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight" style={{ fontFamily: "'Playfair Display', serif" }}>
-// //                       From Zero to AI Hero—This Course Changed Everything
+// //                       From Zero to AI Hero This Course Changed Everything
 // //                     </h2>
 
 // //                     <p className="text-blue-50 text-base lg:text-lg leading-relaxed mb-8">
-// //                       I came in knowing nothing about AI, and now I'm building production-ready GenAI applications. The instructors didn't just teach theory—they showed us how to build real products. Within 3 months, I had a portfolio that got me interviews at top tech companies. The project-based learning and mentorship were game-changers.
+// //                       I came in knowing nothing about AI, and now I'm building production-ready GenAI applications. The instructors didn't just teach theory they showed us how to build real products. Within 3 months, I had a portfolio that got me interviews at top tech companies. The project-based learning and mentorship were game-changers.
 // //                     </p>
 
 // //                     {/* Student Info */}
@@ -1678,7 +1678,7 @@
 //                   </div>
 //                 </div>
 //                 <p className="text-gray-700 text-base leading-relaxed mb-5">
-//                   "GraphQL completely changed my backend development approach. The course structure was perfect—theory, practice, then real-world implementation."
+//                   "GraphQL completely changed my backend development approach. The course structure was perfect theory, practice, then real-world implementation."
 //                 </p>
 //                 <span className="course-badge inline-block px-4 py-2 rounded-full text-sm font-medium text-cyan-700">
 //                   GraphQL
@@ -1729,11 +1729,11 @@
 //                     </div>
 
 //                     <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6 leading-tight">
-//                       From Zero to AI Hero—This Course Changed Everything
+//                       From Zero to AI Hero This Course Changed Everything
 //                     </h2>
 
 //                     <p className="text-white/90 text-base lg:text-lg leading-relaxed mb-8">
-//                       I came in knowing nothing about AI, and now I'm building production-ready GenAI applications. The instructors didn't just teach theory—they showed us how to build real products. Within 3 months, I had a portfolio that got me interviews at top tech companies. The project-based learning and mentorship were game-changers.
+//                       I came in knowing nothing about AI, and now I'm building production-ready GenAI applications. The instructors didn't just teach theory they showed us how to build real products. Within 3 months, I had a portfolio that got me interviews at top tech companies. The project-based learning and mentorship were game-changers.
 //                     </p>
 
 //                     {/* Student Info */}
@@ -2234,7 +2234,7 @@ const TestimonialsSection = () => {
                   </div>
                 </div>
                 <p className="testimonial-text text-gray-700 text-base leading-relaxed mb-5">
-                  "GraphQL completely changed my backend development approach. The course structure was perfect—theory, practice, then real-world implementation."
+                  "GraphQL completely changed my backend development approach. The course structure was perfect theory, practice, then real-world implementation."
                 </p>
                 <span className="course-badge inline-block px-4 py-2 rounded-full text-sm text-cyan-700">
                   GraphQL
@@ -2285,11 +2285,11 @@ const TestimonialsSection = () => {
                     </div>
 
                     <h2 className="hero-title text-3xl lg:text-4xl text-white mb-6 leading-tight">
-                      From Zero to AI Hero—This Course Changed Everything
+                      From Zero to AI Hero This Course Changed Everything
                     </h2>
 
                     <p className="testimonial-text text-white/90 text-base lg:text-lg leading-relaxed mb-8">
-                      I came in knowing nothing about AI, and now I'm building production-ready GenAI applications. The instructors didn't just teach theory—they showed us how to build real products. Within 3 months, I had a portfolio that got me interviews at top tech companies. The project-based learning and mentorship were game-changers.
+                      I came in knowing nothing about AI, and now I'm building production-ready GenAI applications. The instructors didn't just teach theory they showed us how to build real products. Within 3 months, I had a portfolio that got me interviews at top tech companies. The project-based learning and mentorship were game-changers.
                     </p>
 
                     {/* Student Info */}

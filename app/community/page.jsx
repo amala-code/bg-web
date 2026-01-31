@@ -1,588 +1,407 @@
 
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useState } from 'react';
+import { Calendar, Users, MessageSquare, Clock, ArrowRight, Search, Filter, Star, TrendingUp, Award, Zap, Gift, Bell, Folder, Check } from 'lucide-react';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-
-gsap.registerPlugin(ScrollTrigger);
+import Footer from '../components/Footer.tsx';
+import CommunityHero from '../components/communityheader.tsx';
+import FloatingChatbot from '../FloatingChatbot.jsx';
 
 export default function CommunityPage() {
-  const containerRef = useRef(null);
-  const heroRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"]
+  const [activeTab, setActiveTab] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [notificationStatus, setNotificationStatus] = useState('default');
+
+  const requestNotificationPermission = async () => {
+    if (!('Notification' in globalThis)) {
+      alert('This browser does not support notifications');
+      return;
+    }
+
+    try {
+      const permission = await Notification.requestPermission();
+      setNotificationStatus(permission);
+      
+      if (permission === 'granted') {
+        new Notification('Notifications Enabled!', {
+          body: 'You will now receive updates about community activities.',
+          icon: '/images/logo.png'
+        });
+      }
+    } catch (error) {
+      console.error('Error requesting notification permission:', error);
+    }
+  };
+
+const activities = [
+  {
+    id: 1,
+    title: 'AI Hackathon Sprint',
+    category: 'hackathon',
+    date: '2025-11-25',
+    time: '9:00 AM',
+    location: 'Tech Innovation Lab',
+    participants: 24,
+    maxParticipants: 40,
+    image: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=400&fit=crop',
+    description: 'Build and prototype AI-driven solutions in a 24-hour hackathon.',
+    organizer: 'Sarah Johnson',
+    rating: 4.8,
+    featured: true
+  },
+  {
+    id: 2,
+    title: 'Full Stack Web Workshop',
+    category: 'workshop',
+    date: '2025-10-12',
+    time: '6:00 PM',
+    location: 'Community Tech Hub',
+    participants: 12,
+    maxParticipants: 20,
+    image: 'https://images.unsplash.com/photo-1527430253228-e93688616381?w=800&h=400&fit=crop',
+    description: 'Hands-on session covering React, APIs, and backend integration.',
+    organizer: 'Maria Garcia',
+    rating: 4.9,
+    featured: false
+  },
+  {
+    id: 3,
+    title: 'Open Source Project Meetup',
+    category: 'project',
+    date: '2025-09-03',
+    time: '5:30 PM',
+    location: 'Developer Collaboration Space',
+    participants: 18,
+    maxParticipants: 30,
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop',
+    description: 'Collaborate on real-world open source projects and share ideas.',
+    organizer: 'David Chen',
+    rating: 4.7,
+    featured: false
+  },
+
+
+  {
+    id: 6,
+    title: 'Cloud Deployment Bootcamp',
+    category: 'workshop',
+    date: '2025-07-14',
+    time: '9:00 AM',
+    location: 'DevOps Training Room',
+    participants: 16,
+    maxParticipants: 30,
+    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=400&fit=crop',
+    description: 'Learn how to deploy apps using Docker, Kubernetes, and CI/CD.',
+    organizer: 'Lisa Martinez',
+    rating: 4.5,
+    featured: false
+  }
+];
+
+
+const stats = [
+  { icon: Users, label: 'Members Joined', value: '100+', color: 'from-blue-500 to-teal-500' },
+  { icon: Calendar, label: 'Sessions Hosted', value: '6', color: 'from-teal-500 to-cyan-500' },
+  { icon: Award, label: 'Ideas Shared', value: '50+', color: 'from-cyan-500 to-blue-500' },
+  { icon: Award, label: 'Lessons Completed', value: '34', color: 'from-cyan-500 to-blue-500' },
+];
+
+
+  const categories = [
+    { id: 'all', label: 'All Activities', icon: Users },
+    { id: 'project', label: 'Projects', icon: Folder },
+    { id: 'workshop', label: 'Workshops', icon: MessageSquare },
+    { id: 'hackathon', label: 'Hackathon', icon: Calendar }
+  ];
+
+  const upcomingHighlights = [
+    { title: 'Community Hackathon', date: 'Yet to be announced', participants: 120 },
+    { title: 'Tech Workshop Series', date: 'Yet to be announced', participants: 85 },
+    { title: 'Innovation Summit', date: 'Yet to be announced', participants: 250 }
+  ];
+
+  const filteredActivities = activities.filter(activity => {
+    const matchesCategory = activeTab === 'all' || activity.category === activeTab;
+    const matchesSearch = activity.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         activity.description.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearch;
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-
-  useEffect(() => {
-    // Magnetic hover effect for cards
-    const cards = document.querySelectorAll('.magnetic-card');
-    
-    cards.forEach(card => {
-      card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        
-        gsap.to(card, {
-          x: x * 0.1,
-          y: y * 0.1,
-          duration: 0.3,
-          ease: 'power2.out'
-        });
-      });
-      
-      card.addEventListener('mouseleave', () => {
-        gsap.to(card, {
-          x: 0,
-          y: 0,
-          duration: 0.5,
-          ease: 'elastic.out(1, 0.3)'
-        });
-      });
-    });
-
-    // Reveal animations
-    gsap.from('.reveal-text', {
-      scrollTrigger: {
-        trigger: '.reveal-text',
-        start: 'top 80%',
-      },
-      y: 100,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.2,
-      ease: 'power3.out'
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-    };
-  }, []);
-
-  const communitySpaces = [
-    {
-      title: 'BUILDERS',
-      subtitle: 'The Workshop',
-      description: 'Ship code. Break things. Learn fast.',
-      members: '15.2K',
-      color: '#3B82F6',
-      accent: '#60A5FA',
-      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=1000&fit=crop&q=80',
-      tag: 'MOST ACTIVE'
-    },
-    {
-      title: 'MENTORS',
-      subtitle: 'The Circle',
-      description: 'Get guidance from industry veterans.',
-      members: '8.7K',
-      color: '#06B6D4',
-      accent: '#22D3EE',
-      image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=1000&fit=crop&q=80',
-      tag: 'EXPERT LED'
-    },
-    {
-      title: 'CREATORS',
-      subtitle: 'The Studio',
-      description: 'Design, create, inspire others daily.',
-      members: '12.4K',
-      color: '#0EA5E9',
-      accent: '#38BDF8',
-      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=1000&fit=crop&q=80',
-      tag: 'TRENDING'
-    }
-  ];
-
-  const features = [
-    { icon: '⚡', stat: '24/7', label: 'LIVE CHAT' },
-    { icon: '🎯', stat: '100+', label: 'EVENTS/YEAR' },
-    { icon: '🚀', stat: '50K+', label: 'MEMBERS' },
-    { icon: '💼', stat: '2K+', label: 'JOB POSTS' }
-  ];
-
-  const testimonials = [
-    {
-      quote: 'This community changed everything for me. The connections, the knowledge, the opportunities.',
-      author: 'SARAH CHEN',
-      role: 'Senior Developer @ Meta',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop&q=80'
-    },
-    {
-      quote: 'Found my co-founder here. We shipped 3 products together in the last year.',
-      author: 'MARCUS LEE',
-      role: 'Founder @ StartupCo',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&q=80'
-    },
-    {
-      quote: 'The mentorship program is unreal. I went from junior to senior in 18 months.',
-      author: 'ELENA RODRIGUEZ',
-      role: 'Tech Lead @ Stripe',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&q=80'
-    }
-  ];
-
   return (
-    <main ref={containerRef} className="min-h-screen bg-gradient-to-b from-blue-50 to-cyan-50">
-      <Navbar />
-
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&display=swap');
-        
-        .font-display {
-          font-family: 'Bebas Neue', sans-serif;
-          letter-spacing: 0.05em;
-        }
-        
-        .font-mono {
-          font-family: 'JetBrains Mono', monospace;
-        }
-
-        .noise {
-          position: relative;
-        }
-
-        .noise::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
-          pointer-events: none;
-          z-index: 1;
-        }
-
-        .grain {
-          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
-        }
-      `}</style>
-
-      {/* Hero Section - Bold Typography */}
-      <section 
-        ref={heroRef}
-        className="relative min-h-screen flex items-center justify-center px-6 md:px-12 pt-24 pb-20 overflow-hidden bg-gradient-to-br from-[#1e3a8a] via-[#1e40af] to-[#0369a1] noise"
-      >
-        {/* Grid Background */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)',
-            backgroundSize: '50px 50px'
-          }} />
-        </div>
-
-        <motion.div 
-          style={{ y, opacity }}
-          className="relative z-10 w-full max-w-7xl"
-        >
-          {/* Main Headline */}
-          <div className="mb-16">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="overflow-hidden"
-            >
-              <h1 className="font-display text-[12vw] md:text-[180px] leading-[0.85] text-white mb-4">
-                YOUR
-              </h1>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="overflow-hidden flex items-center gap-8"
-            >
-              <h1 className="font-display text-[12vw] md:text-[180px] leading-[0.85] text-white">
-                TRIBE
-              </h1>
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="w-20 h-20 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-[#3B82F6] to-[#06B6D4] flex-shrink-0"
-              />
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="overflow-hidden"
-            >
-              <h1 className="font-display text-[12vw] md:text-[180px] leading-[0.85] text-transparent bg-clip-text bg-gradient-to-r from-[#3B82F6] via-[#06B6D4] to-[#0EA5E9]">
-                AWAITS
-              </h1>
-            </motion.div>
-          </div>
-
-          {/* Subheading */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="max-w-2xl mb-12"
-          >
-            <p className="text-cyan-300 text-xl md:text-2xl font-mono uppercase tracking-wider">
-              50,000+ BUILDERS / CREATORS / DREAMERS
-            </p>
-            <p className="text-blue-300 text-lg md:text-xl font-mono mt-4">
-              Connect. Learn. Ship. Repeat.
-            </p>
-          </motion.div>
-
-          {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
-            {/* <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group relative px-10 py-5 bg-white text-blue-900 font-mono font-bold text-sm uppercase tracking-wider overflow-hidden"
-            >
-              <span className="relative z-10">JOIN NOW →</span>
-              <motion.div
-                className="absolute inset-0 bg-[#3B82F6]"
-                initial={{ x: '-100%' }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.button>
-            
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-5 border-2 border-white text-white font-mono font-bold text-sm uppercase tracking-wider hover:bg-white hover:text-blue-900 transition-colors"
-            >
-              EXPLORE
-            </motion.button> */}
-              <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="flex flex-col sm:flex-row gap-6 justify-center"
-          >
-            <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-teal-500 text-white rounded-xl font-bold text-lg hover:shadow-2xl transition-all duration-300 hover:scale-105">
-              Explore Our Courses
-            </button>
-            <button className="px-8 py-4 border-2 border-white text-white rounded-xl font-bold text-lg hover:bg-white/10 transition-all duration-300">
-              Join Our Community
-            </button>
-          </motion.div>
-          </motion.div>
-        </motion.div>
-
-    
-
-        {/* Scroll Indicator */}
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/50 font-mono text-xs uppercase tracking-widest"
-        >
-          ↓ SCROLL
-        </motion.div>
-      </section>
-
-      {/* Stats Section - Brutalist Grid */}
-      <section className="py-20 px-6 md:px-12 bg-white grain">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {features.map((feature, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                className="magnetic-card bg-gradient-to-br from-[#1e40af] to-[#0369a1] p-8 border-4 border-[#1e40af] hover:border-[#3B82F6] transition-colors cursor-pointer group"
-              >
-                <div className="text-6xl mb-4">{feature.icon}</div>
-                <div className="font-display text-5xl text-white mb-2">{feature.stat}</div>
-                <div className="font-mono text-xs text-zinc-500 uppercase tracking-widest">
-                  {feature.label}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Community Spaces - Magazine Layout */}
-      <section className="py-32 px-6 md:px-12 bg-gradient-to-b from-blue-50 to-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.h2
-            className="reveal-text font-display text-7xl md:text-9xl mb-4 text-blue-900"
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            FIND YOUR
-          </motion.h2>
-          <motion.h2
-            className="reveal-text font-display text-7xl md:text-9xl mb-20 text-transparent bg-clip-text bg-gradient-to-r from-[#3B82F6] to-[#06B6D4]"
-            initial={{ opacity: 0, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            SPACE
-          </motion.h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {communitySpaces.map((space, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: idx * 0.2 }}
-                viewport={{ once: true }}
-                className="group magnetic-card relative overflow-hidden cursor-pointer"
-              >
-                {/* Image */}
-                <div className="relative h-[500px] overflow-hidden">
-                  <motion.img
-                    src={space.image}
-                    alt={space.title}
-                    className="w-full h-full object-cover"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.6 }}
-                  />
-                  
-                  {/* Gradient Overlay */}
-                  <div 
-                    className="absolute inset-0 opacity-80 mix-blend-multiply"
-                    style={{ background: `linear-gradient(135deg, ${space.color}, ${space.accent})` }}
-                  />
-
-                  {/* Tag */}
-                  <div className="absolute top-6 right-6 bg-white px-4 py-2 font-mono text-xs font-bold tracking-widest">
-                    {space.tag}
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="bg-gradient-to-br from-[#1e3a8a] to-[#0369a1] p-8 border-4 border-[#1e40af] group-hover:border-current transition-colors" style={{ borderColor: space.color }}>
-                  <div className="font-mono text-xs text-cyan-300 uppercase tracking-widest mb-2">
-                    {space.subtitle}
-                  </div>
-                  <h3 className="font-display text-5xl mb-4" style={{ color: space.color }}>
-                    {space.title}
-                  </h3>
-                  <p className="text-blue-100 mb-6 font-mono text-sm leading-relaxed">
-                    {space.description}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <div className="font-mono text-white font-bold">
-                      {space.members} <span className="text-blue-300">MEMBERS</span>
-                    </div>
-                    <div className="text-2xl" style={{ color: space.color }}>→</div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials - Asymmetric Layout */}
-      <section className="py-32 px-6 md:px-12 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="mb-20"
-          >
-            <div className="font-mono text-sm text-blue-600 uppercase tracking-widest mb-4">
-              SUCCESS STORIES
+    <> 
+    <Navbar />
+    <CommunityHero/>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-teal-50 to-cyan-50">
+      {/* Hero Header */}
+      <div className="bg-gradient-to-r from-blue-600 via-teal-600 to-cyan-600 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <Zap className="w-4 h-4" />
+              <span>Join 100+ active community members</span>
             </div>
-            <h2 className="font-display text-7xl md:text-9xl text-blue-900">
-              REAL TALK
-            </h2>
-          </motion.div>
+            <h1 className="text-5xl lg:text-6xl font-bold mb-6">Community Activities Hub</h1>
+            <p className="text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto">
+              Connect, learn, and grow together with your neighbors through exciting events and activities
+            </p>
+          </div>
+        </div>
+      </div>
 
-          <div className="space-y-8">
-            {testimonials.map((testimonial, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, x: idx % 2 === 0 ? -100 : 100 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className={`flex flex-col md:flex-row items-center gap-8 bg-gradient-to-br from-blue-50 to-cyan-50 p-8 md:p-12 border-4 border-blue-200 ${
-                  idx % 2 === 0 ? 'md:ml-0 md:mr-auto' : 'md:ml-auto md:mr-0'
-                } max-w-5xl`}
-              >
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.author}
-                  className="w-32 h-32 object-cover border-4 border-blue-500"
+      {/* Stats Section */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+          {stats.map((stat) => {
+            const Icon = stat.icon;
+            return (
+              <div key={stat.label} className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+                <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${stat.color} flex items-center justify-center mb-4`}>
+                  <Icon className="w-6 h-6 text-white" />
+                </div>
+                <div className="text-3xl font-bold text-gray-900 mb-1">{stat.value}</div>
+                <div className="text-sm text-gray-600">{stat.label}</div>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+          {/* Main Content */}
+          <div className="lg:col-span-2">
+            {/* Search and Filter */}
+            <div className="mb-6 flex flex-col sm:flex-row gap-4">
+              <div className="flex-1 relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <input
+                  type="text"
+                  placeholder="Search activities..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-transparent bg-white"
                 />
-                <div className="flex-1">
-                  <p className="text-2xl md:text-3xl font-mono font-bold text-blue-900 mb-6 leading-tight">
-                    "{testimonial.quote}"
-                  </p>
-                  <div>
-                    <div className="font-display text-2xl text-blue-900">{testimonial.author}</div>
-                    <div className="font-mono text-sm text-blue-600 uppercase tracking-wider">
-                      {testimonial.role}
+              </div>
+              <button className="flex items-center gap-2 px-6 py-3 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                <Filter className="w-5 h-5" />
+                <span>Filter</span>
+              </button>
+            </div>
+
+            {/* Category Tabs */}
+            <div className="flex flex-wrap gap-3 mb-6">
+              {categories.map((category) => {
+                const Icon = category.icon;
+                return (
+                  <button
+                    key={category.id}
+                    onClick={() => setActiveTab(category.id)}
+                    className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-medium transition-all ${
+                      activeTab === category.id
+                        ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-lg'
+                        : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'
+                    }`}
+                  >
+                    <Icon className="w-4 h-4" />
+                    <span>{category.label}</span>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Activities Grid */}
+            <div className="grid grid-cols-1 gap-8">
+              {filteredActivities.map((activity) => (
+                <div
+                  key={activity.id}
+                  className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group border border-gray-100"
+                >
+                  <div className="flex flex-col lg:flex-row">
+                    {/* Large Image Section */}
+                    <div className="relative lg:w-2/5 h-72 lg:h-auto overflow-hidden">
+                      <img
+                        src={activity.image}
+                        alt={activity.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:bg-gradient-to-r" />
+                      {activity.featured && (
+                        <div className="absolute top-4 left-4 bg-gradient-to-r from-yellow-400 to-orange-500 px-4 py-1.5 rounded-full text-sm font-bold text-white flex items-center gap-1.5 shadow-lg">
+                          <Star className="w-4 h-4 fill-current" />
+                          <span>Featured</span>
+                        </div>
+                      )}
+                      <div className="absolute bottom-4 left-4 lg:hidden">
+                        <span className="bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-semibold text-teal-600 capitalize shadow-md">
+                          {activity.category}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Content Section */}
+                    <div className="lg:w-3/5 p-6 lg:p-8 flex flex-col justify-between">
+                      <div>
+                        <div className="flex items-start justify-between mb-3">
+                          <div>
+                            <span className="hidden lg:inline-block bg-gradient-to-r from-teal-50 to-cyan-50 text-teal-700 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide mb-2">
+                              {activity.category}
+                            </span>
+                            <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 group-hover:text-teal-600 transition-colors leading-tight">
+                              {activity.title}
+                            </h3>
+                          </div>
+                          <div className="flex items-center gap-1.5 bg-yellow-50 px-3 py-1.5 rounded-full">
+                            <Star className="w-5 h-5 text-yellow-500 fill-current" />
+                            <span className="text-lg font-bold text-gray-900">{activity.rating}</span>
+                          </div>
+                        </div>
+                        
+                        <p className="text-gray-600 text-base lg:text-lg mb-6 leading-relaxed">{activity.description}</p>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                          <div className="flex items-center gap-3 bg-gray-50 rounded-xl p-3">
+                            <div className="w-10 h-10 bg-teal-100 rounded-lg flex items-center justify-center">
+                              <Calendar className="w-5 h-5 text-teal-600" />
+                            </div>
+                            <div>
+                              <p className="text-xs text-gray-500 uppercase tracking-wide">Date</p>
+                              <p className="text-sm font-semibold text-gray-900">{new Date(activity.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}</p>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-3 bg-gray-50 rounded-xl p-3">
+                            <div className="w-10 h-10 bg-cyan-100 rounded-lg flex items-center justify-center">
+                              <Clock className="w-5 h-5 text-cyan-600" />
+                            </div>
+                            <div>
+                              <p className="text-xs text-gray-500 uppercase tracking-wide">Time</p>
+                              <p className="text-sm font-semibold text-gray-900">{activity.time}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center justify-end pt-6 border-t border-gray-100">
+                        {new Date(activity.date) < new Date() ? (
+                          <button 
+                            disabled
+                            className="flex items-center gap-2 bg-gray-300 text-gray-500 px-6 py-3 rounded-xl font-bold cursor-not-allowed"
+                          >
+                            <span>Event Ended</span>
+                          </button>
+                        ) : (
+                          <button className="flex items-center gap-2 bg-gradient-to-r from-teal-600 to-cyan-600 text-white px-6 py-3 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300">
+                            <span>Join Now</span>
+                            <ArrowRight className="w-5 h-5" />
+                          </button>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Events Calendar - Bold Grid */}
-      <section className="py-32 px-6 md:px-12 bg-gradient-to-br from-[#1e3a8a] via-[#1e40af] to-[#0c4a6e]">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-20"
-          >
-            <h2 className="font-display text-7xl md:text-9xl text-white mb-4">
-              UPCOMING
-            </h2>
-            <div className="font-mono text-xl text-cyan-300 uppercase tracking-widest">
-              EVENTS THIS MONTH ↓
+              ))}
             </div>
-          </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                date: 'JAN 20',
-                title: 'HACKATHON 2025',
-                description: 'Build. Ship. Win $10K',
-                color: '#3B82F6',
-                spots: '234 JOINED'
-              },
-              {
-                date: 'JAN 25',
-                title: 'DESIGN SPRINT',
-                description: 'UI/UX Workshop Series',
-                color: '#06B6D4',
-                spots: '156 JOINED'
-              },
-              {
-                date: 'JAN 30',
-                title: 'FOUNDER MIXER',
-                description: 'Network With VCs',
-                color: '#0EA5E9',
-                spots: '89 JOINED'
-              },
-              {
-                date: 'FEB 05',
-                title: 'CODE REVIEW',
-                description: 'Live Architecture Session',
-                color: '#60A5FA',
-                spots: '312 JOINED'
-              }
-            ].map((event, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-                className="magnetic-card bg-white p-8 border-4 border-white hover:border-current transition-all cursor-pointer"
-                style={{ borderColor: event.color }}
-              >
-                <div className="flex items-start justify-between mb-6">
-                  <div 
-                    className="font-display text-6xl"
-                    style={{ color: event.color }}
-                  >
-                    {event.date}
+            {filteredActivities.length === 0 && (
+              <div className="text-center py-12 bg-white rounded-xl">
+                <p className="text-gray-500 text-lg">No activities found. Try adjusting your search or filter.</p>
+              </div>
+            )}
+          </div>
+
+          {/* Sidebar - Sticky */}
+          <div className="lg:sticky lg:top-8 space-y-6 h-fit">
+            {/* Upcoming Highlights */}
+            <div className="bg-white rounded-xl shadow-md p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <TrendingUp className="w-5 h-5 text-teal-600" />
+                <h3 className="font-bold text-lg text-gray-900">Upcoming Highlights</h3>
+              </div>
+              <div className="space-y-4">
+                {upcomingHighlights.map((event) => (
+                  <div key={event.title} className="flex items-center justify-between p-3 bg-gradient-to-r from-blue-50 to-teal-50 rounded-lg">
+                    <div>
+                      <div className="font-semibold text-gray-900">{event.title}</div>
+                      <div className="text-sm text-gray-600">{event.date}</div>
+                    </div>
                   </div>
-                  <div className="bg-gradient-to-r from-[#0369a1] to-[#06b6d4] text-white px-4 py-2 font-mono text-xs font-bold tracking-widest">
-                    {event.spots}
-                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Notifications */}
+            <div className="bg-gradient-to-br from-teal-600 to-cyan-600 rounded-xl shadow-md p-6 text-white">
+              <div className="flex items-center gap-2 mb-4">
+                <Bell className="w-5 h-5" />
+                <h3 className="font-bold text-lg">Stay Updated</h3>
+              </div>
+              <p className="text-sm text-teal-50 mb-4">
+                Get notifications about new activities and events in your area.
+              </p>
+              {notificationStatus === 'granted' ? (
+                <div className="w-full  bg-white/20 text-white px-4 py-2 rounded-lg font-semibold flex items-center justify-center gap-2">
+                  <Check className="w-4 h-4" />
+                  Notifications Enabled
                 </div>
-                <h3 className="font-display text-4xl text-blue-900 mb-3">
-                  {event.title}
-                </h3>
-                <p className="text-blue-700 font-mono mb-6">
-                  {event.description}
-                </p>
+              ) : (
                 <button 
-                  className="font-mono text-sm font-bold uppercase tracking-widest hover:underline"
-                  style={{ color: event.color }}
+                style={
+                {"cursor":"pointer"}
+                }
+
+                  onClick={requestNotificationPermission}
+                  className="w-full bg-white text-teal-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
                 >
-                  REGISTER NOW →
+                  <Bell className="w-4 h-4" />
+                  {notificationStatus === 'denied' ? 'Notifications Blocked' : 'Enable Notifications'}
                 </button>
-              </motion.div>
-            ))}
+              )}
+            </div>
+
+            {/* Rewards */}
+            <div className="bg-white rounded-xl shadow-md p-6">
+              <div className="flex items-center gap-2 mb-4">
+                <Gift className="w-5 h-5 text-teal-600" />
+                <h3 className="font-bold text-lg text-gray-900">Rewards Program</h3>
+              </div>
+              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-4 mb-4">
+                <p className="text-sm text-gray-700 mb-2">Earn points by:</p>
+                <ul className="text-sm text-gray-600 space-y-1">
+                  <li>• Attending community events</li>
+                  <li>• Completing workshops</li>
+                  <li>• Contributing to projects</li>
+                  <li>• Referring new members</li>
+                </ul>
+              </div>
+              <p className="text-xs text-gray-500 mb-3">Join the community to start earning rewards and unlock exclusive benefits!</p>
+              <a 
+                href="https://whatsapp.com/channel/0029VbAbfJY0gcfP0LGgZC1g" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2"
+              >
+                Enroll Now
+              </a>
+            </div>
           </div>
         </div>
-      </section>
 
-      {/* Final CTA - Full Width Impact */}
-      <section className="relative py-40 px-6 md:px-12 bg-[#3B82F6] overflow-hidden">
-        {/* Pattern Background */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'repeating-linear-gradient(45deg, #000 0, #000 1px, transparent 0, transparent 50%)',
-            backgroundSize: '20px 20px'
-          }} />
+        <div className="mt-12 mb-12 bg-gradient-to-r from-blue-600 via-teal-600 to-cyan-600 rounded-2xl p-8 text-white text-center shadow-xl">
+          <h2 className="text-3xl font-bold mb-3">Ready to be part of something amazing?</h2>
+          <p className="text-blue-100 mb-6">Connect with like-minded learners, share ideas, and grow together!</p>
+          <a 
+            href="https://whatsapp.com/channel/0029VbAbfJY0gcfP0LGgZC1g" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-white text-teal-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors shadow-lg inline-flex items-center gap-2"
+          >
+            <span>Join the Community</span>
+            <ArrowRight className="w-5 h-5" />
+          </a>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="relative z-10 max-w-5xl mx-auto text-center"
-        >
-          <h2 className="font-display text-[15vw] md:text-[200px] leading-[0.85] text-white mb-8">
-            JOIN US
-          </h2>
-          
-          <p className="text-white/90 text-2xl font-mono mb-12 max-w-2xl mx-auto">
-            50,000+ CREATORS BUILDING THE FUTURE. YOUR SEAT IS WAITING.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-12 py-6 bg-gradient-to-r from-[#1e40af] to-[#0369a1] text-white font-mono font-bold text-sm uppercase tracking-wider hover:from-[#1e3a8a] hover:to-[#0c4a6e] transition-all"
-            >
-              START FOR FREE →
-            </motion.button>
-            
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-12 py-6 border-4 border-white text-white font-mono font-bold text-sm uppercase tracking-wider hover:bg-white hover:text-[#3B82F6] transition-colors"
-            >
-              VIEW PRICING
-            </motion.button>
-          </div>
-
-          <p className="mt-12 text-white/70 font-mono text-sm uppercase tracking-widest">
-            NO CREDIT CARD • 7 DAY FREE TRIAL • CANCEL ANYTIME
-          </p>
-        </motion.div>
-      </section>
-
-      <Footer />
-    </main>
+      </div>
+    </div>
+          <FloatingChatbot/>
+    
+    <Footer />
+    </>
   );
 }

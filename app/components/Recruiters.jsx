@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import {React,useState} from 'react';
 import { motion } from 'framer-motion';
 import Problemsection from './hr/Problemsection';
 import SolutionSection from './hr/SolutionSection';
@@ -12,7 +12,7 @@ import FAQSection from './hr/Facsection';
 import EnhancedHeroSection from './hr/enhancedher';
 import HeroSplitDesign from './hr/HeroSection';
 import Navbar from './Navbar';
-import Footer from './Footer';
+import Footer from './Footer.tsx';
 
 const Stat = ({ value, label }) => (
   <div className="flex flex-col items-center">
@@ -22,20 +22,21 @@ const Stat = ({ value, label }) => (
 );
 
 export default function Recruiters() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <>
  <Navbar/>
 
       {/* HR COMPONENTS SECTIONS */}
-      <EnhancedHeroSection/>
-      {/* <HeroSplitDesign/> */}
-      
+      <EnhancedHeroSection  onOpenModal={() => setIsModalOpen(true)}/>      
       <Problemsection />
       <SolutionSection />
       <Howitworkssection />
       <Resultsection />
       <PlatinumMembersection />
-      <FinaCTAsection />
+      <FinaCTAsection isModalOpen={isModalOpen}   onOpenModal={() => setIsModalOpen(true)}  // Add this
+onCloseModal={() => setIsModalOpen(false)}/>
       <FAQSection />
       <Footer/>
     </>

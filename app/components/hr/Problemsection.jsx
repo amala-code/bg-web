@@ -72,7 +72,7 @@ export default function ProblemSection() {
           className="text-center"
         >
           <p className="mb-6 text-lg text-slate-300">
-            Every resignation letter isn't just a vacancy—it's lost momentum,
+            Every resignation letter isn't just a vacancy it's lost momentum,
             disrupted projects, and the exhausting cycle starting again.
           </p>
           <p className="text-2xl font-semibold text-blue-400">

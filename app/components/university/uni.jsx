@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GraduationCap, TrendingUp, Award, Users, Briefcase, CheckCircle, ArrowRight, Star, Target, Rocket, Shield, BarChart3, MessageSquare, BookOpen, Code, UserCheck, Building2, Sparkles, Heart, Clock, Zap } from 'lucide-react';
 import HeroWithBackgroundImage from '../hr/largeimage';
+import Footer from '../Footer.tsx';
 
 const BridgegapUniversity = () => {
   const [formData, setFormData] = useState({
@@ -25,7 +26,7 @@ const BridgegapUniversity = () => {
   return (
     <div className="min-h-screen bg-white">
    
-<HeroWithBackgroundImage/>
+{/* <HeroWithBackgroundImage/> */}
       {/* Hero Section - Emotional Hook */}
       <section className="pt-32 pb-20 px-6 bg-gradient-to-br from-blue-50 via-white to-teal-50">
         <div className="max-w-7xl mx-auto">
@@ -33,7 +34,7 @@ const BridgegapUniversity = () => {
             <div>
               <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
                 <Sparkles className="w-4 h-4" />
-                Trusted by 150+ Universities
+                Trusted by 10+ Universities
               </div>
               <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Every Student Deserves a{' '}
@@ -44,7 +45,7 @@ const BridgegapUniversity = () => {
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Your students have potential. They work hard. They dream big. 
                 <span className="font-semibold text-gray-800"> But when companies reject them before they even get a chance to prove themselves</span>, 
-                it breaks more than just their career prospects—it breaks their confidence.
+                it breaks more than just their career prospects it breaks their confidence.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
@@ -75,12 +76,12 @@ const BridgegapUniversity = () => {
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-white rounded-xl p-4 shadow-lg">
-                    <div className="text-2xl font-bold text-blue-600 mb-1">150+</div>
+                    <div className="text-2xl font-bold text-blue-600 mb-1">50+</div>
                     <div className="text-sm text-gray-600">HR Partners</div>
                   </div>
                   <div className="bg-white rounded-xl p-4 shadow-lg">
-                    <div className="text-2xl font-bold text-teal-600 mb-1">20+</div>
-                    <div className="text-sm text-gray-600">Assessments</div>
+                    <div className="text-2xl font-bold text-teal-600 mb-1">1000+</div>
+                    <div className="text-sm text-gray-600">Assessments questions</div>
                   </div>
                 </div>
               </div>
@@ -118,7 +119,7 @@ const BridgegapUniversity = () => {
               {
                 icon: TrendingUp,
                 title: "Placement Stats Define Your Success",
-                description: "Every unplaced student isn't just a statistic—it's a dream deferred, a family disappointed, and pressure on your institution's reputation.",
+                description: "Every unplaced student isn't just a statistic it's a dream deferred, a family disappointed, and pressure on your institution's reputation.",
                 gradient: "from-indigo-500 to-purple-500"
               }
             ].map((problem, idx) => (
@@ -144,7 +145,7 @@ const BridgegapUniversity = () => {
               <p className="text-2xl opacity-95 max-w-4xl mx-auto leading-relaxed font-light">
                 23% of colleges that partnered with us saw their placement rates soar by{' '}
                 <span className="font-bold text-yellow-300">53%</span>. 
-                They didn't just improve numbers—they changed lives.
+                They didn't just improve numbers they changed lives.
               </p>
             </div>
           </div>
@@ -161,7 +162,7 @@ const BridgegapUniversity = () => {
               Partner
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light">
-              We don't just supplement education—we transform outcomes
+              We don't just supplement education we transform outcomes
             </p>
           </div>
 
@@ -183,7 +184,7 @@ const BridgegapUniversity = () => {
                   {
                     icon: CheckCircle,
                     title: "20+ Comprehensive Assessments",
-                    description: "From technical skills to aptitude tests—we measure what matters. Students know exactly where they stand.",
+                    description: "From technical skills to aptitude tests we measure what matters. Students know exactly where they stand.",
                     color: "from-teal-500 to-emerald-500"
                   },
                   {
@@ -195,7 +196,7 @@ const BridgegapUniversity = () => {
                   {
                     icon: Rocket,
                     title: "Advanced Topics & Specializations",
-                    description: "AI, Cloud, DevOps, Data Science—your students stay ahead of the curve with cutting-edge topics.",
+                    description: "AI, Cloud, DevOps, Data Science your students stay ahead of the curve with cutting-edge topics.",
                     color: "from-pink-500 to-rose-500"
                   }
                 ].map((feature, idx) => (
@@ -251,7 +252,7 @@ const BridgegapUniversity = () => {
                   </div>
                   
                   <p className="text-xl text-white/90 mb-10 leading-relaxed font-light">
-                    This is where magic happens. Your students don't just apply to jobs—they get discovered. 
+                    This is where magic happens. Your students don't just apply to jobs they get discovered. 
                     Our HR partners actively seek candidates from Bridgegap universities.
                   </p>
                   
@@ -420,7 +421,7 @@ const BridgegapUniversity = () => {
                 Build Your Brand. Attract Top Companies. Transform Reputation.
               </h3>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Limited slots available. Gold Universities don't just get better placement rates—they become magnets for 
+                Limited slots available. Gold Universities don't just get better placement rates they become magnets for 
                 top companies and premium students. Your brand becomes synonymous with excellence.
               </p>
               
@@ -668,28 +669,7 @@ const BridgegapUniversity = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-6">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-teal-500 rounded-lg flex items-center justify-center">
-              <GraduationCap className="w-6 h-6 text-white" />
-            </div>
-            <span className="text-2xl font-bold">Bridgegap</span>
-          </div>
-          <p className="text-gray-400 mb-6">
-            Bridging the gap between education and employment
-          </p>
-          <div className="flex justify-center gap-8 text-sm text-gray-400">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Contact Us</a>
-          </div>
-          <div className="mt-8 pt-8 border-t border-gray-800 text-sm text-gray-500">
-            © 2024 Bridgegap. All rights reserved. | Empowering 10,000+ students across 150+ universities
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 };

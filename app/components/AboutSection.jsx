@@ -22,7 +22,7 @@ export default function AboutSection() {
                     >
                         <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Our Mission</h3>
                         <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg">At TechLearn, we believe that quality education should be accessible to everyone, regardless of their background or location. Our platform combines cutting-edge technology with expert instruction to deliver transformative learning experiences.</p>
-                        <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg">We partner with industry leaders and top universities to ensure our curriculum stays current with the latest trends and technologies. Our students don't just learn—they build real-world projects and launch successful careers.</p>
+                        <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg">We partner with industry leaders and top universities to ensure our curriculum stays current with the latest trends and technologies. Our students don't just learn they build real-world projects and launch successful careers.</p>
                         <div className="flex flex-wrap gap-3 sm:gap-4">
                             <div className="bg-white rounded-lg p-3 sm:p-4 shadow-md">
                                 <div className="text-lg sm:text-xl lg:text-2xl font-bold text-blue-600">500+</div>

@@ -48,7 +48,7 @@ export default function SolutionSection() {
             </span>
           </h2>
           <p className="mx-auto max-w-3xl text-xl text-slate-600">
-            What makes Bridge Gap Elite different isn't just our students—it's
+            What makes Bridge Gap Elite different isn't just our students it's
             our promise.
           </p>
         </motion.div>
@@ -95,7 +95,7 @@ export default function SolutionSection() {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="mt-8 text-center text-lg font-semibold italic text-slate-700"
           >
-            These aren't just graduates. They're already creamed talent—the top
+            These aren't just graduates. They're already creamed talent the top
             tier who've earned their place.
           </motion.p>
         </motion.div>

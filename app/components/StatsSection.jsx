@@ -15,7 +15,7 @@ export default function StatsSection() {
     { value: '1000+', label: 'Interview Questions', icon: <FaUsers />, color: 'from-blue-800 to-teal-700' },
     { value: '150+', label: 'Assessment Problems', icon: <FaBookOpen />, color: 'from-blue-800 to-teal-700' },
     { value: '200+', label: 'Watch Hour Content', icon: <FaChartLine />, color: 'from-blue-800 to-teal-700' },
-    { value: '24/7', label: 'Support — This is what we offer', icon: <FaComments />, color: 'from-blue-800 to-teal-700' }
+    { value: '24/7', label: 'Support   This is what we offer', icon: <FaComments />, color: 'from-blue-800 to-teal-700' }
 
 
                             ].map((stat, i) => (
