@@ -36,7 +36,7 @@ Navigate to: **http://localhost:3000**
 
 ## 🎉 That's it!
 
-You should now see the futuristic TechLearn landing page with:
+You should now see the futuristic Bridgegap landing page with:
 - Animated navigation
 - 3D floating globe
 - Interactive hover effects

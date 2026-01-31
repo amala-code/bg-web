@@ -51,7 +51,7 @@ import ScrollTextFill from './components/Message';
 import Community from './components/Community';
 import CompaniesScroll from './components/CompaniesScroll';
 
-export default function TechLearnLanding() {
+export default function BridgegapLanding() {
   // ... existing code ...
   
   return (

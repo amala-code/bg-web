@@ -1,7 +1,7 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'TechLearn - Learn The Future. Become The Future.',
+  title: 'Bridgegap - Learn The Future. Become The Future.',
   description: 'Immerse yourself in cutting-edge tech education. Your journey to mastery starts here.',
 }
 

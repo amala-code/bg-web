@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "🚀 TechLearn Landing Page Setup"
+echo "🚀 Bridgegap Landing Page Setup"
 echo "================================"
 echo ""
 echo "📦 Installing dependencies..."

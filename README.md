@@ -1,4 +1,4 @@
-# TechLearn - High-Tech Landing Page
+# Bridgegap - High-Tech Landing Page
 
 A futuristic, high-tech landing page built with Next.js 14, Framer Motion, and GSAP featuring advanced animations, 3D effects, and interactive elements.
 

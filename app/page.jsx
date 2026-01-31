@@ -18,7 +18,7 @@ import BlogsSection from './components/BlogsSection';
 import VerticalScrollSection from './components/Verticalsection';
 import FloatingChatbot from './FloatingChatbot.jsx';
 
-export default function TechLearnLanding() {
+export default function BridgegapLanding() {
   const cardsData = [
     {
       number: "12",

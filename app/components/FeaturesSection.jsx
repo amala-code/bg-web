@@ -13,7 +13,7 @@ export default function FeaturesSection() {
                     viewport={{ once: true }}
                     className="text-center mb-12 sm:mb-16"
                 >
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Why Choose TechLearn?</h2>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Why Choose Bridgegap?</h2>
                     <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-2xl mx-auto px-4">Experience learning like never before with our innovative platform designed for modern learners.</p>
                 </motion.div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">

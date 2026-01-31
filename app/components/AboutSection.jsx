@@ -11,7 +11,7 @@ export default function AboutSection() {
                     viewport={{ once: true }}
                     className="text-center mb-12 sm:mb-16"
                 >
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">About TechLearn</h2>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">About Bridgegap</h2>
                     <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">We're on a mission to democratize access to world-class tech education, empowering the next generation of innovators and problem-solvers.</p>
                 </motion.div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
@@ -21,7 +21,7 @@ export default function AboutSection() {
                         viewport={{ once: true }}
                     >
                         <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">Our Mission</h3>
-                        <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg">At TechLearn, we believe that quality education should be accessible to everyone, regardless of their background or location. Our platform combines cutting-edge technology with expert instruction to deliver transformative learning experiences.</p>
+                        <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg">At Bridgegap, we believe that quality education should be accessible to everyone, regardless of their background or location. Our platform combines cutting-edge technology with expert instruction to deliver transformative learning experiences.</p>
                         <p className="text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base lg:text-lg">We partner with industry leaders and top universities to ensure our curriculum stays current with the latest trends and technologies. Our students don't just learn they build real-world projects and launch successful careers.</p>
                         <div className="flex flex-wrap gap-3 sm:gap-4">
                             <div className="bg-white rounded-lg p-3 sm:p-4 shadow-md">

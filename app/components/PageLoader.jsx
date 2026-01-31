@@ -75,7 +75,7 @@ export default function PageLoader() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >
-              TechLearn
+              Bridgegap
             </motion.h1>
 
             {/* Progress Bar */}

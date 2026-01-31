@@ -217,7 +217,7 @@ export default function AboutPage() {
               Our <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">Core Values</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              The principles that guide everything we do at TechLearn
+              The principles that guide everything we do at Bridgegap
             </p>
           </motion.div>
 
