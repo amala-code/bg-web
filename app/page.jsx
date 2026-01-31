@@ -81,7 +81,7 @@ export default function TechLearnLanding() {
       <Navbar />
       <HeroSection />
       <StatsSection />
-      <CompaniesScroll />
+      {/* <CompaniesScroll /> */}
       <ScrollTextFill/>
       <VerticalScrollSection/>
       <TestimonialsSection />
