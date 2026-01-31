@@ -5,8 +5,11 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, CheckCircle, Users, Award, TrendingUp } from 'lucide-react';
 import Image from 'next/image';
 import hrImage from '../../images/hr.jpeg';
+import PropTypes from 'prop-types';
 
-export default function EnhancedHeroSection() {
+
+export default function EnhancedHeroSection({ onOpenModal }) {
+  
   return (
     <section className="relative overflow-hidden bg-white">
       {/* Background gradient overlay */}
@@ -37,7 +40,7 @@ export default function EnhancedHeroSection() {
             >
               <Sparkles className="h-4 w-4 text-white" />
               <span className="text-sm font-semibold text-white">
-                Trusted by 150+ Leading Companies
+                Trusted by 50+ Leading Companies
               </span>
             </motion.div>
 
@@ -96,18 +99,31 @@ export default function EnhancedHeroSection() {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="flex flex-col gap-4 sm:flex-row"
             >
-              <button className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-teal-600 px-8 py-4 text-lg font-semibold text-white shadow-xl transition-all hover:shadow-2xl hover:scale-105">
+              <button  onClick={onOpenModal} className="group inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-teal-600 px-8 py-4 text-lg font-semibold text-white shadow-xl transition-all hover:shadow-2xl hover:scale-105">
                 Start Hiring for Free
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </button>
-              <button className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-blue-600 bg-white px-8 py-4 text-lg font-semibold text-blue-600 transition-all hover:bg-blue-50">
+              <button
+                className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-blue-600 bg-white px-8 py-4 text-lg font-semibold text-blue-600 transition-all hover:bg-blue-50 cursor-pointer"
+                onClick={() => {
+                  const section = document.getElementById('success-stories-section');
+                  if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                  }
+                  
+                  
+                  EnhancedHeroSection.propTypes = {
+                    onOpenModal: PropTypes.func.isRequired,
+                  };
+                }}
+              >
                 <TrendingUp className="h-5 w-5" />
                 View Success Stories
               </button>
             </motion.div>
 
             {/* Trust indicators */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.8 }}
@@ -125,7 +141,7 @@ export default function EnhancedHeroSection() {
                 <div className="h-2 w-2 rounded-full bg-green-500" />
                 <span>Cancel anytime</span>
               </div>
-            </motion.div>
+            </motion.div> */}
 
             {/* Stats */}
             <motion.div
@@ -240,7 +256,7 @@ export default function EnhancedHeroSection() {
                       ))}
                     </div>
                     <span className="text-sm font-semibold text-slate-700">
-                      150+ Companies
+                      50+ Companies
                     </span>
                   </div>
                 </div>

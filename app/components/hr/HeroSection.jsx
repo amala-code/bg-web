@@ -131,6 +131,8 @@ export default function HeroSplitDesign() {
               </div>
             </motion.div>
 
+            
+
             {/* Trust Indicators */}
             <motion.div
               initial={{ opacity: 0 }}

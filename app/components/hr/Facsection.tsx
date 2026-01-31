@@ -10,7 +10,7 @@ const faqs = [
   {
     question: 'What if I only need to hire 1-2 people per year?',
     answer:
-      'Our free community access is perfect for you. No pressure to upgrade—access quality talent whenever you need it. You can post jobs, browse candidates, and request specific talent at no cost.',
+      'Our free community access is perfect for you. No pressure to upgrade access quality talent whenever you need it. You can post jobs, browse candidates, and request specific talent at no cost.',
   },
   {
     question: 'How quickly can I start interviewing candidates?',
@@ -30,12 +30,12 @@ const faqs = [
   {
     question: 'How is this different from LinkedIn or Indeed?',
     answer:
-      "We pre-vet every candidate through rigorous technical assessments, open-source contributions, and soft skills evaluation. You're not wading through hundreds of generic applications—you're interviewing proven talent.",
+      "We pre-vet every candidate through rigorous technical assessments, open-source contributions, and soft skills evaluation. You're not wading through hundreds of generic applications you're interviewing proven talent.",
   },
   {
     question: 'What industries do your students specialize in?',
     answer:
-      'Our primary focus is technology—software engineering, data science, product management, and related fields. However, our cross-platform access extends to other sectors through partner programs.',
+      'Our primary focus is technology software engineering, data science, product management, and related fields. However, our cross-platform access extends to other sectors through partner programs.',
   },
   {
     question: 'Is there a limit to how many students I can hire?',
@@ -45,8 +45,7 @@ const faqs = [
   {
     question: 'Can I cancel my Platinum membership?',
     answer:
-      'Yes, though most members stay because of the value. Monthly memberships can be canceled anytime. Annual memberships can be canceled with a pro-rated refund after the first 90 days.',
-  },
+'You will be automatically upgraded to HR Premium after 10+ hires or 2+ years of association   without any additional fee.'  },
 ];
 
 function FAQItem({
@@ -143,18 +142,18 @@ export default function FAQSection() {
               href="mailto:hello@bridgegapelite.com"
               className="text-blue-600 hover:text-blue-700"
             >
-              hello@bridgegapelite.com
+              info@thebridgegap.com
             </a>
             <span className="hidden text-slate-400 sm:inline">|</span>
             <a
               href="tel:+1234567890"
               className="text-blue-600 hover:text-blue-700"
             >
-              +1 (234) 567-8900
+              +91 8982210819
             </a>
           </div>
           <p className="mt-4 text-sm text-slate-600">
-            Average response time: Under 2 hours
+            Average response time: Under 8 hours
           </p>
   </M.div>
       </div>

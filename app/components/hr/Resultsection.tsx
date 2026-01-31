@@ -14,11 +14,12 @@ type StatItem = {
 };
 
 const stats: StatItem[] = [
-  { icon: Users, value: 150, suffix: '+', label: 'Companies Trust Us' },
-  { icon: TrendingUp, value: 33, suffix: '%', label: 'Performance Improvement' },
-  { icon: Award, value: 500, suffix: '+', label: 'Elite Students Placed' },
-  { icon: Clock, value: 96, suffix: '%', label: 'Retention Rate After 1 Year' },
+  { icon: Users, value: 50, suffix: '+', label: 'Hiring Partners' },
+  { icon: TrendingUp, value: 33, suffix: '%', label: 'Skill Growth Rate' },
+  { icon: Award, value: 320, suffix: '+', label: 'Learners Enrolled' },
+  { icon: Clock, value: 96, suffix: '%', label: 'Course Completion Consistency' },
 ];
+
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {
   const [count, setCount] = useState(0);
@@ -115,7 +116,7 @@ export default function ResultsSection() {
           <blockquote className="mb-6 text-xl italic leading-relaxed lg:text-2xl">
             "We were drowning in mediocre resumes and disappointing interviews.
             Bridge Gap Elite changed everything. The candidates they connected
-            us with weren't just qualified—they were hungry, humble, and ready
+            us with weren't just qualified they were hungry, humble, and ready
             to contribute from day one. We've seen a 33% improvement in new hire
             performance compared to our traditional recruiting channels."
           </blockquote>

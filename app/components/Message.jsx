@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+// import scr from "../images/scr.jpeg";
 
-export default function ScrollTextFill() {
+
+export default function AboutScrollReveal() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const containerRef = useRef(null);
 
@@ -12,15 +14,12 @@ export default function ScrollTextFill() {
       const rect = container.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       
-      // Calculate how much of the container is visible
       const elementTop = rect.top;
       const elementHeight = rect.height;
       
-      // Start filling when element enters viewport, finish when it exits
       let progress = 0;
       
       if (elementTop < windowHeight && elementTop + elementHeight > 0) {
-        // Calculate progress based on scroll position
         const visibleHeight = Math.min(windowHeight - elementTop, elementHeight);
         progress = (visibleHeight / elementHeight) * 100;
         progress = Math.max(0, Math.min(100, progress));
@@ -32,20 +31,19 @@ export default function ScrollTextFill() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    handleScroll();
     
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const lines = [
-    "The only way to do great work",
-    "is to love what you do.",
-    "Stay hungry, stay foolish,",
-    "and never stop believing",
-    "in the power of your dreams."
+    "We believe in creating",
+    "experiences that inspire,",
+    "innovations that matter,",
+    "and connections that last.",
+    "Explore our story below."
   ];
 
-  // Calculate which lines should be filled based on scroll progress
   const getLineProgress = (index) => {
     const linePercentage = 100 / lines.length;
     const lineStart = index * linePercentage;
@@ -58,13 +56,28 @@ export default function ScrollTextFill() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-teal-800 to-blue-900">
-  
+    <div className="min-h-screen relative bg-gradient-to-br from-blue-900 via-teal-800 to-blue-900">
+      {/* Background image with reduced opacity */}
+      <div
+        className="absolute inset-0 w-full h-full z-0"
+        style={{
+    backgroundImage: `url("/images/scr.jpeg")`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.25,
+          pointerEvents: 'none',
+        }}
+        aria-hidden="true"
+      />
+  {/* Header */}
+  <div className="fixed top-0 left-0 right-0 z-10 px-8 py-6">
+        <h1 className="text-2xl md:text-3xl font-bold text-teal-300"></h1>
+      </div>
 
       {/* Main text container */}
       <div 
         ref={containerRef}
-        className="min-h-screen flex items-center justify-center px-8 py-20"
+        className="relative min-h-screen flex items-center justify-center px-8 py-20 z-10"
       >
         <div className="max-w-4xl w-full">
           <div className="space-y-4">
@@ -92,7 +105,7 @@ export default function ScrollTextFill() {
             })}
           </div>
           
-          {/* Progress indicator */}
+          {/* Progress indicator with CTA */}
           <div className="mt-12">
             <div className="h-1 bg-gray-700 rounded-full overflow-hidden">
               <div 
@@ -100,12 +113,16 @@ export default function ScrollTextFill() {
                 style={{ width: `${scrollProgress}%` }}
               />
             </div>
-          
+            
+            <div className="mt-8 text-center animate-fade-in">
+                <p className="text-teal-300 text-lg mb-4">Ready to learn more?</p>
+                <a href="/about" className="inline-block px-8 py-3 bg-teal-500 hover:bg-teal-400 text-white font-semibold rounded-full transition-all transform hover:scale-105">
+                  Explore Our Story
+                </a>
+              </div>
           </div>
         </div>
       </div>
-
-
     </div>
   );
 }

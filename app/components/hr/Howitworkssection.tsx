@@ -30,7 +30,7 @@ const steps: Step[] = [
     icon: Briefcase,
     title: 'Post Jobs or Request Specific Talent',
     description:
-      "Whether you need a full-stack developer with React expertise or a data analyst who understands your industry—just ask. We're flexible, not rigid.",
+      "Whether you need a full-stack developer with React expertise or a data analyst who understands your industry just ask. We're flexible, not rigid.",
     features: [
       'Tell us what you need',
       'We match you with qualified candidates',

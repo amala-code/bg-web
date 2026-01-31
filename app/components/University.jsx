@@ -12,7 +12,7 @@ import FAQSection from './hr/Facsection';
 import EnhancedHeroSection from './hr/enhancedher';
 import HeroSplitDesign from './hr/HeroSection';
 import Navbar from './Navbar';
-import Footer from './Footer';
+import Footer from './Footer.tsx';
 import HeroWithBackgroundImage from './hr/largeimage';
 import BridgegapUniversity from './university/uni';
 
@@ -28,19 +28,9 @@ export default function Universities() {
     <>
  <Navbar/>
 
-      {/* HR COMPONENTS SECTIONS */}
-      {/* <HeroSplitDesign/> */}
-      <BridgegapUniversity/>
-      <HeroWithBackgroundImage/>
       
-      {/* <Problemsection /> */}
-      <SolutionSection />
-      <Howitworkssection />
-      <Resultsection />
-      <PlatinumMembersection />
-      <FinaCTAsection />
-      <FAQSection />
-      <Footer/>
+      <BridgegapUniversity/>
+   
     </>
   );
 }

@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Play, Star, Shield, Zap } from 'lucide-react';
 import Image from 'next/image';
-import img1 from '../../images/clg1.jpeg'
+import img1 from '../../images/clg11.png'
 
 export default function HeroWithBackgroundImage() {
   return (
@@ -118,13 +118,13 @@ export default function HeroWithBackgroundImage() {
             ].map((stat, index) => (
               <div
                 key={index}
-                className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm"
+                className="rounded-2xl border border-gray-200 bg-white p-6"
               >
                 <stat.icon className="mx-auto mb-3 h-10 w-10 text-teal-400" />
-                <div className="mb-1 text-4xl font-bold text-white">
+                <div className="mb-1 text-4xl font-bold text-gray-900">
                   {stat.value}
                 </div>
-                <div className="text-sm text-blue-200">{stat.label}</div>
+                <div className="text-sm text-gray-600">{stat.label}</div>
               </div>
             ))}
           </motion.div>
@@ -140,9 +140,9 @@ export default function HeroWithBackgroundImage() {
               Start Hiring for Free
               <ArrowRight className="h-6 w-6 transition-transform group-hover:translate-x-1" />
             </button>
-            <button className="group inline-flex items-center gap-3 rounded-xl border-2 border-white/30 bg-white/10 px-10 py-5 text-lg font-semibold text-white backdrop-blur-sm transition-all hover:bg-white/20">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20">
-                <Play className="h-5 w-5 fill-white text-white" />
+            <button className="group inline-flex items-center gap-3 rounded-xl border-2 border-gray-200 bg-white px-10 py-5 text-lg font-semibold text-gray-900 transition-all hover:bg-gray-50">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-100">
+                <Play className="h-5 w-5 text-teal-500" />
               </div>
               Watch Demo
             </button>
