@@ -43,8 +43,7 @@ export default function Navbar() {
         { href: '/community', label: 'Community' },
         { href: '/recruiters', label: 'Recruiters' },
         { href: '/universities', label: 'Universities' },
-        { href: '/blogs', label: 'Blogs' },
-        { href: '/signin', label: 'Contact' 
+        { href: '/blogs', label: 'Blogs' 
             
         }
     ];
