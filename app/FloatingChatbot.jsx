@@ -16,12 +16,39 @@ export default function FloatingChatbot() {
   const [customQuestion, setCustomQuestion] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const predefinedQA = [
-    { question: 'What are your business hours?', answer: 'We are open Monday to Friday, 9 AM to 6 PM EST.' },
-    { question: 'How can I track my order?', answer: 'You can track your order using the tracking link sent to your email after purchase.' },
-    { question: 'What is your return policy?', answer: 'We accept returns within 30 days of purchase. Items must be unused and in original packaging.' },
-    { question: 'Do you offer international shipping?', answer: 'Yes! We ship to over 50 countries worldwide.' },
-  ];
+const predefinedQA = [
+  {
+    question: 'What is Bridgegap and how does it help students?',
+    answer:
+      'Bridgegap is a career-focused learning platform that helps students build industry-ready skills through courses, mentorship, and placement support.'
+  },
+  {
+    question: 'How can I enroll in Bridgegap courses?',
+    answer:
+      'You can enroll directly through our website. Select your preferred course, complete the registration, and our team will guide you further.'
+  },
+  {
+    question: 'Do you provide placement or internship assistance?',
+    answer:
+      'Yes, we offer placement guidance, interview preparation, and internship opportunities in collaboration with our hiring partners.'
+  },
+  {
+    question: 'When do new batches or enrollments start?',
+    answer:
+      'New batches and enrollments are announced regularly. Upcoming enrollments typically begin from March 25. Please check our website for updates.'
+  },
+  {
+    question: 'Are the courses suitable for beginners?',
+    answer:
+      'Yes, our courses are designed for beginners as well as advanced learners, with step-by-step learning and hands-on projects.'
+  },
+  {
+    question: 'How can I contact the Bridgegap support team?',
+    answer:
+      'You can reach us at info@thebridgegap.com or use the contact form on our website for quick assistance.'
+  }
+];
+
 
   const handleQuestionClick = (qa) => {
     setMessages((prev) => [
@@ -129,12 +156,12 @@ export default function FloatingChatbot() {
                     {qa.question}
                   </button>
                 ))}
-                <button
+                {/* <button
                   onClick={handleAskCustom}
                   className="w-full text-left text-sm bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg p-3 font-medium shadow hover:opacity-95"
                 >
                   🤖 Ask the chatbot anything
-                </button>
+                </button> */}
               </div>
             )}
 
@@ -176,7 +203,7 @@ export default function FloatingChatbot() {
           {/* Footer */}
           <div className="p-3 bg-blue-50 border-t border-blue-100 rounded-b-xl">
             <p className="text-xs text-center text-blue-600">
-              Powered by AI Chatbot
+              Powered by Bridgegap
             </p>
           </div>
         </div>

@@ -37,6 +37,23 @@ export default function CommunityPage() {
 const activities = [
   {
     id: 1,
+    title: 'Nexus 1.0',
+    category: 'hackathon',
+    date: '2026-02-06',
+    time: 'Registration Open',
+    location: 'Tech Innovation Lab',
+    participants: 24,
+    maxParticipants: 40,
+    image: '/images/nx.jpeg',
+    description: 'Build and prototype AI-driven solutions in a 36 hour Online hackathon, post selection.  Participants get an opportunity to win conditioned cash prizes, certificates along with mentorship from industry experts. Join our community to stay updated on the latest news and announcements about Nexus 1.0, including registration details, event schedule, and prize information.',
+    organizer: 'Sarah Johnson',
+    rating: 4.8,
+    featured: true,
+    event_link:'https://unstop.com/p/nexus-10-nexus-10-bridgegapedge-solutions-pvt-ltd-1635186?lb=sbzaH9Dd&utm_medium=Share&utm_source=joxfhmkc55802&utm_campaign=Online_coding_challenge',
+    enddate:'2026-03-30'
+  },
+  {
+    id: 3,
     title: 'AI Hackathon Sprint',
     category: 'hackathon',
     date: '2025-11-25',
@@ -48,63 +65,20 @@ const activities = [
     description: 'Build and prototype AI-driven solutions in a 24-hour hackathon.',
     organizer: 'Sarah Johnson',
     rating: 4.8,
-    featured: true
+    featured: false,
+    event_link:'',
+    enddate:'2025-02-08'
   },
-  {
-    id: 2,
-    title: 'Full Stack Web Workshop',
-    category: 'workshop',
-    date: '2025-10-12',
-    time: '6:00 PM',
-    location: 'Community Tech Hub',
-    participants: 12,
-    maxParticipants: 20,
-    image: 'https://images.unsplash.com/photo-1527430253228-e93688616381?w=800&h=400&fit=crop',
-    description: 'Hands-on session covering React, APIs, and backend integration.',
-    organizer: 'Maria Garcia',
-    rating: 4.9,
-    featured: false
-  },
-  {
-    id: 3,
-    title: 'Open Source Project Meetup',
-    category: 'project',
-    date: '2025-09-03',
-    time: '5:30 PM',
-    location: 'Developer Collaboration Space',
-    participants: 18,
-    maxParticipants: 30,
-    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop',
-    description: 'Collaborate on real-world open source projects and share ideas.',
-    organizer: 'David Chen',
-    rating: 4.7,
-    featured: false
-  },
-
-
-  {
-    id: 6,
-    title: 'Cloud Deployment Bootcamp',
-    category: 'workshop',
-    date: '2025-07-14',
-    time: '9:00 AM',
-    location: 'DevOps Training Room',
-    participants: 16,
-    maxParticipants: 30,
-    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=400&fit=crop',
-    description: 'Learn how to deploy apps using Docker, Kubernetes, and CI/CD.',
-    organizer: 'Lisa Martinez',
-    rating: 4.5,
-    featured: false
-  }
+  
+  
 ];
 
 
 const stats = [
-  { icon: Users, label: 'Members Joined', value: '100+', color: 'from-blue-500 to-teal-500' },
-  { icon: Calendar, label: 'Sessions Hosted', value: '6', color: 'from-teal-500 to-cyan-500' },
-  { icon: Award, label: 'Ideas Shared', value: '50+', color: 'from-cyan-500 to-blue-500' },
-  { icon: Award, label: 'Lessons Completed', value: '34', color: 'from-cyan-500 to-blue-500' },
+  { icon: Users, label: 'Members Joined', value: '50+', color: 'from-blue-500 to-teal-500' },
+  { icon: Calendar, label: 'Sessions Hosted', value: '4', color: 'from-teal-500 to-cyan-500' },
+  { icon: Award, label: 'Ideas Shared', value: '10+', color: 'from-cyan-500 to-blue-500' },
+  { icon: Award, label: 'Total Events', value: '2', color: 'from-cyan-500 to-blue-500' },
 ];
 
 
@@ -116,7 +90,6 @@ const stats = [
   ];
 
   const upcomingHighlights = [
-    { title: 'Community Hackathon', date: 'Yet to be announced', participants: 120 },
     { title: 'Tech Workshop Series', date: 'Yet to be announced', participants: 85 },
     { title: 'Innovation Summit', date: 'Yet to be announced', participants: 250 }
   ];
@@ -217,13 +190,13 @@ const stats = [
                 >
                   <div className="flex flex-col lg:flex-row">
                     {/* Large Image Section */}
-                    <div className="relative lg:w-2/5 h-72 lg:h-auto overflow-hidden">
+<div className="relative lg:w-2/5 h-[420px] sm:h-[480px] md:h-[520px] lg:h-auto overflow-hidden">
                       <img
                         src={activity.image}
                         alt={activity.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:bg-gradient-to-r" />
+                      {/* <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent lg:bg-gradient-to-r" /> */}
                       {activity.featured && (
                         <div className="absolute top-4 left-4 bg-gradient-to-r from-yellow-400 to-orange-500 px-4 py-1.5 rounded-full text-sm font-bold text-white flex items-center gap-1.5 shadow-lg">
                           <Star className="w-4 h-4 fill-current" />
@@ -249,10 +222,10 @@ const stats = [
                               {activity.title}
                             </h3>
                           </div>
-                          <div className="flex items-center gap-1.5 bg-yellow-50 px-3 py-1.5 rounded-full">
+                          {/* <div className="flex items-center gap-1.5 bg-yellow-50 px-3 py-1.5 rounded-full">
                             <Star className="w-5 h-5 text-yellow-500 fill-current" />
                             <span className="text-lg font-bold text-gray-900">{activity.rating}</span>
-                          </div>
+                          </div> */}
                         </div>
                         
                         <p className="text-gray-600 text-base lg:text-lg mb-6 leading-relaxed">{activity.description}</p>
@@ -280,7 +253,7 @@ const stats = [
                       </div>
 
                       <div className="flex items-center justify-end pt-6 border-t border-gray-100">
-                        {new Date(activity.date) < new Date() ? (
+                        {new Date() > new Date(activity.enddate) ? (
                           <button 
                             disabled
                             className="flex items-center gap-2 bg-gray-300 text-gray-500 px-6 py-3 rounded-xl font-bold cursor-not-allowed"
@@ -288,10 +261,10 @@ const stats = [
                             <span>Event Ended</span>
                           </button>
                         ) : (
-                          <button className="flex items-center gap-2 bg-gradient-to-r from-teal-600 to-cyan-600 text-white px-6 py-3 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300">
+                          <a href={activity.event_link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-gradient-to-r from-teal-600 to-cyan-600 text-white px-6 py-3 rounded-xl font-bold hover:shadow-xl hover:scale-105 transition-all duration-300">
                             <span>Join Now</span>
                             <ArrowRight className="w-5 h-5" />
-                          </button>
+                          </a>
                         )}
                       </div>
                     </div>
@@ -308,7 +281,7 @@ const stats = [
           </div>
 
           {/* Sidebar - Sticky */}
-          <div className="lg:sticky lg:top-8 space-y-6 h-fit">
+          <div className="lg:sticky lg:top-25 space-y-6 h-fit">
             {/* Upcoming Highlights */}
             <div className="bg-white rounded-xl shadow-md p-6">
               <div className="flex items-center gap-2 mb-4">
@@ -357,30 +330,25 @@ const stats = [
             </div>
 
             {/* Rewards */}
-            <div className="bg-white rounded-xl shadow-md p-6">
-              <div className="flex items-center gap-2 mb-4">
-                <Gift className="w-5 h-5 text-teal-600" />
-                <h3 className="font-bold text-lg text-gray-900">Rewards Program</h3>
-              </div>
-              <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg p-4 mb-4">
-                <p className="text-sm text-gray-700 mb-2">Earn points by:</p>
-                <ul className="text-sm text-gray-600 space-y-1">
-                  <li>• Attending community events</li>
-                  <li>• Completing workshops</li>
-                  <li>• Contributing to projects</li>
-                  <li>• Referring new members</li>
-                </ul>
-              </div>
-              <p className="text-xs text-gray-500 mb-3">Join the community to start earning rewards and unlock exclusive benefits!</p>
-              <a 
-                href="https://whatsapp.com/channel/0029VbAbfJY0gcfP0LGgZC1g" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2"
-              >
-                Enroll Now
-              </a>
-            </div>
+      <div className="bg-white rounded-xl shadow-md p-6">
+  <div className="flex items-center gap-2 mb-4">
+    <Gift className="w-5 h-5 text-teal-600" />
+    <h3 className="font-bold text-lg text-gray-900">Power of Community</h3>
+  </div>
+
+  <div className="bg-gradient-to-r from-blue-50 via-teal-50 to-cyan-50 rounded-lg p-5 mb-4">
+    <p className="text-gray-800 text-sm leading-relaxed italic text-center">
+      “When people come together with a shared purpose,  
+      dreams become goals, and goals become reality.  
+      A strong community doesn’t just support you —  
+      it helps you grow, rise, and succeed.”
+    </p>
+  </div>
+
+
+ 
+</div>
+
           </div>
         </div>
 

@@ -314,7 +314,7 @@ const BlogReaderPage = () => {
           <>
             {/* Blog Section Heading */}
             <div className="mb-8 max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl font-extrabold text-gray-900 mb-2 tracking-tight">Reads</h2>
+              <h2 className="text-4xl font-extrabold text-gray-900 mb-2 tracking-tight">Chronicles</h2>
               <p className="text-lg text-gray-500">Explore our latest articles, guides, and insights</p>
             </div>
             {/* Search Bar */}

@@ -339,7 +339,8 @@ import Link from "next/link";
 import {
   FiMail,
   FiPhone,
-  FiLinkedin
+  FiLinkedin,
+  FiInstagram
 } from "react-icons/fi";
 
 interface NavItem {
@@ -350,10 +351,10 @@ interface NavItem {
 export default function Footer(): JSX.Element {
   const learningLinks: NavItem[] = [
     { label: "All Courses", href: "/courses" },
-    { label: "Data Science / ML Track", href: "/tracks/data-science-ml" },
-    { label: "GenAI Track", href: "/tracks/gen-ai" },
-    { label: "Mini Courses", href: "/mini-courses" },
-    { label: "Interview Prep", href: "/interview-questions" }
+    { label: "Data Science / ML Track", href: "/courses/data-science" },
+    { label: "GenAI Track", href: "/tracks/ai-ml" },
+    { label: "Mini Courses", href: "/courses/" },
+    { label: "Interview Prep", href: "/courses" }
   ];
 
   const companyLinks: NavItem[] = [
@@ -466,7 +467,18 @@ export default function Footer(): JSX.Element {
               className="inline-flex items-center gap-3 px-5 py-3 bg-slate-700/50 hover:bg-slate-600/70 rounded-lg text-sm text-gray-200 hover:text-white transition-all group mb-6"
             >
               <FiLinkedin className="text-xl group-hover:scale-110 transition-transform" />
-              <span className="font-medium">Follow on LinkedIn</span>
+              <span className="font-medium">Follow us on LinkedIn</span>
+            </a>
+
+
+            <a
+              href="https://www.instagram.com/bridgegap_official?igsh=MXBycmhtbTBvZHRoMg%3D%3D&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-5 py-3 bg-slate-700/50 hover:bg-slate-600/70 rounded-lg text-sm text-gray-200 hover:text-white transition-all group mb-6"
+            >
+              <FiInstagram className="text-xl group-hover:scale-110 transition-transform" />
+              <span className="font-medium">Follow us on Instagram</span>
             </a>
 
             <p className="text-sm text-gray-300 leading-relaxed">

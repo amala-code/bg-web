@@ -1,10 +1,10 @@
 
+
 'use client';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import logo from '../images/logo.png';
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,9 +44,6 @@ export default function Navbar() {
         { href: '/recruiters', label: 'Recruiters' },
         { href: '/universities', label: 'Universities' },
         { href: '/blogs', label: 'Blogs' },
-        { href: '/signin', label: 'Contact' 
-            
-        }
     ];
 
     return (
@@ -58,8 +55,7 @@ export default function Navbar() {
                 className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ${
                     scrolled 
              ? 'bg-white/80 backdrop-blur-xl border-b border-gray-200/50 shadow-sm py-1.5' 
-: 'transparent py-4'
-
+: 'bg-white backdrop-blur-md border-b border-white/20 py-2'
                 }`}
             >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -78,6 +74,7 @@ export default function Navbar() {
                                 height={400}
 className="w-24 sm:w-28 lg:w-32 h-auto pointer-events-none select-none"
                                 priority
+                                tabIndex={-1}
                             />
                         </motion.a>
 
@@ -118,7 +115,7 @@ className="w-24 sm:w-28 lg:w-32 h-auto pointer-events-none select-none"
 
                         {/* Desktop Action Buttons */}
                         <div className="hidden lg:flex items-center gap-3">
-                            <motion.div
+                               <motion.div
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 className="px-5 cursor-pointer py-2.5 border-2 border-gray-300 rounded-xl font-medium text-sm text-gray-700 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50/50 transition-all"
@@ -237,7 +234,7 @@ className="w-24 sm:w-28 lg:w-32 h-auto pointer-events-none select-none"
                                 </div>
 
                                 {/* Mobile Action Buttons */}
-                                <motion.div
+                               <motion.div
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: 20 }}

@@ -13,6 +13,8 @@ const BridgegapUniversity = () => {
     message: ''
   });
 
+  const [copied, setCopied] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
@@ -526,129 +528,131 @@ const BridgegapUniversity = () => {
       
 
       {/* Contact Form */}
-      <section id="contact" className="py-20 px-6 bg-gradient-to-br from-blue-50 to-teal-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Ready to Transform Your Placements?
-            </h2>
-            <p className="text-xl text-gray-600">
-              Join 150+ universities that have revolutionized their placement outcomes
-            </p>
-          </div>
 
-          <div className="bg-white rounded-3xl shadow-2xl p-12">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    University Name *
-                  </label>
-                  <input
-                    type="text"
-                    name="universityName"
-                    required
-                    value={formData.universityName}
-                    onChange={handleChange}
-                  
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
-                    placeholder="Enter your university name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Contact Person *
-                  </label>
-                  <input
-                    type="text"
-                    name="contactPerson"
-                    required
-                    value={formData.contactPerson}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
-                    placeholder="Your name"
-                  />
-                </div>
-              </div>
+<section id="contact" className="py-20 px-6 bg-gradient-to-br from-blue-50 to-teal-50">
+  <div className="max-w-4xl mx-auto">
+    <div className="text-center mb-12">
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        Ready to Transform Your Placements?
+      </h2>
+ 
+    </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
-                    placeholder="your.email@university.edu"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    required
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
-                    placeholder="+91 98765 43210"
-                  />
-                </div>
-              </div>
+    <div className="bg-white rounded-3xl shadow-2xl p-12">
+      <div className="text-center space-y-8">
+        <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-blue-100 to-teal-100 rounded-full mb-4">
+          <svg className="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
 
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Number of Students *
-                </label>
-                <select
-                  name="studentCount"
-                  required
-                  value={formData.studentCount}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
-                >
-                  <option value="">Select student count</option>
-                  <option value="0-500">0 - 500 students</option>
-                  <option value="500-1000">500 - 1,000 students</option>
-                  <option value="1000-2000">1,000 - 2,000 students</option>
-                  <option value="2000+">2,000+ students</option>
-                </select>
-              </div>
+        <div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-3">
+            Contact Our Sales Team
+          </h3>
+          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+            Interested in our placement solutions? Reach out to our team to discuss how we can help your university achieve better placement outcomes.
+          </p>
+        </div>
 
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">
-                  Message (Optional)
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows="4"
-                  className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors resize-none"
-                  placeholder="Tell us about your placement challenges or what you'd like to achieve..."
-                ></textarea>
-              </div>
+        <div className="flex flex-col items-center gap-6">
+<a
+  href="mailto:info@thebridgegap.com?subject=University%20Placement%20Inquiry&body=Hello%2C%0A%0AI%20would%20like%20to%20learn%20more%20about%20your%20placement%20solutions.%0A%0AUniversity%20Name%3A%20%0AContact%20Person%3A%20%0APhone%3A%20%0A%0AThank%20you!"
+  className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+>
 
-              <button
-                type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-teal-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                Send Your Enquiry Now <ArrowRight className="w-5 h-5" />
-              </button>
 
-              <p className="text-center text-sm text-gray-500">
-                Our team will reach out within 24 hours to discuss how we can help transform your placement outcomes
-              </p>
-            </form>
+  Email Us: info@thebridgegap.com
+
+  {/* Copy Button */}
+  <button
+    type="button"
+    onClick={(e) => {
+      e.preventDefault();
+
+      navigator.clipboard.writeText('info@thebridgegap.com');
+
+      setCopied(true);
+
+      setTimeout(() => {
+        setCopied(false);
+      }, 2000); // reset after 2 sec
+    }}
+    className="p-2 hover:bg-white/20 rounded-lg transition cursor-pointer"
+    title="Copy email"
+  >
+    {copied ? (
+      /* ✅ Tick Icon */
+      <svg
+        className="w-5 h-5 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M5 13l4 4L19 7"
+        />
+      </svg>
+    ) : (
+      /* 📋 Copy Icon (Initial) */
+      <svg
+        className="w-5 h-5 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"
+        />
+      </svg>
+    )}
+  </button>
+</a>
+
+       
+
+          <div className="flex items-center gap-2 text-gray-500 text-sm">
+            <svg className="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>We typically respond within 24 hours</span>
           </div>
         </div>
-      </section>
+
+        <div className="pt-8 border-t border-gray-200">
+          <div className="bg-blue-50 rounded-lg p-6 text-left">
+            <p className="font-semibold text-gray-900 mb-3">What to include in your email:</p>
+            <ul className="space-y-2 text-gray-600 text-sm">
+              <li className="flex items-start gap-2">
+                <span className="text-teal-500 mt-1">•</span>
+                <span>University name and location</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-teal-500 mt-1">•</span>
+                <span>Your contact details (name, phone number)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-teal-500 mt-1">•</span>
+                <span>Number of students</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-teal-500 mt-1">•</span>
+                <span>Any specific questions or requirements</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Final CTA */}
       <section className="py-20 px-6 bg-gradient-to-r from-blue-600 to-teal-500">

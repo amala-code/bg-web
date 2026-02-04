@@ -365,11 +365,13 @@ export default function Community() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={() => setIsModalOpen(true)}
-              className="px-10 py-4 bg-gradient-to-r from-teal-500 to-blue-500 text-white font-bold rounded-full hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="px-10 cursor-pointer py-4 bg-gradient-to-r from-teal-500 to-blue-500 text-white font-bold rounded-full hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Join Now
             </button>
-            <button className="px-10 py-4 border-2 border-teal-500 text-teal-600 font-bold rounded-full hover:bg-teal-50 transform transition-all duration-300">
+            <button 
+              onClick={() => window.location.href = '/about'}
+            className="px-10 py-4 border-2 cursor-pointer border-teal-500 text-teal-600 font-bold rounded-full hover:bg-teal-50 transform transition-all duration-300">
               Learn More
             </button>
           </div>

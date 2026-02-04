@@ -1618,729 +1618,1364 @@ export default function CourseDetailPage({ params }) {
     setClickedCard(key);
     setTimeout(() => setClickedCard(null), 1000);
   };
-  return (
-    <>
-      <Navbar />
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50">
-          <div className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-teal-700 min-h-[700px]">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-96 h-100 bg-teal-400 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-400 rounded-full blur-3xl" />
-      </div>
+//   return (
+//     <>
+//       <Navbar />
+//       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50">
+//           <div className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-teal-700 min-h-[700px]">
+//       <div className="absolute inset-0 opacity-10">
+//         <div className="absolute top-0 right-0 w-96 h-100 bg-teal-400 rounded-full blur-3xl" />
+//         <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-400 rounded-full blur-3xl" />
+//       </div>
 
-      <div className="relative max-w-7xl mx-auto px-6 py-20">
-        <a href="/courses" className="inline-flex items-center text-teal-200 hover:text-white transition-colors mb-12">
-          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-          </svg>
-          Back to Courses
-        </a>
+//       <div className="relative max-w-7xl mx-auto px-6 py-20">
+//         <a href="/courses" className="inline-flex items-center text-teal-200 hover:text-white transition-colors mb-12">
+//           <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+//           </svg>
+//           Back to Courses
+//         </a>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <div className="inline-flex items-center gap-2 bg-teal-500/20 backdrop-blur-sm px-4 py-2 rounded-full text-teal-100">
-              <HiSparkles className="text-xl" />
-              <span className="font-semibold">Most Comprehensive Course</span>
-            </div>
+//         <div className="grid lg:grid-cols-2 gap-12 items-center">
+//           <div className="space-y-6">
+//             <div className="inline-flex items-center gap-2 bg-teal-500/20 backdrop-blur-sm px-4 py-2 rounded-full text-teal-100">
+//               <HiSparkles className="text-xl" />
+//               <span className="font-semibold">Most Comprehensive Course</span>
+//             </div>
             
-            <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-              {course.title}
-            </h1>
-            <p className="text-xl text-teal-100">{course.subtitle}</p>
-            <p className="text-lg text-slate-200 leading-relaxed">{course.description}</p>
+//             <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+//               {course.title}
+//             </h1>
+//             <p className="text-xl text-teal-100">{course.subtitle}</p>
+//             <p className="text-lg text-slate-200 leading-relaxed">{course.description}</p>
 
-            <div className="flex flex-wrap gap-4 pt-4">
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-                {course.rating} Rating
-              </div>
-              {/* <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                </svg>
-                {course.students} Students
-              </div> */}
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white">
-                <FiBookOpen className="w-5 h-5" />
-                {course.courseOverview.totalChapters} Chapters
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white">
-                <FaProjectDiagram className="w-5 h-5" />
-                {course.courseOverview.totalProjects} Projects
-              </div>
+//             <div className="flex flex-wrap gap-4 pt-4">
+//               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white">
+//                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+//                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+//                 </svg>
+//                 {course.rating} Rating
+//               </div>
+//               {/* <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white">
+//                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+//                 </svg>
+//                 {course.students} Students
+//               </div> */}
+//               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white">
+//                 <FiBookOpen className="w-5 h-5" />
+//                 {course.courseOverview.totalChapters} Chapters
+//               </div>
+//               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white">
+//                 <FaProjectDiagram className="w-5 h-5" />
+//                 {course.courseOverview.totalProjects} Projects
+//               </div>
+//             </div>
+//           </div>
+
+//           <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl">
+//             <img
+//               src={course.thumbnail}
+//               alt={course.title}
+//               className="w-full h-full object-cover"
+//             />
+//             <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent" />
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+
+//         {/* Pricing Tier Selection - moved further below */}
+//         <div className="relative z-12 mt-24">
+//           <div className="max-w-7xl mx-auto px-6">
+//             <motion.div
+//               initial={{ opacity: 0, y: 30 }}
+//               animate={{ opacity: 1, y: 0 }}
+//               transition={{ duration: 0.6 }}
+//               className="bg-white rounded-3xl shadow-2xl p-8"
+//             >
+//               <div className="text-center mb-8">
+//                 <h2 className="text-3xl font-bold text-blue-900 mb-3">Choose Your Learning Path</h2>
+//                 <p className="text-slate-600 text-lg">Select the tier that matches your goals and experience level</p>
+//               </div>
+//               <div className="grid md:grid-cols-3 gap-6">
+//                 {Object.entries(course.pricingTiers).map(([key, tier]) => (
+//                   <motion.div
+//                     key={key}
+//                     whileHover={{ scale: 1.03 }}
+//                     onClick={() => setSelectedTier(key)}
+//                     className={`relative cursor-pointer rounded-3xl p-7 border-2 transition-all flex flex-col justify-between shadow-lg ${
+//                       selectedTier === key
+//                         ? 'border-teal-500 bg-gradient-to-br from-teal-50 to-cyan-50 shadow-xl scale-[1.02]'
+//                         : 'border-slate-200 bg-white hover:border-teal-300 hover:shadow-xl'
+//                     }`}
+//                   >
+//                     {/* Badge */}
+//                     {tier.recommended && (
+//                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+//                         <div className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white px-4 py-1 rounded-full text-sm font-bold flex items-center gap-1 shadow-md">
+//                           <HiSparkles /> {tier.badge}
+//                         </div>
+//                       </div>
+//                     )}
+//                     {!tier.recommended && tier.badge && (
+//                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+//                         <div className="bg-blue-900 text-white px-4 py-1 rounded-full text-sm font-bold shadow-md">
+//                           {tier.badge}
+//                         </div>
+//                       </div>
+//                     )}
+
+//                     <div className="text-center mb-2">
+//                       <h3 className="text-2xl font-extrabold text-blue-900 mb-2 tracking-tight">{tier.name}</h3>
+//                       <div className="flex items-center justify-center gap-2 mb-2">
+//                         <span className="text-4xl font-bold text-teal-600">{tier.price}</span>
+//                         {tier.originalPrice && (
+//                           <span className="text-sm text-slate-400 line-through">{tier.originalPrice}</span>
+//                         )}
+//                       </div>
+//                       <div className="text-teal-600 font-semibold text-sm mb-2">{tier.savings}</div>
+//                     </div>
+
+//                     {/* Highlighted Description */}
+//                     <div className="mb-3 px-3 py-2 rounded-lg bg-gradient-to-r from-blue-50 to-teal-50 text-blue-900 font-medium text-base shadow-sm border border-teal-100">
+//                       {tier.description}
+//                     </div>
+
+//                     {/* Duration & Value */}
+//                     <div className="flex items-center justify-center gap-2 mb-3">
+//                       <span className="inline-block bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-xs font-semibold">
+//                         Duration: {tier.estimatedTime}
+//                       </span>
+                   
+//                     </div>
+
+//                     {/* Value List */}
+//                     <div className="space-y-2 mb-4">
+//                       <div className="flex items-center justify-between text-sm">
+//                         <span className="text-slate-600">Chapters:</span>
+//                         <span className="font-semibold text-blue-900">{tier.chaptersIncluded}</span>
+//                       </div>
+//                       <div className="flex items-center justify-between text-sm">
+//                         <span className="text-slate-600">Projects:</span>
+//                         <span className="font-semibold text-blue-900">{tier.projectsIncluded}</span>
+//                       </div>
+//                       <div className="flex items-center justify-between text-sm">
+//                         <span className="text-slate-600">Questions:</span>
+//                         <span className="font-semibold text-blue-900">{tier.questionsIncluded}</span>
+//                       </div>
+//                           <div className="flex items-center justify-between text-sm">
+//                         <span className="text-slate-600"> Community:</span>
+//                         <span className="font-semibold text-blue-900">{tier.jobAssistanceCommunity}</span>
+//                       </div>
+//                           <div className="flex items-center justify-between text-sm">
+//                         <span className="text-slate-600">Soft Skills :</span>
+//                         <span className="font-semibold text-blue-900">{tier.SoftSkillsTraining}</span>
+//                       </div>
+//                           <div className="flex items-center justify-between text-sm">
+//                         <span className="text-slate-600">Certificate:</span>
+//                         <span className="font-semibold text-blue-900">{tier.Certificate}</span>
+//                       </div>
+//                       {tier.bonusContent && (
+//                         <div className="flex items-center justify-between text-sm">
+//                           <span className="text-teal-600 font-bold">Bonus Content:</span>
+//                           <span className="font-semibold text-teal-700">{tier.bonusContent}</span>
+//                         </div>
+//                       )}
+//                     </div>
+
+//                     {/* Selected Tier Checkmark */}
+//                     {selectedTier === key && (
+//                       <div className="absolute top-4 right-4">
+//                         <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center shadow-lg">
+//                           <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+//                           </svg>
+//                         </div>
+//                       </div>
+//                     )}
+//                   </motion.div>
+//                 ))}
+//               </div>
+//             </motion.div>
+//           </div>
+//         </div>
+
+  
+
+
+
+//         {/* Main Content */}
+//         <div className="max-w-7xl mx-auto px-6 py-16">
+//           <div className="grid lg:grid-cols-3 gap-12">
+//             {/* Left Column - Course Details */}
+//             <div className="lg:col-span-2 space-y-12">
+//               {/* Course Overview Stats */}
+  
+
+//               {/* What's Included in Selected Tier */}
+//               <motion.section
+//                 initial={{ opacity: 0, y: 20 }}
+//                 animate={{ opacity: 1, y: 0 }}
+//                 transition={{ duration: 0.5 }}
+//                 className="bg-white rounded-2xl p-8 shadow-lg"
+//               >
+//                 <h2 className="text-3xl font-bold text-blue-900 mb-6 flex items-center gap-3">
+//                   <FiTarget className="text-4xl text-teal-500" />
+//                   What's Included in {currentTier.name} Tier
+//                 </h2>
+//                 <div className="grid md:grid-cols-2 gap-4">
+//                   {currentTier.features && currentTier.features.map((feature, index) => (
+//                     <div key={index} className="flex items-start gap-3">
+//                       <svg className="w-6 h-6 text-teal-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+//                       </svg>
+//                       <span className="text-slate-700">{feature}</span>
+//                     </div>
+//                   ))}
+//                 </div>
+//               </motion.section>
+
+//               {/* Complete Curriculum with Modules - UPDATED TO HANDLE JSON STRUCTURE */}
+//               <motion.section
+//                 initial={{ opacity: 0, y: 20 }}
+//                 animate={{ opacity: 1, y: 0 }}
+//                 transition={{ duration: 0.5, delay: 0.1 }}
+//                 className="bg-white rounded-2xl p-8 shadow-lg"
+//               >
+//                 <h2 className="text-3xl font-bold text-blue-900 mb-6 flex items-center gap-3">
+//                   <FiBookOpen className="text-4xl text-teal-500" />
+//                   Complete Course Curriculum
+//                 </h2>
+
+//                 <div className="space-y-4">
+//                   {course.curriculum?.map((module, index) => {
+//                     // Module is accessible if any chapter is accessible for the selected tier
+//                     const hasAccessibleChapter = module.chapters.some(
+//                       (chapter) =>
+//                         typeof chapter === 'object' && chapter.accessLevel && chapter.accessLevel[selectedTier]
+//                     );
+//                     const isModuleAccessible = hasAccessibleChapter;
+
+//                     return (
+//                       <div
+//                         key={index}
+//                         className={`border-2 rounded-xl overflow-hidden transition-all ${
+//                           isModuleAccessible
+//                             ? 'border-teal-200 bg-gradient-to-r from-white to-teal-50'
+//                             : 'border-slate-200 bg-slate-50 opacity-60'
+//                         }`}
+//                       >
+//                         {/* Module Header */}
+//                         <div
+//                           onClick={() => isModuleAccessible && toggleModule(index)}
+//                           className={`p-5 flex items-center justify-between ${
+//                             isModuleAccessible ? 'cursor-pointer hover:bg-teal-100/50' : 'cursor-not-allowed'
+//                           }`}
+//                         >
+//                           <div className="flex items-center gap-4 flex-1">
+//                             <div className={`flex items-center justify-center w-12 h-12 rounded-full font-bold ${
+//                               isModuleAccessible
+//                                 ? 'bg-teal-500 text-white'
+//                                 : 'bg-slate-300 text-slate-600'
+//                             }`}>
+//                               {module.moduleNumber}
+//                             </div>
+//                             <div className="flex-1">
+//                               <div className="flex items-center gap-3 mb-1 flex-wrap">
+//                                 <h3 className="text-lg font-bold text-blue-900">{module.moduleTitle}</h3>
+//                                 {/* Optionally, you can show a badge for module type if you want */}
+//                                 {!isModuleAccessible && (
+//                                   <span className="flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-slate-200 text-slate-600">
+//                                     <FiLock className="w-3 h-3" /> Locked
+//                                   </span>
+//                                 )}
+//                               </div>
+//                               <p className="text-sm text-slate-600">{module.totalChapters} chapters</p>
+//                             </div>
+//                           </div>
+//                           {isModuleAccessible && (
+//                             <div>
+//                               {expandedModule === index ? (
+//                                 <FiChevronUp className="w-6 h-6 text-teal-500" />
+//                               ) : (
+//                                 <FiChevronDown className="w-6 h-6 text-slate-400" />
+//                               )}
+//                             </div>
+//                           )}
+//                         </div>
+
+//                         {/* Chapter List - Expanded */}
+//                         {isModuleAccessible && expandedModule === index && (
+//                           <motion.div
+//                             initial={{ opacity: 0, height: 0 }}
+//                             animate={{ opacity: 1, height: 'auto' }}
+//                             exit={{ opacity: 0, height: 0 }}
+//                             className="border-t border-teal-200 bg-white p-5"
+//                           >
+//                             <div className="space-y-3">
+//                               {module.chapters.map((chapter, chapterIndex) => {
+//                                 const chapterName = typeof chapter === 'string'
+//                                   ? chapter
+//                                   : chapter.chapterName;
+//                                 const chapterNumber = typeof chapter === 'string'
+//                                   ? chapterIndex + 1
+//                                   : chapter.chapterNumber;
+//                                 const isChapterAccessible = typeof chapter === 'object' && chapter.accessLevel && chapter.accessLevel[selectedTier];
+//                                 const belongsTo = typeof chapter === 'object' ? chapter.belongsTo : null;
+//                                 const duration = typeof chapter === 'object' ? chapter.duration : null;
+//                                 const learningOutcome = typeof chapter === 'object' ? chapter.learningOutcome : null;
+//                                 return (
+//                                   <div
+//                                     key={chapterIndex}
+//                                     className={`flex items-start gap-3 p-4 rounded-lg transition-colors ${
+//                                       isChapterAccessible
+//                                         ? 'bg-slate-50 hover:bg-teal-50 border border-slate-200'
+//                                         : 'bg-slate-100 opacity-50 border border-slate-300'
+//                                     }`}
+//                                   >
+//                                     <div className={`flex items-center justify-center w-8 h-8 rounded-full font-semibold text-sm flex-shrink-0 ${
+//                                       isChapterAccessible
+//                                         ? 'bg-teal-100 text-teal-700'
+//                                         : 'bg-slate-200 text-slate-500'
+//                                     }`}>
+//                                       {chapterNumber}
+//                                     </div>
+//                                     <div className="flex-1 min-w-0">
+//                                       <div className="flex items-start justify-between gap-2 mb-1">
+//                                         <div className="flex items-center gap-2 flex-wrap">
+//                                           <p className={`font-medium ${
+//                                             isChapterAccessible ? 'text-slate-800' : 'text-slate-500'
+//                                           }`}>
+//                                             {chapterName}
+//                                           </p>
+//                                           {!isChapterAccessible && (
+//                                             <FiLock className="w-3 h-3 text-slate-400 flex-shrink-0" />
+//                                           )}
+//                                         </div>
+//                                         {belongsTo && (
+//                                           <span className="text-xs text-slate-400 whitespace-nowrap">
+//                                             {belongsTo}
+//                                           </span>
+//                                         )}
+//                                       </div>
+//                                       {duration && (
+//                                         <p className="text-xs text-slate-500 mb-1">{duration}</p>
+//                                       )}
+//                                       {learningOutcome && isChapterAccessible && (
+//                                         <p className="text-xs text-teal-600 mt-2 flex items-start gap-1">
+//                                           <span className="flex-shrink-0">📚</span>
+//                                           <span>{learningOutcome}</span>
+//                                         </p>
+//                                       )}
+//                                     </div>
+//                                   </div>
+//                                 );
+//                               })}
+//                             </div>
+//                           </motion.div>
+//                         )}
+//                       </div>
+//                     );
+//                   })}
+//                 </div>
+//               </motion.section>
+
+//               {/* Projects Overview */}
+//               {course.projectsSummary && (
+//                 <motion.section
+//                   initial={{ opacity: 0, y: 20 }}
+//                   animate={{ opacity: 1, y: 0 }}
+//                   transition={{ duration: 0.5, delay: 0.2 }}
+//                   className="bg-white rounded-2xl p-8 shadow-lg"
+//                 >
+//                   <h2 className="text-3xl font-bold text-blue-900 mb-6 flex items-center gap-3">
+//                     <FaProjectDiagram className="text-4xl text-teal-500" />
+//                     Hands-on Projects
+//                   </h2>
+
+//                   <div className="grid md:grid-cols-2 gap-6">
+//                     {/* Mini Projects */}
+//                     <div className="border-2 border-blue-200 rounded-xl p-6 bg-gradient-to-br from-blue-50 to-white">
+//                       <div className="flex items-center gap-3 mb-4">
+//                         <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+//                           <FiCode className="w-6 h-6 text-white" />
+//                         </div>
+//                         <div>
+//                           <h3 className="text-xl font-bold text-blue-900">Mini Projects</h3>
+//                           <p className="text-sm text-slate-600">{course.projectsSummary.miniProjects.count} projects</p>
+//                         </div>
+//                       </div>
+//                       <ul className="space-y-2">
+//                         {course.projectsSummary.miniProjects.projects.map((project, idx) => (
+//                           <li key={idx} className="flex items-start gap-2 text-sm text-slate-700">
+//                             <svg className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+//                             </svg>
+//                             {project}
+//                           </li>
+//                         ))}
+//                       </ul>
+//                       <div className="mt-4 text-xs text-slate-500">
+//                         Access: {course.projectsSummary.miniProjects.accessLevel}
+//                       </div>
+//                     </div>
+
+//                     {/* Major Projects */}
+//                     <div className="border-2 border-teal-200 rounded-xl p-6 bg-gradient-to-br from-teal-50 to-white">
+//                       <div className="flex items-center gap-3 mb-4">
+//                         <div className="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center">
+//                           <FaRocket className="w-6 h-6 text-white" />
+//                         </div>
+//                         <div>
+//                           <h3 className="text-xl font-bold text-blue-900">Major Projects</h3>
+//                           <p className="text-sm text-slate-600">{course.projectsSummary.majorProjects.count} projects</p>
+//                         </div>
+//                       </div>
+//                       <ul className="space-y-2">
+//                         {course.projectsSummary.majorProjects.projects.map((project, idx) => (
+//                           <li key={idx} className="flex items-start gap-2 text-sm text-slate-700">
+//                             <svg className="w-4 h-4 text-teal-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+//                             </svg>
+//                             {project}
+//                           </li>
+//                         ))}
+//                       </ul>
+//                       <div className="mt-4 text-xs text-slate-500">
+//                         Access: {course.projectsSummary.majorProjects.accessLevel}
+//                       </div>
+//                     </div>
+
+//                     {/* Mega Projects */}
+//                     <div className="border-2 border-purple-200 rounded-xl p-6 bg-gradient-to-br from-purple-50 to-white">
+//                       <div className="flex items-center gap-3 mb-4">
+//                         <div className="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center">
+//                           <HiLightningBolt className="w-6 h-6 text-white" />
+//                         </div>
+//                         <div>
+//                           <h3 className="text-xl font-bold text-blue-900">Mega Projects</h3>
+//                           <p className="text-sm text-slate-600">{course.projectsSummary.megaProjects.count} projects</p>
+//                         </div>
+//                       </div>
+//                       <ul className="space-y-2">
+//                         {course.projectsSummary.megaProjects.projects.map((project, idx) => (
+//                           <li key={idx} className="flex items-start gap-2 text-sm text-slate-700">
+//                             <svg className="w-4 h-4 text-purple-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+//                             </svg>
+//                             {project}
+//                           </li>
+//                         ))}
+//                       </ul>
+//                       <div className="mt-4 text-xs text-slate-500">
+//                         Access: {course.projectsSummary.megaProjects.accessLevel}
+//                       </div>
+//                     </div>
+
+//                     {/* Capstone Projects */}
+//                     <div className="border-2 border-orange-200 rounded-xl p-6 bg-gradient-to-br from-orange-50 to-white">
+//                       <div className="flex items-center gap-3 mb-4">
+//                         <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center">
+//                           <MdWorkspacePremium className="w-6 h-6 text-white" />
+//                         </div>
+//                         <div>
+//                           <h3 className="text-xl font-bold text-blue-900">Capstone Projects</h3>
+//                           <p className="text-sm text-slate-600">{course.projectsSummary.capstoneProjects.count} projects</p>
+//                         </div>
+//                       </div>
+//                       <ul className="space-y-2">
+//                         {course.projectsSummary.capstoneProjects.projects.map((project, idx) => (
+//                           <li key={idx} className="flex items-start gap-2 text-sm text-slate-700">
+//                             <svg className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+//                             </svg>
+//                             {project}
+//                           </li>
+//                         ))}
+//                       </ul>
+//                       <div className="mt-4 text-xs text-slate-500">
+//                         Access: {course.projectsSummary.capstoneProjects.accessLevel}
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </motion.section>
+//               )}
+
+//               {/* Assessment & Practice */}
+//               {course.assessmentsSummary && (
+//                 <motion.section
+//                   initial={{ opacity: 0, y: 20 }}
+//                   animate={{ opacity: 1, y: 0 }}
+//                   transition={{ duration: 0.5, delay: 0.3 }}
+//                   className="bg-gradient-to-br from-indigo-900 to-purple-700 rounded-2xl p-8 shadow-lg text-white"
+//                 >
+//                   <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+//                     <MdQuiz className="text-4xl text-yellow-300" />
+//                     Practice & Assessments
+//                   </h2>
+//                   <div className="grid md:grid-cols-2 gap-6">
+//                     <div>
+//                       <div className="text-5xl font-bold text-yellow-300 mb-2">
+//                         {course.assessmentsSummary.totalQuestions}
+//                       </div>
+//                       <p className="text-purple-200 mb-4">Total Practice Questions</p>
+//                       <div className="space-y-2">
+//                         {Object.entries(course.assessmentsSummary.questionBreakdown).slice(0, 4).map(([key, value]) => (
+//                           <div key={key} className="flex justify-between items-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
+//                             <span className="text-sm capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
+//                             <span className="font-bold">{value.count}</span>
+//                           </div>
+//                         ))}
+//                       </div>
+//                     </div>
+//                     <div className="flex flex-col justify-center">
+//                       <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+//                         <FiAward className="w-12 h-12 text-yellow-300 mb-4" />
+//                         <h3 className="text-xl font-bold mb-2">In-Video Solutions</h3>
+//                         <p className="text-purple-200 mb-2">{course.assessmentsSummary.inVideoSolutions}</p>
+//                         <p className="text-sm text-purple-300">Step-by-step solved examples in videos to master concepts</p>
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </motion.section>
+//               )}
+
+//               {/* Learning Outcomes */}
+//               {course.learningOutcomes && (
+//                 <motion.section
+//                   initial={{ opacity: 0, y: 20 }}
+//                   animate={{ opacity: 1, y: 0 }}
+//                   transition={{ duration: 0.5, delay: 0.4 }}
+//                   className="bg-white rounded-2xl p-8 shadow-lg"
+//                 >
+//                   <h2 className="text-3xl font-bold text-blue-900 mb-6 flex items-center gap-3">
+//                     <FiCheckCircle className="text-4xl text-teal-500" />
+//                     Learning Outcomes
+//                   </h2>
+                  
+//                   <div className="space-y-6">
+//                     <div>
+//                       <h3 className="text-xl font-bold text-blue-900 mb-4">Technical Skills</h3>
+//                       <div className="grid md:grid-cols-2 gap-3">
+//                         {course.learningOutcomes.technical.map((skill, index) => (
+//                           <div key={index} className="flex items-start gap-3">
+//                             <svg className="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+//                             </svg>
+//                             <span className="text-slate-700 text-sm">{skill}</span>
+//                           </div>
+//                         ))}
+//                       </div>
+//                     </div>
+
+//                     <div>
+//                       <h3 className="text-xl font-bold text-blue-900 mb-4">Project Experience</h3>
+//                       <div className="grid md:grid-cols-2 gap-3">
+//                         {course.learningOutcomes.projects.map((item, index) => (
+//                           <div key={index} className="flex items-start gap-3">
+//                             <svg className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+//                             </svg>
+//                             <span className="text-slate-700 text-sm">{item}</span>
+//                           </div>
+//                         ))}
+//                       </div>
+//                     </div>
+
+//                     <div>
+//                       <h3 className="text-xl font-bold text-blue-900 mb-4">Career Readiness</h3>
+//                       <div className="grid md:grid-cols-2 gap-3">
+//                         {course.learningOutcomes.career.map((item, index) => (
+//                           <div key={index} className="flex items-start gap-3">
+//                             <svg className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+//                             </svg>
+//                             <span className="text-slate-700 text-sm">{item}</span>
+//                           </div>
+//                         ))}
+//                       </div>
+//                     </div>
+//                   </div>
+//                 </motion.section>
+//               )}
+
+//               {/* Career Paths */}
+//               {course.careerPaths && (
+//                 <motion.section
+//                   initial={{ opacity: 0, y: 20 }}
+//                   animate={{ opacity: 1, y: 0 }}
+//                   transition={{ duration: 0.5, delay: 0.5 }}
+//                   className="bg-gradient-to-br from-teal-900 to-cyan-700 rounded-2xl p-8 shadow-lg text-white"
+//                 >
+//                   <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
+//                     <FaRocket className="text-4xl text-yellow-300" />
+//                     Career Opportunities
+//                   </h2>
+//                   <div className="grid md:grid-cols-2 gap-4">
+//                     {course.careerPaths.map((career, index) => (
+//                       <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-5 hover:bg-white/20 transition-all">
+//                         <h3 className="text-lg font-bold mb-2">{career.role}</h3>
+//                         <p className="text-teal-200 text-sm">{career.skills}</p>
+//                       </div>
+//                     ))}
+//                   </div>
+//                 </motion.section>
+//               )}
+//             </div>
+
+//             {/* Right Column - Purchase Card */}
+//             <div className="lg:col-span-1">
+//               <motion.div
+//                 initial={{ opacity: 0, y: 20 }}
+//                 animate={{ opacity: 1, y: 0 }}
+//                 transition={{ duration: 0.5, delay: 0.4 }}
+//                 className="sticky top-6 bg-white rounded-2xl shadow-2xl overflow-hidden"
+//               >
+//                 <div className="bg-gradient-to-r from-teal-500 to-cyan-500 p-6 text-white">
+//                   <div className="text-center">
+//                     <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-bold mb-3">
+//                       {currentTier.badge}
+//                     </div>
+//                     <h3 className="text-2xl font-bold mb-2">{currentTier.name} Tier</h3>
+//                     <div className="text-5xl font-bold mb-2">{currentTier.price}</div>
+//                     <div className="text-sm line-through opacity-75">{currentTier.originalPrice}</div>
+//                     <div className="text-lg font-semibold mt-2">{currentTier.savings}</div>
+//                   </div>
+//                 </div>
+
+//                 <div className="p-8">
+//                   {/* Payment Options */}
+//                   <div className="mb-6">
+//                     <div className="flex gap-3 mb-4">
+//                       <button
+//                         onClick={() => setSelectedPayment('one-time')}
+//                         className={`flex-1 py-3 px-4 rounded-xl font-semibold transition-all ${
+//                           selectedPayment === 'one-time'
+//                             ? 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white shadow-lg'
+//                             : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+//                         }`}
+//                       >
+//                         One-time
+//                       </button>
+//                       <button
+//                         onClick={() => setSelectedPayment('installments')}
+//                         className={`flex-1 py-3 px-4 rounded-xl font-semibold transition-all ${
+//                           selectedPayment === 'installments'
+//                             ? 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white shadow-lg'
+//                             : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+//                         }`}
+//                       >
+//                         3 Payments
+//                       </button>
+//                     </div>
+                    
+//                     {selectedPayment === 'installments' && (
+//                       <div className="text-center text-sm text-slate-600 bg-blue-50 p-3 rounded-lg">
+//                         <span className="font-bold text-blue-900">{currentTier.installmentPrice}</span> × 3 monthly payments
+//                       </div>
+//                     )}
+//                   </div>
+// and 
+//                   <button className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 mb-4">
+//                     Enroll Now
+//                   </button>
+
+//                   <p className="text-center text-sm text-slate-500 mb-6 flex items-center justify-center gap-2">
+//                     <FiLock className="inline text-lg" /> 30-day money-back guarantee
+//                   </p>
+
+//                   {/* Course Includes */}
+//                   <div className="border-t border-slate-200 pt-6">
+//                     <h3 className="font-bold text-blue-900 mb-4">This tier includes:</h3>
+//                     <div className="space-y-3 max-h-96 overflow-y-auto">
+//                       {currentTier.features && currentTier.features.map((feature, index) => (
+//                         <div key={index} className="flex items-start gap-3 text-sm text-slate-700">
+//                           <svg className="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+//                           </svg>
+//                           <span>{feature}</span>
+//                         </div>
+//                       ))}
+//                     </div>
+//                   </div>
+
+//                   {/* Course Info */}
+//                   <div className="border-t border-slate-200 pt-6 mt-6 space-y-3 text-sm">
+//                     <div className="flex justify-between">
+//                       <span className="text-slate-600">Duration:</span>
+//                       <span className="font-semibold text-blue-900">{currentTier.estimatedTime}</span>
+//                     </div>
+//                     <div className="flex justify-between">
+//                       <span className="text-slate-600">Level:</span>
+//                       <span className="font-semibold text-blue-900">{currentTier.skillLevel}</span>
+//                     </div>
+//                     <div className="flex justify-between">
+//                       <span className="text-slate-600">Language:</span>
+//                       <span className="font-semibold text-blue-900">{course.courseOverview.language}</span>
+//                     </div>
+//                     <div className="flex justify-between">
+//                       <span className="text-slate-600">Last Updated:</span>
+//                       <span className="font-semibold text-blue-900">{course.courseOverview.lastUpdated}</span>
+//                     </div>
+//                   </div>
+
+//                   {/* Tier Comparison CTA */}
+//                   <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-teal-50 rounded-xl border border-teal-200">
+//                     <p className="text-sm text-slate-700 text-center mb-2">
+//                       Want to compare all tiers?
+//                     </p>
+//                     <button
+//                       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+//                       className="w-full text-teal-600 font-semibold text-sm hover:text-teal-700 transition-colors"
+//                     >
+//                       View All Pricing Options ↑
+//                     </button>
+//                   </div>
+//                 </div>
+//               </motion.div>
+//             </div>
+
+            
+//           </div>
+//         </div>
+//       </div>
+//       <Footer />
+//     </>
+//   );
+
+return ( 
+  <>
+  <Navbar />
+<div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50">
+  {/* Hero Section - Mobile Optimized */}
+  <div className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-blue-800 to-teal-700 min-h-[500px] md:min-h-[700px]">
+    <div className="absolute inset-0 opacity-10">
+      <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-teal-400 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 md:w-96 md:h-96 bg-cyan-400 rounded-full blur-3xl" />
+    </div>
+
+    <div className="relative max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-20">
+      <a href="/courses" className="inline-flex items-center text-teal-200 hover:text-white transition-colors mb-6 md:mb-12">
+        <svg className="w-4 h-4 md:w-5 md:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+        Back to Courses
+      </a>
+
+      <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
+        <div className="space-y-4 md:space-y-6">
+          <div className="inline-flex items-center gap-2 bg-teal-500/20 backdrop-blur-sm px-3 py-1.5 md:px-4 md:py-2 rounded-full text-teal-100 text-sm md:text-base">
+            <HiSparkles className="text-lg md:text-xl" />
+            <span className="font-semibold">Most Comprehensive</span>
+          </div>
+
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            {course.title}
+          </h1>
+          <p className="text-lg md:text-xl text-teal-100">{course.subtitle}</p>
+          <p className="text-base md:text-lg text-slate-200 leading-relaxed">{course.description}</p>
+
+          <div className="flex flex-wrap gap-2 md:gap-4 pt-2 md:pt-4">
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full text-white text-sm md:text-base">
+              <svg className="w-4 h-4 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+              {course.rating}
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full text-white text-sm md:text-base">
+              <FiBookOpen className="w-4 h-4 md:w-5 md:h-5" />
+              {course.courseOverview.totalChapters} Ch
+            </div>
+            <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full text-white text-sm md:text-base">
+              <FaProjectDiagram className="w-4 h-4 md:w-5 md:h-5" />
+              {course.courseOverview.totalProjects} Proj
             </div>
           </div>
+        </div>
 
-          <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl">
-            <img
-              src={course.thumbnail}
-              alt={course.title}
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent" />
-          </div>
+        {/* Hide image on mobile, show on md+ */}
+        <div className="hidden md:block relative w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl">
+          <img
+            src={course.thumbnail}
+            alt={course.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-900/60 to-transparent" />
         </div>
       </div>
     </div>
+  </div>
 
-        {/* Pricing Tier Selection - moved further below */}
-        <div className="relative z-12 mt-24">
-          <div className="max-w-7xl mx-auto px-6">
+  {/* Pricing Tier Selection - Mobile Optimized */}
+  <div className="relative mt-6 md:mt-10">
+    <div className="max-w-7xl mx-auto px-4 md:px-6">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="bg-white rounded-2xl md:rounded-3xl shadow-2xl p-4 md:p-8"
+      >
+        <div className="text-center mb-6 md:mb-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-2 md:mb-3">Choose Your Path</h2>
+          <p className="text-slate-600 text-sm md:text-lg">Select the tier that matches your goals</p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3 md:gap-6">
+          {Object.entries(course.pricingTiers).map(([key, tier]) => (
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="bg-white rounded-3xl shadow-2xl p-8"
+              key={key}
+              whileHover={{ scale: 1.03 }}
+              onClick={() => setSelectedTier(key)}
+              className={`relative cursor-pointer rounded-2xl md:rounded-3xl p-5 md:p-7 border-2 transition-all flex flex-col justify-between shadow-lg ${
+                selectedTier === key
+                  ? 'border-teal-500 bg-gradient-to-br from-teal-50 to-cyan-50 shadow-xl scale-[1.02]'
+                  : 'border-slate-200 bg-white hover:border-teal-300 hover:shadow-xl'
+              }`}
             >
-              <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold text-blue-900 mb-3">Choose Your Learning Path</h2>
-                <p className="text-slate-600 text-lg">Select the tier that matches your goals and experience level</p>
+              {tier.recommended && (
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white px-3 py-0.5 md:px-4 md:py-1 rounded-full text-xs md:text-sm font-bold flex items-center gap-1 shadow-md">
+                    <HiSparkles className="text-sm" /> {tier.badge}
+                  </div>
+                </div>
+              )}
+              {!tier.recommended && tier.badge && (
+                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-blue-900 text-white px-3 py-0.5 md:px-4 md:py-1 rounded-full text-xs md:text-sm font-bold shadow-md">
+                    {tier.badge}
+                  </div>
+                </div>
+              )}
+
+              <div className="text-center mb-2">
+                <h3 className="text-xl md:text-2xl font-extrabold text-blue-900 mb-2 tracking-tight">{tier.name}</h3>
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <span className="text-3xl md:text-4xl font-bold text-teal-600">₹{tier.price}</span>
+                  {tier.originalPrice && (
+                    <span className="text-xs md:text-sm text-slate-400 line-through">₹{tier.originalPrice}</span>
+                  )}
+                </div>
+                <div className="text-teal-600 font-semibold text-xs md:text-sm mb-2">{tier.savings}</div>
               </div>
-              <div className="grid md:grid-cols-3 gap-6">
-                {Object.entries(course.pricingTiers).map(([key, tier]) => (
-                  <motion.div
-                    key={key}
-                    whileHover={{ scale: 1.03 }}
-                    onClick={() => setSelectedTier(key)}
-                    className={`relative cursor-pointer rounded-3xl p-7 border-2 transition-all flex flex-col justify-between shadow-lg ${
-                      selectedTier === key
-                        ? 'border-teal-500 bg-gradient-to-br from-teal-50 to-cyan-50 shadow-xl scale-[1.02]'
-                        : 'border-slate-200 bg-white hover:border-teal-300 hover:shadow-xl'
+
+              <div className="mb-3 px-2 md:px-3 py-2 rounded-lg bg-gradient-to-r from-blue-50 to-teal-50 text-blue-900 font-medium text-sm md:text-base shadow-sm border border-teal-100">
+                {tier.description}
+              </div>
+
+              <div className="flex items-center justify-center gap-2 mb-3">
+                <span className="inline-block bg-blue-100 text-blue-900 px-2.5 md:px-3 py-1 rounded-full text-xs font-semibold">
+                  {tier.estimatedTime}
+                </span>
+              </div>
+
+              <div className="space-y-2 mb-4 text-xs md:text-sm">
+                <div className="flex items-center justify-between">
+                  <span className="text-slate-600">Chapters:</span>
+                  <span className="font-semibold text-blue-900">{tier.chaptersIncluded}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-slate-600">Projects:</span>
+                  <span className="font-semibold text-blue-900">{tier.projectsIncluded}</span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-slate-600">Questions:</span>
+                  <span className="font-semibold text-blue-900">{tier.questionsIncluded}</span>
+                </div>
+                {/* Hide on mobile */}
+                <div className="hidden md:flex items-center justify-between">
+                  <span className="text-slate-600">Community:</span>
+                  <span className="font-semibold text-blue-900">{tier.jobAssistanceCommunity}</span>
+                </div>
+                <div className="hidden md:flex items-center justify-between">
+                  <span className="text-slate-600">Soft Skills:</span>
+                  <span className="font-semibold text-blue-900">{tier.SoftSkillsTraining}</span>
+                </div>
+                <div className="hidden md:flex items-center justify-between">
+                  <span className="text-slate-600">Certificate:</span>
+                  <span className="font-semibold text-blue-900">{tier.Certificate}</span>
+                </div>
+              </div>
+
+              {selectedTier === key && (
+                <div className="absolute top-3 right-3 md:top-4 md:right-4">
+                  <div className="w-6 h-6 md:w-8 md:h-8 bg-teal-500 rounded-full flex items-center justify-center shadow-lg">
+                    <svg className="w-4 h-4 md:w-5 md:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                </div>
+              )}
+            </motion.div>
+          ))}
+        </div>
+      </motion.div>
+    </div>
+  </div>
+
+  {/* Main Content */}
+  <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-16">
+    <div className="grid lg:grid-cols-3 gap-6 md:gap-12">
+      {/* Left Column - Course Details */}
+      <div className="lg:col-span-2 space-y-6 md:space-y-12">
+
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="bg-white rounded-xl md:rounded-2xl p-5 md:p-8 shadow-lg"
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-4 md:mb-6 flex items-center gap-2 md:gap-3">
+            <FiBookOpen className="text-2xl md:text-4xl text-teal-500" />
+            Course Curriculum
+          </h2>
+
+          <div className="space-y-3 md:space-y-4">
+            {course.curriculum?.map((module, index) => {
+              const hasAccessibleChapter = module.chapters.some(
+                (chapter) =>
+                  typeof chapter === 'object' && chapter.accessLevel && chapter.accessLevel[selectedTier]
+              );
+              const isModuleAccessible = hasAccessibleChapter;
+
+              return (
+                <div
+                  key={index}
+                  className={`border-2 rounded-lg md:rounded-xl overflow-hidden transition-all ${
+                    isModuleAccessible
+                      ? 'border-teal-200 bg-gradient-to-r from-white to-teal-50'
+                      : 'border-slate-200 bg-slate-50 opacity-60'
+                  }`}
+                >
+                  <div
+                    onClick={() => isModuleAccessible && toggleModule(index)}
+                    className={`p-4 md:p-5 flex items-center justify-between ${
+                      isModuleAccessible ? 'cursor-pointer hover:bg-teal-100/50' : 'cursor-not-allowed'
                     }`}
                   >
-                    {/* Badge */}
-                    {tier.recommended && (
-                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <div className="bg-gradient-to-r from-teal-500 to-cyan-500 text-white px-4 py-1 rounded-full text-sm font-bold flex items-center gap-1 shadow-md">
-                          <HiSparkles /> {tier.badge}
-                        </div>
+                    <div className="flex items-center gap-3 md:gap-4 flex-1">
+                      <div className={`flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full font-bold text-sm md:text-base ${
+                        isModuleAccessible
+                          ? 'bg-teal-500 text-white'
+                          : 'bg-slate-300 text-slate-600'
+                      }`}>
+                        {module.moduleNumber}
                       </div>
-                    )}
-                    {!tier.recommended && tier.badge && (
-                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <div className="bg-blue-900 text-white px-4 py-1 rounded-full text-sm font-bold shadow-md">
-                          {tier.badge}
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 md:gap-3 mb-1 flex-wrap">
+                          <h3 className="text-base md:text-lg font-bold text-blue-900">{module.moduleTitle}</h3>
+                          {!isModuleAccessible && (
+                            <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-semibold bg-slate-200 text-slate-600">
+                              <FiLock className="w-3 h-3" /> Locked
+                            </span>
+                          )}
                         </div>
+                        <p className="text-xs md:text-sm text-slate-600">{module.totalChapters} chapters</p>
                       </div>
-                    )}
-
-                    <div className="text-center mb-2">
-                      <h3 className="text-2xl font-extrabold text-blue-900 mb-2 tracking-tight">{tier.name}</h3>
-                      <div className="flex items-center justify-center gap-2 mb-2">
-                        <span className="text-4xl font-bold text-teal-600">{tier.price}</span>
-                        {tier.originalPrice && (
-                          <span className="text-sm text-slate-400 line-through">{tier.originalPrice}</span>
+                    </div>
+                    {isModuleAccessible && (
+                      <div>
+                        {expandedModule === index ? (
+                          <FiChevronUp className="w-5 h-5 md:w-6 md:h-6 text-teal-500" />
+                        ) : (
+                          <FiChevronDown className="w-5 h-5 md:w-6 md:h-6 text-slate-400" />
                         )}
                       </div>
-                      <div className="text-teal-600 font-semibold text-sm mb-2">{tier.savings}</div>
-                    </div>
-
-                    {/* Highlighted Description */}
-                    <div className="mb-3 px-3 py-2 rounded-lg bg-gradient-to-r from-blue-50 to-teal-50 text-blue-900 font-medium text-base shadow-sm border border-teal-100">
-                      {tier.description}
-                    </div>
-
-                    {/* Duration & Value */}
-                    <div className="flex items-center justify-center gap-2 mb-3">
-                      <span className="inline-block bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-xs font-semibold">
-                        Duration: {tier.estimatedTime}
-                      </span>
-                   
-                    </div>
-
-                    {/* Value List */}
-                    <div className="space-y-2 mb-4">
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-600">Chapters:</span>
-                        <span className="font-semibold text-blue-900">{tier.chaptersIncluded}</span>
-                      </div>
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-600">Projects:</span>
-                        <span className="font-semibold text-blue-900">{tier.projectsIncluded}</span>
-                      </div>
-                      <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-600">Questions:</span>
-                        <span className="font-semibold text-blue-900">{tier.questionsIncluded}</span>
-                      </div>
-                          <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-600"> Community:</span>
-                        <span className="font-semibold text-blue-900">{tier.jobAssistanceCommunity}</span>
-                      </div>
-                          <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-600">Soft Skills :</span>
-                        <span className="font-semibold text-blue-900">{tier.SoftSkillsTraining}</span>
-                      </div>
-                          <div className="flex items-center justify-between text-sm">
-                        <span className="text-slate-600">Certificate:</span>
-                        <span className="font-semibold text-blue-900">{tier.Certificate}</span>
-                      </div>
-                      {tier.bonusContent && (
-                        <div className="flex items-center justify-between text-sm">
-                          <span className="text-teal-600 font-bold">Bonus Content:</span>
-                          <span className="font-semibold text-teal-700">{tier.bonusContent}</span>
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Selected Tier Checkmark */}
-                    {selectedTier === key && (
-                      <div className="absolute top-4 right-4">
-                        <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center shadow-lg">
-                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                          </svg>
-                        </div>
-                      </div>
                     )}
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+                  </div>
+
+                  {isModuleAccessible && expandedModule === index && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="border-t border-teal-200 bg-white p-4 md:p-5"
+                    >
+                      <div className="space-y-2 md:space-y-3">
+                        {module.chapters.map((chapter, chapterIndex) => {
+                          const chapterName = typeof chapter === 'string'
+                            ? chapter
+                            : chapter.chapterName;
+                          const chapterNumber = typeof chapter === 'string'
+                            ? chapterIndex + 1
+                            : chapter.chapterNumber;
+                          const isChapterAccessible = typeof chapter === 'object' && chapter.accessLevel && chapter.accessLevel[selectedTier];
+                          const belongsTo = typeof chapter === 'object' ? chapter.belongsTo : null;
+                          const duration = typeof chapter === 'object' ? chapter.duration : null;
+                          const learningOutcome = typeof chapter === 'object' ? chapter.learningOutcome : null;
+                          return (
+                            <div
+                              key={chapterIndex}
+                              className={`flex items-start gap-2 md:gap-3 p-3 md:p-4 rounded-lg transition-colors ${
+                                isChapterAccessible
+                                  ? 'bg-slate-50 hover:bg-teal-50 border border-slate-200'
+                                  : 'bg-slate-100 opacity-50 border border-slate-300'
+                              }`}
+                            >
+                              <div className={`flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full font-semibold text-xs md:text-sm flex-shrink-0 ${
+                                isChapterAccessible
+                                  ? 'bg-teal-100 text-teal-700'
+                                  : 'bg-slate-200 text-slate-500'
+                              }`}>
+                                {chapterNumber}
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-start justify-between gap-2 mb-1">
+                                  <div className="flex items-center gap-2 flex-wrap">
+                                    <p className={`font-medium text-sm md:text-base ${
+                                      isChapterAccessible ? 'text-slate-800' : 'text-slate-500'
+                                    }`}>
+                                      {chapterName}
+                                    </p>
+                                    {!isChapterAccessible && (
+                                      <FiLock className="w-3 h-3 text-slate-400 flex-shrink-0" />
+                                    )}
+                                  </div>
+                                  {/* Hide belongsTo on mobile */}
+                                  {belongsTo && (
+                                    <span className="hidden md:inline text-xs text-slate-400 whitespace-nowrap">
+                                      {belongsTo}
+                                    </span>
+                                  )}
+                                </div>
+                                {duration && (
+                                  <p className="text-xs text-slate-500 mb-1">{duration}</p>
+                                )}
+                                {/* Hide learning outcome on mobile */}
+                                {learningOutcome && isChapterAccessible && (
+                                  <p className="hidden md:flex text-xs text-teal-600 mt-2 items-start gap-1">
+                                    <span className="flex-shrink-0">📚</span>
+                                    <span>{learningOutcome}</span>
+                                  </p>
+                                )}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </motion.div>
+                  )}
+                </div>
+              );
+            })}
           </div>
-        </div>
+        </motion.section>
 
-  
-
-
-
-        {/* Main Content */}
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="grid lg:grid-cols-3 gap-12">
-            {/* Left Column - Course Details */}
-            <div className="lg:col-span-2 space-y-12">
-              {/* Course Overview Stats */}
-  
-
-              {/* What's Included in Selected Tier */}
-              <motion.section
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="bg-white rounded-2xl p-8 shadow-lg"
-              >
-                <h2 className="text-3xl font-bold text-blue-900 mb-6 flex items-center gap-3">
-                  <FiTarget className="text-4xl text-teal-500" />
-                  What's Included in {currentTier.name} Tier
-                </h2>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {currentTier.features && currentTier.features.map((feature, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <svg className="w-6 h-6 text-teal-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-slate-700">{feature}</span>
+        {/* Dynamic Assessments Section */}
+        <AnimatePresence mode="wait">
+          <motion.section
+            key={`assessments-${selectedTier}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="bg-gradient-to-br from-teal-900 to-cyan-700 rounded-xl md:rounded-2xl p-5 md:p-8 shadow-lg text-white"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 flex items-center gap-2 md:gap-3">
+              <MdQuiz className="text-2xl md:text-4xl text-yellow-300" />
+              Practice & Assessments
+            </h2>
+            <div className="grid gap-4 md:grid-cols-2 md:gap-6">
+              <div>
+                <div className="text-4xl md:text-5xl font-bold text-yellow-300 mb-2">
+                  {currentTierContent.assessmentCount}
+                </div>
+                <p className="text-purple-200 text-sm md:text-base mb-4">Practice Questions for {currentTier.name}</p>
+                <div className="space-y-2">
+                  {currentTierContent.assessments.map((assessment, idx) => (
+                    <div key={idx} className="flex justify-between items-center bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2">
+                      <span className="text-xs md:text-sm">{assessment}</span>
+                      <FiCheckCircle className="text-yellow-300 flex-shrink-0" />
                     </div>
                   ))}
                 </div>
-              </motion.section>
-
-              {/* Complete Curriculum with Modules - UPDATED TO HANDLE JSON STRUCTURE */}
-              <motion.section
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="bg-white rounded-2xl p-8 shadow-lg"
-              >
-                <h2 className="text-3xl font-bold text-blue-900 mb-6 flex items-center gap-3">
-                  <FiBookOpen className="text-4xl text-teal-500" />
-                  Complete Course Curriculum
-                </h2>
-
-                <div className="space-y-4">
-                  {course.curriculum?.map((module, index) => {
-                    // Module is accessible if any chapter is accessible for the selected tier
-                    const hasAccessibleChapter = module.chapters.some(
-                      (chapter) =>
-                        typeof chapter === 'object' && chapter.accessLevel && chapter.accessLevel[selectedTier]
-                    );
-                    const isModuleAccessible = hasAccessibleChapter;
-
-                    return (
-                      <div
-                        key={index}
-                        className={`border-2 rounded-xl overflow-hidden transition-all ${
-                          isModuleAccessible
-                            ? 'border-teal-200 bg-gradient-to-r from-white to-teal-50'
-                            : 'border-slate-200 bg-slate-50 opacity-60'
-                        }`}
-                      >
-                        {/* Module Header */}
-                        <div
-                          onClick={() => isModuleAccessible && toggleModule(index)}
-                          className={`p-5 flex items-center justify-between ${
-                            isModuleAccessible ? 'cursor-pointer hover:bg-teal-100/50' : 'cursor-not-allowed'
-                          }`}
-                        >
-                          <div className="flex items-center gap-4 flex-1">
-                            <div className={`flex items-center justify-center w-12 h-12 rounded-full font-bold ${
-                              isModuleAccessible
-                                ? 'bg-teal-500 text-white'
-                                : 'bg-slate-300 text-slate-600'
-                            }`}>
-                              {module.moduleNumber}
-                            </div>
-                            <div className="flex-1">
-                              <div className="flex items-center gap-3 mb-1 flex-wrap">
-                                <h3 className="text-lg font-bold text-blue-900">{module.moduleTitle}</h3>
-                                {/* Optionally, you can show a badge for module type if you want */}
-                                {!isModuleAccessible && (
-                                  <span className="flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-slate-200 text-slate-600">
-                                    <FiLock className="w-3 h-3" /> Locked
-                                  </span>
-                                )}
-                              </div>
-                              <p className="text-sm text-slate-600">{module.totalChapters} chapters</p>
-                            </div>
-                          </div>
-                          {isModuleAccessible && (
-                            <div>
-                              {expandedModule === index ? (
-                                <FiChevronUp className="w-6 h-6 text-teal-500" />
-                              ) : (
-                                <FiChevronDown className="w-6 h-6 text-slate-400" />
-                              )}
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Chapter List - Expanded */}
-                        {isModuleAccessible && expandedModule === index && (
-                          <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: 'auto' }}
-                            exit={{ opacity: 0, height: 0 }}
-                            className="border-t border-teal-200 bg-white p-5"
-                          >
-                            <div className="space-y-3">
-                              {module.chapters.map((chapter, chapterIndex) => {
-                                const chapterName = typeof chapter === 'string'
-                                  ? chapter
-                                  : chapter.chapterName;
-                                const chapterNumber = typeof chapter === 'string'
-                                  ? chapterIndex + 1
-                                  : chapter.chapterNumber;
-                                const isChapterAccessible = typeof chapter === 'object' && chapter.accessLevel && chapter.accessLevel[selectedTier];
-                                const belongsTo = typeof chapter === 'object' ? chapter.belongsTo : null;
-                                const duration = typeof chapter === 'object' ? chapter.duration : null;
-                                const learningOutcome = typeof chapter === 'object' ? chapter.learningOutcome : null;
-                                return (
-                                  <div
-                                    key={chapterIndex}
-                                    className={`flex items-start gap-3 p-4 rounded-lg transition-colors ${
-                                      isChapterAccessible
-                                        ? 'bg-slate-50 hover:bg-teal-50 border border-slate-200'
-                                        : 'bg-slate-100 opacity-50 border border-slate-300'
-                                    }`}
-                                  >
-                                    <div className={`flex items-center justify-center w-8 h-8 rounded-full font-semibold text-sm flex-shrink-0 ${
-                                      isChapterAccessible
-                                        ? 'bg-teal-100 text-teal-700'
-                                        : 'bg-slate-200 text-slate-500'
-                                    }`}>
-                                      {chapterNumber}
-                                    </div>
-                                    <div className="flex-1 min-w-0">
-                                      <div className="flex items-start justify-between gap-2 mb-1">
-                                        <div className="flex items-center gap-2 flex-wrap">
-                                          <p className={`font-medium ${
-                                            isChapterAccessible ? 'text-slate-800' : 'text-slate-500'
-                                          }`}>
-                                            {chapterName}
-                                          </p>
-                                          {!isChapterAccessible && (
-                                            <FiLock className="w-3 h-3 text-slate-400 flex-shrink-0" />
-                                          )}
-                                        </div>
-                                        {belongsTo && (
-                                          <span className="text-xs text-slate-400 whitespace-nowrap">
-                                            {belongsTo}
-                                          </span>
-                                        )}
-                                      </div>
-                                      {duration && (
-                                        <p className="text-xs text-slate-500 mb-1">{duration}</p>
-                                      )}
-                                      {learningOutcome && isChapterAccessible && (
-                                        <p className="text-xs text-teal-600 mt-2 flex items-start gap-1">
-                                          <span className="flex-shrink-0">📚</span>
-                                          <span>{learningOutcome}</span>
-                                        </p>
-                                      )}
-                                    </div>
-                                  </div>
-                                );
-                              })}
-                            </div>
-                          </motion.div>
-                        )}
-                      </div>
-                    );
-                  })}
+              </div>
+              {/* Hide on mobile */}
+              <div className="hidden md:flex flex-col justify-center">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                  <FiAward className="w-12 h-12 text-yellow-300 mb-4" />
+                  <h3 className="text-xl font-bold mb-2">In-Video Solutions</h3>
+                  <p className="text-purple-200 mb-2">{course.assessmentsSummary.inVideoSolutions}</p>
+                  <p className="text-sm text-purple-300">Step-by-step solved examples in videos</p>
                 </div>
-              </motion.section>
+              </div>
+            </div>
+          </motion.section>
+        </AnimatePresence>
 
-              {/* Projects Overview */}
-              {course.projectsSummary && (
-                <motion.section
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="bg-white rounded-2xl p-8 shadow-lg"
-                >
-                  <h2 className="text-3xl font-bold text-blue-900 mb-6 flex items-center gap-3">
-                    <FaProjectDiagram className="text-4xl text-teal-500" />
-                    Hands-on Projects
-                  </h2>
+        {/* Dynamic Projects Section */}
+        <AnimatePresence mode="wait">
+          <motion.section
+            key={`projects-${selectedTier}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="bg-white rounded-xl md:rounded-2xl p-5 md:p-8 shadow-lg"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-4 md:mb-6 flex items-center gap-2 md:gap-3">
+              <FaProjectDiagram className="text-2xl md:text-4xl text-teal-500" />
+              Hands-on Projects
+            </h2>
 
-                  <div className="grid md:grid-cols-2 gap-6">
-                    {/* Mini Projects */}
-                    <div className="border-2 border-blue-200 rounded-xl p-6 bg-gradient-to-br from-blue-50 to-white">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
-                          <FiCode className="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-blue-900">Mini Projects</h3>
-                          <p className="text-sm text-slate-600">{course.projectsSummary.miniProjects.count} projects</p>
-                        </div>
-                      </div>
-                      <ul className="space-y-2">
-                        {course.projectsSummary.miniProjects.projects.map((project, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-sm text-slate-700">
-                            <svg className="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            {project}
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="mt-4 text-xs text-slate-500">
-                        Access: {course.projectsSummary.miniProjects.accessLevel}
-                      </div>
-                    </div>
-
-                    {/* Major Projects */}
-                    <div className="border-2 border-teal-200 rounded-xl p-6 bg-gradient-to-br from-teal-50 to-white">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center">
-                          <FaRocket className="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-blue-900">Major Projects</h3>
-                          <p className="text-sm text-slate-600">{course.projectsSummary.majorProjects.count} projects</p>
-                        </div>
-                      </div>
-                      <ul className="space-y-2">
-                        {course.projectsSummary.majorProjects.projects.map((project, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-sm text-slate-700">
-                            <svg className="w-4 h-4 text-teal-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            {project}
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="mt-4 text-xs text-slate-500">
-                        Access: {course.projectsSummary.majorProjects.accessLevel}
-                      </div>
-                    </div>
-
-                    {/* Mega Projects */}
-                    <div className="border-2 border-purple-200 rounded-xl p-6 bg-gradient-to-br from-purple-50 to-white">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center">
-                          <HiLightningBolt className="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-blue-900">Mega Projects</h3>
-                          <p className="text-sm text-slate-600">{course.projectsSummary.megaProjects.count} projects</p>
-                        </div>
-                      </div>
-                      <ul className="space-y-2">
-                        {course.projectsSummary.megaProjects.projects.map((project, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-sm text-slate-700">
-                            <svg className="w-4 h-4 text-purple-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            {project}
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="mt-4 text-xs text-slate-500">
-                        Access: {course.projectsSummary.megaProjects.accessLevel}
-                      </div>
-                    </div>
-
-                    {/* Capstone Projects */}
-                    <div className="border-2 border-orange-200 rounded-xl p-6 bg-gradient-to-br from-orange-50 to-white">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center">
-                          <MdWorkspacePremium className="w-6 h-6 text-white" />
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-bold text-blue-900">Capstone Projects</h3>
-                          <p className="text-sm text-slate-600">{course.projectsSummary.capstoneProjects.count} projects</p>
-                        </div>
-                      </div>
-                      <ul className="space-y-2">
-                        {course.projectsSummary.capstoneProjects.projects.map((project, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-sm text-slate-700">
-                            <svg className="w-4 h-4 text-orange-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            {project}
-                          </li>
-                        ))}
-                      </ul>
-                      <div className="mt-4 text-xs text-slate-500">
-                        Access: {course.projectsSummary.capstoneProjects.accessLevel}
-                      </div>
-                    </div>
-                  </div>
-                </motion.section>
-              )}
-
-              {/* Assessment & Practice */}
-              {course.assessmentsSummary && (
-                <motion.section
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 }}
-                  className="bg-gradient-to-br from-indigo-900 to-purple-700 rounded-2xl p-8 shadow-lg text-white"
-                >
-                  <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                    <MdQuiz className="text-4xl text-yellow-300" />
-                    Practice & Assessments
-                  </h2>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <div className="text-5xl font-bold text-yellow-300 mb-2">
-                        {course.assessmentsSummary.totalQuestions}
-                      </div>
-                      <p className="text-purple-200 mb-4">Total Practice Questions</p>
-                      <div className="space-y-2">
-                        {Object.entries(course.assessmentsSummary.questionBreakdown).slice(0, 4).map(([key, value]) => (
-                          <div key={key} className="flex justify-between items-center bg-white/10 backdrop-blur-sm rounded-lg px-4 py-2">
-                            <span className="text-sm capitalize">{key.replace(/([A-Z])/g, ' $1').trim()}</span>
-                            <span className="font-bold">{value.count}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="flex flex-col justify-center">
-                      <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6">
-                        <FiAward className="w-12 h-12 text-yellow-300 mb-4" />
-                        <h3 className="text-xl font-bold mb-2">In-Video Solutions</h3>
-                        <p className="text-purple-200 mb-2">{course.assessmentsSummary.inVideoSolutions}</p>
-                        <p className="text-sm text-purple-300">Step-by-step solved examples in videos to master concepts</p>
-                      </div>
-                    </div>
-                  </div>
-                </motion.section>
-              )}
-
-              {/* Learning Outcomes */}
-              {course.learningOutcomes && (
-                <motion.section
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                  className="bg-white rounded-2xl p-8 shadow-lg"
-                >
-                  <h2 className="text-3xl font-bold text-blue-900 mb-6 flex items-center gap-3">
-                    <FiCheckCircle className="text-4xl text-teal-500" />
-                    Learning Outcomes
-                  </h2>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-xl font-bold text-blue-900 mb-4">Technical Skills</h3>
-                      <div className="grid md:grid-cols-2 gap-3">
-                        {course.learningOutcomes.technical.map((skill, index) => (
-                          <div key={index} className="flex items-start gap-3">
-                            <svg className="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span className="text-slate-700 text-sm">{skill}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-bold text-blue-900 mb-4">Project Experience</h3>
-                      <div className="grid md:grid-cols-2 gap-3">
-                        {course.learningOutcomes.projects.map((item, index) => (
-                          <div key={index} className="flex items-start gap-3">
-                            <svg className="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span className="text-slate-700 text-sm">{item}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div>
-                      <h3 className="text-xl font-bold text-blue-900 mb-4">Career Readiness</h3>
-                      <div className="grid md:grid-cols-2 gap-3">
-                        {course.learningOutcomes.career.map((item, index) => (
-                          <div key={index} className="flex items-start gap-3">
-                            <svg className="w-5 h-5 text-orange-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span className="text-slate-700 text-sm">{item}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </motion.section>
-              )}
-
-              {/* Career Paths */}
-              {course.careerPaths && (
-                <motion.section
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                  className="bg-gradient-to-br from-teal-900 to-cyan-700 rounded-2xl p-8 shadow-lg text-white"
-                >
-                  <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-                    <FaRocket className="text-4xl text-yellow-300" />
-                    Career Opportunities
-                  </h2>
-                  <div className="grid md:grid-cols-2 gap-4">
-                    {course.careerPaths.map((career, index) => (
-                      <div key={index} className="bg-white/10 backdrop-blur-sm rounded-xl p-5 hover:bg-white/20 transition-all">
-                        <h3 className="text-lg font-bold mb-2">{career.role}</h3>
-                        <p className="text-teal-200 text-sm">{career.skills}</p>
-                      </div>
-                    ))}
-                  </div>
-                </motion.section>
-              )}
+            <div className="mb-4 md:mb-6 p-3 md:p-4 bg-teal-50 rounded-xl border border-teal-200">
+              <p className="text-teal-900 font-semibold text-center text-sm md:text-base">
+                {currentTierContent.projectCount} in {currentTier.name} Tier
+              </p>
             </div>
 
-            {/* Right Column - Purchase Card */}
-            <div className="lg:col-span-1">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="sticky top-6 bg-white rounded-2xl shadow-2xl overflow-hidden"
-              >
-                <div className="bg-gradient-to-r from-teal-500 to-cyan-500 p-6 text-white">
-                  <div className="text-center">
-                    <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-bold mb-3">
-                      {currentTier.badge}
-                    </div>
-                    <h3 className="text-2xl font-bold mb-2">{currentTier.name} Tier</h3>
-                    <div className="text-5xl font-bold mb-2">{currentTier.price}</div>
-                    <div className="text-sm line-through opacity-75">{currentTier.originalPrice}</div>
-                    <div className="text-lg font-semibold mt-2">{currentTier.savings}</div>
-                  </div>
-                </div>
-
-                <div className="p-8">
-                  {/* Payment Options */}
-                  <div className="mb-6">
-                    <div className="flex gap-3 mb-4">
-                      <button
-                        onClick={() => setSelectedPayment('one-time')}
-                        className={`flex-1 py-3 px-4 rounded-xl font-semibold transition-all ${
-                          selectedPayment === 'one-time'
-                            ? 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white shadow-lg'
-                            : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                        }`}
-                      >
-                        One-time
-                      </button>
-                      <button
-                        onClick={() => setSelectedPayment('installments')}
-                        className={`flex-1 py-3 px-4 rounded-xl font-semibold transition-all ${
-                          selectedPayment === 'installments'
-                            ? 'bg-gradient-to-r from-teal-500 to-cyan-500 text-white shadow-lg'
-                            : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                        }`}
-                      >
-                        3 Payments
-                      </button>
-                    </div>
-                    
-                    {selectedPayment === 'installments' && (
-                      <div className="text-center text-sm text-slate-600 bg-blue-50 p-3 rounded-lg">
-                        <span className="font-bold text-blue-900">{currentTier.installmentPrice}</span> × 3 monthly payments
+            <div className="grid gap-3 md:gap-4">
+              {currentTierContent.projects.map((project, index) => {
+                const projectTypeColors = {
+                  'Mini': 'bg-blue-500',
+                  'Major': 'bg-teal-500',
+                  'Mega': 'bg-purple-500',
+                  'Capstone': 'bg-orange-500'
+                };
+                return (
+                  <motion.div
+                    key={project.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.05 }}
+                    className="border-2 border-teal-200 rounded-lg md:rounded-xl p-4 md:p-5 bg-gradient-to-br from-blue-50 to-white hover:shadow-lg transition-all"
+                  >
+                    <div className="flex items-start justify-between gap-3 md:gap-4">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 md:gap-3 mb-2 flex-wrap">
+                          <h3 className="text-base md:text-lg font-bold text-blue-900">{project.name}</h3>
+                          <span className={`${projectTypeColors[project.type]} text-white px-2 md:px-3 py-0.5 md:py-1 rounded-full text-xs font-bold`}>
+                            {project.type}
+                          </span>
+                        </div>
+                        <p className="text-slate-600 text-xs md:text-sm">{project.description}</p>
                       </div>
-                    )}
+                      <div className="w-8 h-8 md:w-10 md:h-10 bg-teal-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <FiCode className="w-4 h-4 md:w-5 md:h-5 text-white" />
+                      </div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.section>
+        </AnimatePresence>
+
+        {/* Dynamic Career Opportunities Section */}
+        <AnimatePresence mode="wait">
+          <motion.section
+            key={`careers-${selectedTier}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="bg-gradient-to-br from-teal-900 to-cyan-700 rounded-xl md:rounded-2xl p-5 md:p-8 shadow-lg text-white"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 flex items-center gap-2 md:gap-3">
+              <FaRocket className="text-2xl md:text-4xl text-yellow-300" />
+              Career Opportunities
+            </h2>
+            <p className="text-teal-100 text-sm md:text-base mb-4 md:mb-6">Available with {currentTier.name} tier</p>
+            <div className="grid gap-3 md:grid-cols-2 md:gap-4">
+              {currentTierContent.careers.map((career, index) => (
+                <motion.div
+                  key={career.role}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: index * 0.05 }}
+                  className="bg-white/10 backdrop-blur-sm rounded-lg md:rounded-xl p-4 md:p-5 hover:bg-white/20 transition-all"
+                >
+                  <div className="flex items-start gap-3">
+                    <div>
+                      <h3 className="text-base md:text-lg font-bold mb-1">{career.role}</h3>
+                      <p className="text-teal-200 text-xs md:text-sm font-semibold">{career.salary}</p>
+                    </div>
                   </div>
-and 
-                  <button className="w-full bg-gradient-to-r from-teal-500 to-cyan-500 text-white py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 mb-4">
+                </motion.div>
+              ))}
+            </div>
+          </motion.section>
+        </AnimatePresence>
+
+        {/* Dynamic Learning Outcomes */}
+        <AnimatePresence mode="wait">
+          <motion.section
+            key={`learning-outcomes-${selectedTier}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="bg-white rounded-xl md:rounded-2xl p-5 md:p-8 shadow-lg"
+          >
+            <h2 className="text-2xl md:text-3xl font-bold text-blue-900 mb-4 md:mb-6 flex items-center gap-2 md:gap-3">
+              <FiCheckCircle className="text-2xl md:text-4xl text-teal-500" />
+              Learning Outcomes
+            </h2>
+
+            <div className="mb-4 p-3 bg-teal-50 rounded-xl border border-teal-200">
+              <p className="text-teal-900 font-semibold text-center text-xs md:text-sm">
+                What you'll achieve with {currentTier.name}
+              </p>
+            </div>
+
+            <div className="space-y-4 md:space-y-6">
+              <div>
+                <h3 className="text-lg md:text-xl font-bold text-blue-900 mb-3 md:mb-4">Technical Skills</h3>
+                <div className="grid gap-2 md:grid-cols-2 md:gap-3">
+                  {currentTierContent.learningOutcomes.technical.map((skill, index) => (
+                    <motion.div
+                      key={skill}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.03 }}
+                      className="flex items-start gap-2 md:gap-3"
+                    >
+                      <svg className="w-4 h-4 md:w-5 md:h-5 text-teal-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span className="text-slate-700 text-xs md:text-sm">{skill}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-lg md:text-xl font-bold text-blue-900 mb-3 md:mb-4">Project Experience</h3>
+                <div className="grid gap-2 md:grid-cols-2 md:gap-3">
+                  {currentTierContent.learningOutcomes.projects.map((item, index) => (
+                    <motion.div
+                      key={item}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.03 }}
+                      className="flex items-start gap-2 md:gap-3"
+                    >
+                      <svg className="w-4 h-4 md:w-5 md:h-5 text-purple-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span className="text-slate-700 text-xs md:text-sm">{item}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-lg md:text-xl font-bold text-blue-900 mb-3 md:mb-4">Career Readiness</h3>
+                <div className="grid gap-2 md:grid-cols-2 md:gap-3">
+                  {currentTierContent.learningOutcomes.career.map((item, index) => (
+                    <motion.div
+                      key={item}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.03 }}
+                      className="flex items-start gap-2 md:gap-3"
+                    >
+                      <svg className="w-4 h-4 md:w-5 md:h-5 text-orange-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span className="text-slate-700 text-xs md:text-sm">{item}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.section>
+        </AnimatePresence>
+      </div>
+
+      {/* Right Column - Purchase Card & Skills */}
+      <div className="lg:col-span-1">
+        <div className="sticky top-4 md:top-20 space-y-4 md:space-y-6">
+          {/* Purchase Card */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`purchase-${selectedTier}`}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.3 }}
+              className="bg-white rounded-xl md:rounded-2xl shadow-2xl overflow-hidden"
+            >
+              <div className={`${currentHeaderColor} p-5 md:p-6 text-white`}>
+                <div className="text-center">
+                  <div className="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs md:text-sm font-bold mb-2 md:mb-3">
+                    {currentTier.badge}
+                  </div>
+                  <h3 className="text-xl md:text-2xl font-bold mb-2">{currentTier.name} Tier</h3>
+                  <div className="text-4xl md:text-5xl font-bold mb-2">₹{currentTier.price}</div>
+                  <div className="text-xs md:text-sm line-through opacity-75">₹{currentTier.originalPrice}</div>
+                  <div className="text-base md:text-lg font-semibold mt-2">{currentTier.savings}</div>
+                </div>
+              </div>
+
+              <div className="p-5 md:p-8">
+                <Link href="/checkout" target='_blank'>
+                  <button className="w-full bg-gradient-to-r from-teal-600 via-blue-600 to-indigo-700 text-white py-3 md:py-4 rounded-xl font-bold text-base md:text-lg hover:shadow-2xl hover:scale-[1.04] transition-all duration-300 mb-3 md:mb-4">
                     Enroll Now
                   </button>
+                </Link>
 
-                  <p className="text-center text-sm text-slate-500 mb-6 flex items-center justify-center gap-2">
-                    <FiLock className="inline text-lg" /> 30-day money-back guarantee
-                  </p>
+                <p className="text-center text-xs md:text-sm text-slate-500 flex items-center justify-center gap-2">
+                  <FiLock className="inline text-base md:text-lg" /> 7-day money-back guarantee
+                </p>
+              </div>
+            </motion.div>
+          </AnimatePresence>
 
-                  {/* Course Includes */}
-                  <div className="border-t border-slate-200 pt-6">
-                    <h3 className="font-bold text-blue-900 mb-4">This tier includes:</h3>
-                    <div className="space-y-3 max-h-96 overflow-y-auto">
-                      {currentTier.features && currentTier.features.map((feature, index) => (
-                        <div key={index} className="flex items-start gap-3 text-sm text-slate-700">
-                          <svg className="w-5 h-5 text-teal-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span>{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Course Info */}
-                  <div className="border-t border-slate-200 pt-6 mt-6 space-y-3 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-slate-600">Duration:</span>
-                      <span className="font-semibold text-blue-900">{currentTier.estimatedTime}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-600">Level:</span>
-                      <span className="font-semibold text-blue-900">{currentTier.skillLevel}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-600">Language:</span>
-                      <span className="font-semibold text-blue-900">{course.courseOverview.language}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-slate-600">Last Updated:</span>
-                      <span className="font-semibold text-blue-900">{course.courseOverview.lastUpdated}</span>
-                    </div>
-                  </div>
-
-                  {/* Tier Comparison CTA */}
-                  <div className="mt-6 p-4 bg-gradient-to-r from-blue-50 to-teal-50 rounded-xl border border-teal-200">
-                    <p className="text-sm text-slate-700 text-center mb-2">
-                      Want to compare all tiers?
-                    </p>
-                    <button
-                      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                      className="w-full text-teal-600 font-semibold text-sm hover:text-teal-700 transition-colors"
-                    >
-                      View All Pricing Options ↑
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
+          {/* Skills Component */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="bg-white rounded-xl md:rounded-2xl shadow-2xl overflow-hidden p-5 md:p-6"
+          >
+            <div className="flex items-center gap-2 mb-3 md:mb-4">
+              <div className="w-5 h-5 md:w-6 md:h-6 bg-green-500 rounded-full flex items-center justify-center">
+                <svg className="w-3 h-3 md:w-4 md:h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="text-base md:text-lg font-bold text-slate-800">Skills You'll Master</h3>
             </div>
 
-            
-          </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={selectedTier}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+                className="flex flex-wrap gap-2"
+              >
+                {currentTier.skills && currentTier.skills.map((skill, index) => (
+                  <motion.div
+                    key={skill}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.2, delay: index * 0.05 }}
+                    className="inline-flex items-center px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r from-teal-600 to-blue-600 hover:from-teal-700 hover:to-blue-700 text-white text-xs md:text-sm font-semibold rounded-md transition-all cursor-default shadow-sm hover:shadow-md"
+                  >
+                    {skill}
+                  </motion.div>
+                ))}
+              </motion.div>
+            </AnimatePresence>
+
+            <div className="mt-3 md:mt-4 pt-3 md:pt-4 border-t border-slate-200">
+              <div className="flex items-start gap-2">
+                <HiSparkles className="w-4 h-4 md:w-5 md:h-5 text-yellow-500 flex-shrink-0 mt-0.5" />
+                <p className="text-xs text-slate-600">
+                  Add these job-ready skills to your resume upon completion.
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
-      <Footer />
-    </>
-  );
+    </div>
+  </div>
+</div>
+<FloatingChatbot />
+<Footer />
+</>
+)
 }
