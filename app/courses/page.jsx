@@ -354,11 +354,11 @@ const courses = {
       available: true
     },
     {
-      id: 'ai-ml',
+      id: 'modern-ai',
       title: 'AI & Machine Learning',
       description: 'Master artificial intelligence and machine learning with deep learning, neural networks, NLP, and computer vision.',
       thumbnail: '/images/courses/111.png',
-      duration: '0+ Hours',
+      duration: '60+ Hours',
       students: '28',
       price: '₹549',
       badge: 'Mega Course',
