@@ -539,7 +539,7 @@ export default function Footer(): JSX.Element {
   const learningLinks: NavItem[] = [
     { label: "All Courses", href: "/courses" },
     { label: "Data Science / ML Track", href: "/courses/data-science" },
-    { label: "GenAI Track", href: "/tracks/ai-ml" },
+    { label: "Modern AI Track", href: "/tracks/modern-ai" },
     { label: "Mini Courses", href: "/courses/" },
     { label: "Interview Prep", href: "/courses" }
   ];

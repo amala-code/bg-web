@@ -3671,11 +3671,11 @@ export default function CourseDetailPage({ params }) {
                     </div>
 
                     <div className="p-4 md:p-8">
-                      <Link href="/checkout" target='_blank'>
+                      {/* <Link href="" target='_blank'> */}
                         <button className="w-full bg-gradient-to-r from-teal-600 via-blue-600 to-indigo-700 text-white py-3 md:py-4 rounded-xl font-bold text-base md:text-lg hover:shadow-2xl hover:scale-[1.04] transition-all duration-300 mb-3 md:mb-4">
-                          Enroll Now
+                          Enrollment begins from March 15
                         </button>
-                      </Link>
+                      {/* </Link> */}
 
                       <p className="text-center text-xs md:text-sm text-slate-500 flex items-center justify-center gap-2">
                         <FiLock className="inline text-base md:text-lg" /> 7-day money-back guarantee
