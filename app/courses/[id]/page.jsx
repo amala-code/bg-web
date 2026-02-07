@@ -1,3 +1,5 @@
+
+
 'use client';
 
 import { useState } from 'react';
@@ -26,165 +28,6 @@ const tierHeaderColors = {
 };
 
 
-// // Tier-specific content configuration
-// const tierContent = {
-//   basic: {
-//     assessments: [
-//       'Weekly Quizzes',
-//       'Module End Tests',
-//       'Basic Coding Challenges',
-//       'Final Course Assessment'
-//     ],
-//     assessmentCount: '150+',
-//     projects: [
-
-//     ],
-//     projectCount: 'Projects not included in Basic tier, upgrade to advanced for projects',
-//     careers: [
-//       { role: 'Junior Data Analyst', salary: '$45k - $65k', icon: '📊' },
-//       { role: 'Data Entry Specialist', salary: '$35k - $50k', icon: '⌨️' },
-//       { role: 'Business Intelligence Trainee', salary: '$40k - $60k', icon: '📈' }
-//     ]
-//   },
-//   intermediate: {
-//     assessments: [
-//       'Weekly Quizzes',
-//       'Module End Tests',
-//       'Intermediate Coding Challenges',
-//       'Statistics & ML Theory Tests',
-//       'Project-based Assessments',
-//       'Mid-term Comprehensive Exam',
-//       'Final Course Assessment'
-//     ],
-//     assessmentCount: '350+',
-//     projects: [
-//       { name: 'YouTube Analytics', type: 'Major', description: 'Analyze trending video patterns' },
-//       { name: 'Social Media Ad Performance', type: 'Major', description: 'Predict ad click-through rates' },
-//       { name: 'Sports Analytics Dashboard', type: 'Mini', description: 'Player similarity finder' },
-//       { name: 'Data Visualization Portfolio', type: 'Mini', description: 'Interactive Streamlit apps' },
-//       { name: 'Statistical Analysis Project', type: 'Mini', description: 'A/B testing implementation' }
-//     ],
-//     projectCount: '2 Major + 3 Mini Projects',
-//     careers: [
-//       { role: 'Data Analyst', salary: '$60k - $85k', icon: '📊' },
-//       { role: 'Junior Data Scientist', salary: '$70k - $95k', icon: '🔬' },
-//       { role: 'Business Intelligence Analyst', salary: '$65k - $90k', icon: '📈' },
-//       { role: 'ML Operations Associate', salary: '$65k - $90k', icon: '⚙️' }
-//     ]
-//   },
-//   advanced: {
-//     assessments: [
-//       'Weekly Quizzes',
-//       'Module End Tests',
-//       'Advanced Coding Challenges',
-//       'Statistics & ML Theory Tests',
-//       'Deep Learning Assessments',
-//       'Project-based Evaluations',
-//       'Industry Expert Reviews',
-//       'Technical Interview Prep (250+ Questions)',
-//       'System Design Assessments',
-//       'Mid-term & Final Comprehensive Exams',
-//       'Capstone Project Defense'
-//     ],
-//     assessmentCount: '580+',
-//     projects: [
-//       { name: 'YouTube Analytics', type: 'Major', description: 'Complete trend analysis system' },
-//       { name: 'Social Media Ad Performance', type: 'Major', description: 'ML-powered prediction engine' },
-//       { name: 'Medical Imaging Classifier', type: 'Mega', description: 'CNN with transfer learning' },
-//       { name: 'Hybrid Recommendation System', type: 'Mega', description: 'Deep learning recommendations' },
-//       { name: 'AI Career Coach', type: 'Capstone', description: 'NLP-powered career advisor' },
-//       { name: 'Bias & Fairness Dashboard', type: 'Capstone', description: 'Ethical AI monitoring' },
-//       { name: 'Ethical AI Investment Analyzer', type: 'Capstone', description: 'ESG-based recommendations' },
-//       { name: 'AI Nutritionist Specialist', type: 'Capstone', description: 'Personalized meal planning' },
-//       { name: 'Custom Industry Project', type: 'Capstone', description: 'Your choice domain' },
-//       { name: 'Sports Analytics Platform', type: 'Mini', description: 'Player comparison system' }
-//     ],
-//     projectCount: '2 Major + 2 Mega + 5 Capstone + 1 Mini',
-//     careers: [
-//       { role: 'Senior Data Scientist', salary: '$120k - $180k', icon: '🚀' },
-//       { role: 'Machine Learning Engineer', salary: '$130k - $200k', icon: '🤖' },
-//       { role: 'AI Research Scientist', salary: '$140k - $220k', icon: '🔬' },
-//       { role: 'Data Science Manager', salary: '$150k - $220k', icon: '👔' },
-//       { role: 'Solutions Architect', salary: '$140k - $200k', icon: '🏗️' },
-//       { role: 'Technical Lead - AI/ML', salary: '$160k - $240k', icon: '⭐' },
-//       { role: 'Independent AI Consultant', salary: '$150k+', icon: '💼' }
-//     ],
-//     learningOutcomes: {
-//       technical: [
-//         'Master Python programming for data science',
-//         'Perform advanced data analysis with Pandas and NumPy',
-//         'Create professional data visualizations',
-//         'Apply statistical methods and probability theory',
-//         'Build end-to-end machine learning models',
-//         'Implement deep learning with neural networks',
-//         'Work with Big Data tools (Spark, Hadoop)',
-//         'Deploy ML models to production',
-//         'Use Git for version control',
-//         'Build interactive dashboards and web apps'
-//       ],
-//       projects: [
-//         '12+ hands-on projects from mini to capstone level',
-//         'Portfolio-ready projects for job applications',
-//         'Real-world industry case studies',
-//         'Experience with medical, sports, social media, and finance domains',
-//         'Capstone projects showcasing advanced AI capabilities'
-//       ],
-//       career: [
-//         'Job-ready skills for Senior Data Scientist roles',
-//         'Interview preparation with 250+ questions',
-//         'Professional portfolio on GitHub',
-//         'Optimized resume and LinkedIn profile',
-//         'Premium community access with industry experts',
-//         'Understanding of ethical AI and bias mitigation',
-//         'Leadership and team management skills'
-//       ]
-//     }
-//   }
-// };
-
-// // Add learning outcomes for basic and intermediate tiers
-// tierContent.basic.learningOutcomes = {
-//   technical: [
-//     'Learn Python programming fundamentals',
-//     'Understand basic data structures and algorithms',
-//     'Introduction to data manipulation concepts',
-//     'Basic data visualization techniques'
-//   ],
-//   projects: [
-//     '3 guided mini projects to practice basics',
-//     'Foundation for building data science portfolio'
-//   ],
-//   career: [
-//     'Entry-level skills for Junior Data Analyst roles',
-//     'Basic understanding of data science workflow',
-//     'Resume building with foundational skills'
-//   ]
-// };
-
-// tierContent.intermediate.learningOutcomes = {
-//   technical: [
-//     'Master Python programming for data science',
-//     'Perform data analysis with Pandas and NumPy',
-//     'Create professional data visualizations',
-//     'Apply basic statistical methods',
-//     'Build fundamental machine learning models',
-//     'Work with SQL databases',
-//     'Understand ML evaluation metrics'
-//   ],
-//   projects: [
-//     '7 hands-on projects (2 major + 5 mini)',
-//     'Portfolio-ready projects for mid-level positions',
-//     'Real-world case studies from YouTube and social media',
-//     'Interactive dashboard development'
-//   ],
-//   career: [
-//     'Job-ready skills for Data Analyst and Junior Data Scientist roles',
-//     'Basic interview preparation',
-//     'Professional portfolio development',
-//     'Community networking opportunities',
-//     'Resume optimization for data science roles'
-//   ]
-// };
 
 const tierContent = {
   'data-science': {
@@ -198,11 +41,12 @@ const tierContent = {
       assessmentCount: '150+',
       projects: [],
       projectCount: 'Projects not included in Basic tier, upgrade to advanced for projects',
-      careers: [
-        { role: 'Junior Data Analyst', salary: '$45k - $65k', icon: '📊' },
-        { role: 'Data Entry Specialist', salary: '$35k - $50k', icon: '⌨️' },
-        { role: 'Business Intelligence Trainee', salary: '$40k - $60k', icon: '📈' }
-      ],
+   careers: [
+  { role: 'Junior Data Analyst', salary: '₹3 LPA – ₹6 LPA', icon: '📊' },
+  { role: 'Data Entry Specialist', salary: '₹2 LPA – ₹4 LPA', icon: '⌨️' },
+  { role: 'Business Intelligence Trainee', salary: '₹3 LPA – ₹5 LPA', icon: '📈' }
+],
+
       learningOutcomes: {
         technical: [
           'Learn Python programming fundamentals',
@@ -232,20 +76,21 @@ const tierContent = {
         'Final Course Assessment'
       ],
       assessmentCount: '350+',
-      projects: [
-        { name: 'YouTube Analytics', type: 'Major', description: 'Analyze trending video patterns' },
-        { name: 'Social Media Ad Performance', type: 'Major', description: 'Predict ad click-through rates' },
-        { name: 'Sports Analytics Dashboard', type: 'Mini', description: 'Player similarity finder' },
-        { name: 'Data Visualization Portfolio', type: 'Mini', description: 'Interactive Streamlit apps' },
-        { name: 'Statistical Analysis Project', type: 'Mini', description: 'A/B testing implementation' }
+     projects: [
+        { name: 'YouTube Analytics', type: 'Mini', description: 'Complete trend analysis system' },
+        { name: 'Social Media Ad Performance', type: 'Mini', description: 'ML-powered prediction engine' },
+        { name: 'AI Nutritionist Specialist', type: 'Mini', description: 'Personalized meal planning' },
+        { name: 'Tinder Match Predictions', type: 'Mini', description: 'Your choice domain' },
+        { name: 'Sports Analytics Platform', type: 'Mini', description: 'Player comparison system' }
       ],
-      projectCount: '2 Major + 3 Mini Projects',
-      careers: [
-        { role: 'Data Analyst', salary: '$60k - $85k', icon: '📊' },
-        { role: 'Junior Data Scientist', salary: '$70k - $95k', icon: '🔬' },
-        { role: 'Business Intelligence Analyst', salary: '$65k - $90k', icon: '📈' },
-        { role: 'ML Operations Associate', salary: '$65k - $90k', icon: '⚙️' }
-      ],
+      projectCount: '5 Mini Projects',
+    careers: [
+  { role: 'Data Analyst', salary: '₹4 LPA – ₹8 LPA', icon: '📊' },
+  { role: 'Junior Data Scientist', salary: '₹5 LPA – ₹10 LPA', icon: '🔬' },
+  { role: 'Business Intelligence Analyst', salary: '₹4.5 LPA – ₹9 LPA', icon: '📈' },
+  { role: 'ML Operations Associate', salary: '₹5 LPA – ₹9 LPA', icon: '⚙️' }
+],
+
       learningOutcomes: {
         technical: [
           'Master Python programming for data science',
@@ -287,27 +132,26 @@ const tierContent = {
       ],
       assessmentCount: '580+',
       projects: [
-        { name: 'YouTube Analytics', type: 'Major', description: 'Complete trend analysis system' },
-        { name: 'Social Media Ad Performance', type: 'Major', description: 'ML-powered prediction engine' },
-        { name: 'Medical Imaging Classifier', type: 'Mega', description: 'CNN with transfer learning' },
-        { name: 'Hybrid Recommendation System', type: 'Mega', description: 'Deep learning recommendations' },
-        { name: 'AI Career Coach', type: 'Capstone', description: 'NLP-powered career advisor' },
+        { name: 'YouTube Analytics', type: 'Mini', description: 'Complete trend analysis system' },
+        { name: 'Social Media Ad Performance', type: 'Mini', description: 'ML-powered prediction engine' },
+        { name: 'Student Resume Recommendation System', type: 'Capstone', description: 'NLP-powered career advisor' },
         { name: 'Bias & Fairness Dashboard', type: 'Capstone', description: 'Ethical AI monitoring' },
         { name: 'Ethical AI Investment Analyzer', type: 'Capstone', description: 'ESG-based recommendations' },
-        { name: 'AI Nutritionist Specialist', type: 'Capstone', description: 'Personalized meal planning' },
-        { name: 'Custom Industry Project', type: 'Capstone', description: 'Your choice domain' },
+        { name: 'AI Nutritionist Specialist', type: 'Mini', description: 'Personalized meal planning' },
+        { name: 'Tinder Match Predictions', type: 'Mini', description: 'Your choice domain' },
         { name: 'Sports Analytics Platform', type: 'Mini', description: 'Player comparison system' }
       ],
-      projectCount: '2 Major + 2 Mega + 5 Capstone + 1 Mini',
-      careers: [
-        { role: 'Senior Data Scientist', salary: '$120k - $180k', icon: '🚀' },
-        { role: 'Machine Learning Engineer', salary: '$130k - $200k', icon: '🤖' },
-        { role: 'AI Research Scientist', salary: '$140k - $220k', icon: '🔬' },
-        { role: 'Data Science Manager', salary: '$150k - $220k', icon: '👔' },
-        { role: 'Solutions Architect', salary: '$140k - $200k', icon: '🏗️' },
-        { role: 'Technical Lead - AI/ML', salary: '$160k - $240k', icon: '⭐' },
-        { role: 'Independent AI Consultant', salary: '$150k+', icon: '💼' }
-      ],
+      projectCount: '5 Mini Projects + 3 Capstone Projects ',
+careers: [
+  { role: 'Data Scientist', salary: '₹6 LPA – ₹12 LPA', icon: '🚀' },
+  { role: 'Machine Learning Engineer', salary: '₹7 LPA – ₹14 LPA', icon: '🤖' },
+  { role: 'AI Research Associate', salary: '₹6 LPA – ₹11 LPA', icon: '🔬' },
+  { role: 'Junior Data Science Manager', salary: '₹8 LPA – ₹15 LPA', icon: '👔' },
+  { role: 'Associate Solutions Architect', salary: '₹7 LPA – ₹13 LPA', icon: '🏗️' },
+  { role: 'AI/ML Technical Lead (Early Career)', salary: '₹9 LPA – ₹18 LPA', icon: '⭐' },
+  { role: 'Freelance / AI Consultant (Entry Level)', salary: '₹5 LPA – ₹10 LPA', icon: '💼' }
+],
+
       learningOutcomes: {
         technical: [
           'Master Python programming for data science',
@@ -322,7 +166,7 @@ const tierContent = {
           'Build interactive dashboards and web apps'
         ],
         projects: [
-          '12+ hands-on projects from mini to capstone level',
+          '8+ hands-on projects from mini to capstone level',
           'Portfolio-ready projects for job applications',
           'Real-world industry case studies',
           'Experience with medical, sports, social media, and finance domains',
@@ -356,11 +200,12 @@ const tierContent = {
         { name: 'Tiny Harry Potter Fanfic Generator', type: 'Mini', description: 'Text generation from scratch' }
       ],
       projectCount: '4 Mini Projects',
-      careers: [
-        { role: 'Junior AI Engineer', salary: '$50k - $70k', icon: '🤖' },
-        { role: 'Prompt Engineer', salary: '$45k - $65k', icon: '✍️' },
-        { role: 'AI Support Specialist', salary: '$40k - $60k', icon: '💬' }
-      ],
+careers: [
+  { role: 'Junior AI Engineer', salary: '₹4.5 LPA – ₹8 LPA', icon: '🤖' },
+  { role: 'Prompt Engineer (Entry Level)', salary: '₹4 LPA – ₹7 LPA', icon: '✍️' },
+  { role: 'AI Support Specialist', salary: '₹3.5 LPA – ₹6.5 LPA', icon: '💬' }
+],
+
       learningOutcomes: {
         technical: [
           'Run and interact with open-source LLMs',
@@ -402,12 +247,13 @@ const tierContent = {
         { name: 'Tiny Fanfic Generator', type: 'Mini', description: 'Neural network from scratch' }
       ],
       projectCount: '8 Mini Projects',
-      careers: [
-        { role: 'AI Engineer', salary: '$70k - $100k', icon: '🤖' },
-        { role: 'Computer Vision Engineer', salary: '$75k - $105k', icon: '👁️' },
-        { role: 'NLP Engineer', salary: '$80k - $110k', icon: '📝' },
-        { role: 'ML Engineer', salary: '$85k - $115k', icon: '⚙️' }
-      ],
+   careers: [
+  { role: 'AI Engineer', salary: '₹6 LPA – ₹11 LPA', icon: '🤖' },
+  { role: 'Computer Vision Engineer', salary: '₹7 LPA – ₹13 LPA', icon: '👁️' },
+  { role: 'NLP Engineer', salary: '₹7.5 LPA – ₹14 LPA', icon: '📝' },
+  { role: 'ML Engineer', salary: '₹8 LPA – ₹15 LPA', icon: '⚙️' }
+],
+
       learningOutcomes: {
         technical: [
           'Build CNNs for image classification',
@@ -458,14 +304,15 @@ const tierContent = {
         { name: 'AI Caption Generator', type: 'Capstone', description: 'Social media content creator' }
       ],
       projectCount: '11 Mini + 3 Capstone Projects',
-      careers: [
-        { role: 'Senior Generative AI Engineer', salary: '$130k - $200k', icon: '🚀' },
-        { role: 'LLM Engineer', salary: '$140k - $210k', icon: '🤖' },
-        { role: 'AI Product Developer', salary: '$120k - $180k', icon: '💼' },
-        { role: 'AI Research Engineer', salary: '$150k - $220k', icon: '🔬' },
-        { role: 'MLOps Lead', salary: '$140k - $200k', icon: '⚙️' },
-        { role: 'AI Safety Engineer', salary: '$160k - $240k', icon: '🛡️' }
-      ],
+  careers: [
+  { role: 'Junior Generative AI Engineer', salary: '₹6 LPA – ₹12 LPA', icon: '🚀' },
+  { role: 'Associate LLM Engineer', salary: '₹7 LPA – ₹14 LPA', icon: '🤖' },
+  { role: 'AI Product Developer (Junior)', salary: '₹5 LPA – ₹10 LPA', icon: '💼' },
+  { role: 'AI Research Associate', salary: '₹6 LPA – ₹11 LPA', icon: '🔬' },
+  { role: 'MLOps Associate', salary: '₹6 LPA – ₹12 LPA', icon: '⚙️' },
+  { role: 'AI Safety Analyst (Entry Level)', salary: '₹7 LPA – ₹13 LPA', icon: '🛡️' }
+],
+
       learningOutcomes: {
         technical: [
           'Fine-tune LLMs with LoRA/QLoRA on consumer GPUs',
@@ -505,12 +352,12 @@ const courseData = {
     "title": "Data Science Mastery",
     "subtitle": "Your complete journey from beginner to job-ready data scientist",
     "description": "Master data science from scratch with our industry-aligned program. Progress through carefully structured modules combining Python, SQL, Statistics, and Machine Learning. Each lesson includes video + written guide for maximum learning.",
-    duration: '120+ Hours',
-    students: '15,420',
-    rating: '4.9',
-    price: '$499',
-    level: 'Beginner to Advanced',
-    language: 'English',
+    "duration": '120+ Hours',
+    "students": '15,420',
+    "rating": '4.9',
+    "price": '$499',
+    "level": 'Beginner to Advanced',
+    "language": 'English',
     "courseOverview": {
       "totalChapters": 60,
       "totalProjects": 12,
@@ -521,59 +368,59 @@ const courseData = {
       "lastUpdated": "January 2026"
     },
     "pricingTiers": {
-      basic: {
-        name: "Basic",
-        price: "6999",
-        originalPrice: "9000",
-        savings: "Save 50%",
-        badge: "Starter",
-        description: "Perfect starting point for aspiring data scientists",
-        estimatedTime: "1 Month",
-        skillLevel: "Beginner",
-        chaptersIncluded: "8 Core Chapters",
-        projectsIncluded: "Projects not included",
-        questionsIncluded: "Questions not included",
+      "basic": {
+        "name": "Basic",
+        "price": "5,999",
+        "originalPrice": "8,000",
+        "savings": "Save 50%",
+        "badge": "Starter",
+        "description": "Perfect starting point for aspiring data scientists",
+        "estimatedTime": "1 Month",
+        "skillLevel": "Beginner",
+        "chaptersIncluded": "8 Core Chapters",
+        "projectsIncluded": "Projects not included",
+        "questionsIncluded": "Questions not included",
         "jobAssistanceCommunity": "Basic community access",
         "SoftSkillsTraining": "Not Included",
         "Certificate": "Yes, Shareable on LinkedIn",
-        recommended: false,
-        skills: ["Python Programming", "Data Manipulation"]
+        "recommended": false,
+        "skills": ["Python Programming", "Data Manipulation"]
       },
-      intermediate: {
-        name: "Intermediate",
-        price: "10,999",
-        originalPrice: "13900",
-        savings: "Save 50%",
-        badge: "Most Popular",
-        description: "Build practical skills with hands-on projects",
-        estimatedTime: "2 Months",
-        skillLevel: "Intermediate",
-        chaptersIncluded: "15 Chapters",
-        projectsIncluded: "5 Mini + 2 Major",
-        questionsIncluded: "200+ Questions",
-        "jobAssistanceCommunity": "Basic Community access",
+      "intermediate": {
+        "name": "Pro",
+        "price": "9,999",
+        "originalPrice": "11,900",
+        "savings": "Save 50%",
+        "badge": "Most Popular",
+        "description": "Build practical skills with hands-on projects",
+        "estimatedTime": "2 Months",
+        "skillLevel": "Intermediate",
+        "chaptersIncluded": "15 Chapters",
+        "projectsIncluded": "5 Mini + 2 Major",
+        "questionsIncluded": "200+ Questions",
+        "jobAssistanceCommunity": "Premium Community access",
         "SoftSkillsTraining": "Soft skills Questionnaire",
         "Certificate": "Yes, Shareable on LinkedIn",
-        recommended: false,
-        skills: ["Python Programming", "Data Manipulation", "Data Visualization", "Statistics Fundamentals"]
+        "recommended": false,
+        "skills": ["Python Programming", "Data Manipulation", "Data Visualization", "Statistics Fundamentals"]
       },
-      advanced: {
-        name: "Advanced",
-        price: "14,999",
-        originalPrice: "29900",
-        savings: "Save 50%",
-        badge: "Career Ready",
-        description: "Complete job-ready program with interview prep",
-        estimatedTime: "3 Months",
-        skillLevel: "Advanced",
-        chaptersIncluded: "All 25 Chapters",
-        projectsIncluded: "10 Mini + 3 Capstone",
+      "advanced": {
+        "name": "Elite",
+        "price": "13,999",
+        "originalPrice": "20,000",
+        "savings": "Save 50%",
+        "badge": "Career Ready",
+        "description": "Complete job-ready program with interview prep",
+        "estimatedTime": "3 Months",
+        "skillLevel": "Advanced",
+        "chaptersIncluded": "All 25 Chapters",
+        "projectsIncluded": "10 Mini + 3 Capstone",
         "questionsIncluded": "500+ Questions",
         "jobAssistanceCommunity": "Premium Community Access",
         "SoftSkillsTraining": "Soft skills Questionnaire",
         "Certificate": "Yes, Shareable on LinkedIn",
         "recommended": true,
-        skills: ["Python Programming", "Data Manipulation", "Data Visualization", "Statistics Fundamentals", "Machine Learning", "SQL for Data Science"]
+        "skills": ["Python Programming", "Data Manipulation", "Data Visualization", "Statistics Fundamentals", "Machine Learning", "SQL for Data Science"]
       }
     },
 
@@ -2078,33 +1925,33 @@ const courseData = {
     "subtitle": "Build real AI from Week 1 — LLMs, RAG, Diffusion, Deployment & Production Apps",
     "description": "Experience frontier AI magic immediately: build chatbots, semantic search, image classifiers and RAG apps in the first weeks, then deeply understand embeddings, transformers, fine-tuning, diffusion models, RAG systems, safety and deployment. Modern-first curriculum: play with powerful open models Day 1, reverse-engineer how they work, and ship portfolio-ready AI products by the end.",
     "duration": "120+ Hours",
-    "students": "12850",
+    "students": "12,850",
     "rating": "4.9",
     "price": "$499",
     "level": "Beginner to Advanced",
     "language": "English",
     "courseOverview": {
-      "totalChapters": 55,
+      "totalChapters": 60,
       "totalProjects": 12,
       "practiceQuestions": "580+",
       "interviewQuestions": "250+",
       "language": "English",
-      "format": "Video + Written Guides + Hands-on Coding + Live Demos + Project Reviews",
+      "format": "Video + Written Guides + Hands-on Coding",
       "lastUpdated": "January 2026"
     },
     "pricingTiers": {
       "basic": {
         "name": "Basic",
-        "price": "6999",
-        "originalPrice": "9000",
+        "price": "5,999",
+        "originalPrice": "8,000",
         "savings": "Save 50%",
         "badge": "Starter",
-        "description": "Experience AI magic immediately — build your first chatbot, semantic search engine and simple generators in 4 weeks",
+        "description": "Experience AI Magic: Build Chatbots in 4 Weeks",
         "estimatedTime": "1 Month",
         "skillLevel": "Beginner",
-        "chaptersIncluded": "Modules 1–4 (20 chapters)",
+        "chaptersIncluded": "4 Modules (20 chapters)",
         "projectsIncluded": "4 Mini Projects",
-        "questionsIncluded": "Basic prompt engineering + embeddings questions (~150)",
+        "questionsIncluded": "Questions not included",
         "jobAssistanceCommunity": "Basic community access",
         "SoftSkillsTraining": "Not Included",
         "Certificate": "Yes, Shareable on LinkedIn",
@@ -2112,40 +1959,40 @@ const courseData = {
         "skills": ["Prompt Engineering", "Running Open LLMs", "Embeddings & Similarity Search", "Simple Chat & Generation Apps"]
       },
       "intermediate": {
-        "name": "Intermediate",
-        "price": "10999",
-        "originalPrice": "13900",
+        "name": "Pro",
+        "price": "9,999",
+        "originalPrice": "11,900",
         "savings": "Save 50%",
         "badge": "Most Popular",
-        "description": "Master computer vision, transformers and real AI applications — compare classic ML vs modern deep learning",
+        "description": "From Classic ML to Transformers: Build AI Apps",
         "estimatedTime": "2 Months",
         "skillLevel": "Intermediate",
-        "chaptersIncluded": "Modules 1–8 (40 chapters)",
+        "chaptersIncluded": "8 Modules (40 chapters)",
         "projectsIncluded": "8 Mini Projects",
-        "questionsIncluded": "200+ Questions (prompts through transformers & vision)",
-        "jobAssistanceCommunity": "Full community access",
+        "questionsIncluded": "200+ Questions",
+        "jobAssistanceCommunity": "Premium community access",
         "SoftSkillsTraining": "Soft skills Questionnaire",
         "Certificate": "Yes, Shareable on LinkedIn",
         "recommended": false,
-        "skills": ["CNNs & Transfer Learning", "RNNs vs Transformers", "Vision & NLP Applications", "Classic ML vs Modern Comparison"]
+        "skills": ["Prompt Engineering", "Running Open LLMs", "Embeddings & Similarity Search", "Simple Chat & Generation Apps","CNNs & Transfer Learning", "RNNs vs Transformers", "Vision & NLP Applications", "Classic ML vs Modern Comparison"]
       },
       "advanced": {
-        "name": "Advanced",
-        "price": "14999",
-        "originalPrice": "29900",
+        "name": "Elite",
+        "price": "13,999",
+        "originalPrice": "20,000",
         "savings": "Save 50%",
         "badge": "Career Ready",
-        "description": "Production-grade Generative AI — fine-tuning, RAG at scale, diffusion models, deployment, safety, evaluation & capstone apps",
+        "description": "End-to-End GenAI: Build, Deploy, Evaluate, Scale",
         "estimatedTime": "3 Months",
         "skillLevel": "Advanced",
-        "chaptersIncluded": "All 55 Chapters",
-        "projectsIncluded": "12 Mini Projects + 3 Capstone Projects",
-        "questionsIncluded": "500+ Questions (complete bank)",
-        "jobAssistanceCommunity": "Premium Community Access + Expert AMAs",
+        "chaptersIncluded": "All 60 Chapters",
+        "projectsIncluded": "11 Mini + 3 Capstone",
+        "questionsIncluded": "500+ Questions",
+        "jobAssistanceCommunity": "Premium Community Access",
         "SoftSkillsTraining": "Soft skills Questionnaire",
         "Certificate": "Yes, Shareable on LinkedIn",
         "recommended": true,
-        "skills": ["LoRA & QLoRA Fine-tuning", "Advanced RAG Systems", "Diffusion & Generative Media", "Fast LLM Deployment", "AI Safety, Alignment & Red-teaming"]
+        "skills": ["Prompt Engineering", "Running Open LLMs", "Embeddings & Similarity Search", "Simple Chat & Generation Apps","CNNs & Transfer Learning", "RNNs vs Transformers", "Vision & NLP Applications", "Classic ML vs Modern Comparison","LoRA & QLoRA Fine-tuning", "Advanced RAG Systems", "Diffusion & Generative Media", "Fast LLM Deployment", "AI Safety, Alignment & Red-teaming"]
       }
     },
     "curriculum": [
@@ -3229,11 +3076,11 @@ export default function CourseDetailPage({ params }) {
                   </div>
                   <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full text-white text-sm md:text-base">
                     <FiBookOpen className="w-4 h-4 md:w-5 md:h-5" />
-                    {course.courseOverview.totalChapters} Ch
+                    {course.courseOverview.totalChapters} Chapters
                   </div>
                   <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-3 py-1.5 md:px-4 md:py-2 rounded-full text-white text-sm md:text-base">
                     <FaProjectDiagram className="w-4 h-4 md:w-5 md:h-5" />
-                    {course.courseOverview.totalProjects} Proj
+                    {course.courseOverview.totalProjects} Projects
                   </div>
                 </div>
               </div>

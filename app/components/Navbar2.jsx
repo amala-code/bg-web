@@ -54,8 +54,8 @@ export default function Navbar() {
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 ${
                     scrolled 
-             ? 'bg-white/80 backdrop-blur-xl border-b border-gray-200/50 shadow-sm py-1.5' 
-: 'bg-white backdrop-blur-md border-b border-white/20 py-2'
+                        ? 'bg-white/80 backdrop-blur-xl border-b border-gray-200/50 shadow-sm py-2' 
+                        : 'bg-white backdrop-blur-md border-b border-white/20 py-2'
                 }`}
             >
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,7 +63,7 @@ export default function Navbar() {
                         {/* Logo */}
                         <motion.a 
                             href="/" 
-  className="flex items-center relative z-50 focus:outline-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
+                            className="flex items-center relative z-50 focus:outline-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0"
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                         >
@@ -72,7 +72,7 @@ export default function Navbar() {
                                 alt="Bridgegap Logo" 
                                 width={400} 
                                 height={400}
-className="w-24 sm:w-28 lg:w-32 h-auto pointer-events-none select-none"
+                                className="w-24 sm:w-28 lg:w-32 h-auto pointer-events-none select-none"
                                 priority
                                 tabIndex={-1}
                             />
@@ -115,7 +115,7 @@ className="w-24 sm:w-28 lg:w-32 h-auto pointer-events-none select-none"
 
                         {/* Desktop Action Buttons */}
                         <div className="hidden lg:flex items-center gap-3">
-                               <motion.div
+                            <motion.div
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 className="px-5 cursor-pointer py-2.5 border-2 border-gray-300 rounded-xl font-medium text-sm text-gray-700 hover:border-blue-600 hover:text-blue-600 hover:bg-blue-50/50 transition-all"
@@ -137,11 +137,11 @@ className="w-24 sm:w-28 lg:w-32 h-auto pointer-events-none select-none"
                             </motion.div>
                         </div>
 
-                        {/* Mobile Menu Button */}
+                        {/* Mobile Menu Button - UPDATED */}
                         <motion.button
                             whileTap={{ scale: 0.9 }}
                             onClick={() => setIsMenuOpen(!isMenuOpen)}
-                            className="lg:hidden p-1.5 rounded-xl bg-gray-100 hover:bg-gray-200 transition-colors relative z-50"
+                            className="lg:hidden p-2 rounded-xl hover:bg-gray-100/50 transition-colors relative z-50"
                             aria-label="Toggle menu"
                         >
                             <motion.div
@@ -189,14 +189,19 @@ className="w-24 sm:w-28 lg:w-32 h-auto pointer-events-none select-none"
                             onClick={() => setIsMenuOpen(false)}
                         />
 
-                        {/* Mobile Menu */}
-                        <motion.div
-                            initial={{ x: '100%' }}
-                            animate={{ x: 0 }}
-                            exit={{ x: '100%' }}
-                            transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-                            className="fixed top-0 right-0 bottom-0 w-full sm:w-80 bg-white shadow-2xl z-40 lg:hidden overflow-y-auto"
-                        >
+                        {/* Mobile Menu - UPDATED ANIMATION */}
+               <motion.div
+    initial={{ x: '100%', opacity: 0 }}
+    animate={{ x: 0, opacity: 1 }}
+    exit={{ x: '100%', opacity: 0 }}
+    transition={{ 
+        x: { type: 'tween', duration: 0.3, ease: 'easeOut' },
+        opacity: { duration: 0.2 }
+    }}
+    className="fixed top-0 right-0 bottom-0 w-full sm:w-80 bg-white shadow-2xl z-40 lg:hidden overflow-y-auto"
+    style={{ willChange: 'transform' }}
+>
+     
                             <div className="pt-24 pb-8 px-6">
                                 {/* Mobile Navigation Links */}
                                 <div className="space-y-2 mb-8">
@@ -234,7 +239,7 @@ className="w-24 sm:w-28 lg:w-32 h-auto pointer-events-none select-none"
                                 </div>
 
                                 {/* Mobile Action Buttons */}
-                               <motion.div
+                                <motion.div
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: 20 }}

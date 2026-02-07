@@ -1,3 +1,5 @@
+
+
 'use client';
 
 import React, { useRef } from 'react';
@@ -57,61 +59,61 @@ export default function HowItWorksSection() {
   const isInView = useInView(ref as any, { once: true, amount: 0.2 });
 
   return (
-    <section ref={ref} className="bg-white py-24">
+    <section ref={ref} className="bg-white py-16 sm:py-24 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <M.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-16 text-center"
+          className="mb-12 sm:mb-16 text-center"
         >
-          <h2 className="mb-4 text-4xl font-bold text-slate-900 sm:text-5xl">
+          <h2 className="mb-4 text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900">
             Three Simple Steps to Your Best Hire Yet
           </h2>
-  </M.div>
+        </M.div>
 
-        <div className="space-y-12">
+        <div className="space-y-8 sm:space-y-12">
           {steps.map((step, index) => (
             <M.div
               key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="relative"
             >
-              <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:gap-12">
+              <div className="flex flex-col gap-6 sm:gap-8 lg:flex-row lg:items-start lg:gap-12">
                 {/* Step Number */}
                 <div className="flex-shrink-0">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-teal-600 text-2xl font-bold text-white shadow-lg">
+                  <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-gradient-to-br from-blue-600 to-teal-600 text-xl sm:text-2xl font-bold text-white shadow-lg">
                     {index + 1}
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="flex-1">
-                  <div className="mb-4 flex items-center gap-4">
-                    <div className="rounded-lg bg-blue-100 p-3">
+                  <div className="mb-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+                    <div className="rounded-lg bg-blue-100 p-2.5 sm:p-3 w-fit">
                       {/** Use a capitalized variable for dynamic component rendering to satisfy TSX */}
                       {(() => {
                         const Icon = step.icon;
-                        return <Icon className="h-8 w-8 text-blue-600" />;
+                        return <Icon className="h-6 w-6 sm:h-8 sm:w-8 text-blue-600" />;
                       })()}
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-900">
+                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
                       {step.title}
                     </h3>
                   </div>
-                  <p className="mb-6 text-lg text-slate-600">
+                  <p className="mb-4 sm:mb-6 text-base sm:text-lg text-slate-600 leading-relaxed">
                     {step.description}
                   </p>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2.5 sm:space-y-3">
                     {step.features.map((feature, fIndex) => (
                       <li
                         key={fIndex}
-                        className="flex items-start gap-3 text-slate-700"
+                        className="flex items-start gap-2.5 sm:gap-3 text-sm sm:text-base text-slate-700"
                       >
                         <svg
-                          className="mt-1 h-5 w-5 flex-shrink-0 text-green-500"
+                          className="mt-0.5 sm:mt-1 h-5 w-5 flex-shrink-0 text-green-500"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -121,7 +123,7 @@ export default function HowItWorksSection() {
                             clipRule="evenodd"
                           />
                         </svg>
-                        {feature}
+                        <span className="flex-1">{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -130,7 +132,7 @@ export default function HowItWorksSection() {
 
               {/* Connector Line */}
               {index < steps.length - 1 && (
-                <div className="absolute left-8 top-20 h-12 w-0.5 bg-gradient-to-b from-blue-600 to-teal-600 lg:left-8" />
+                <div className="absolute left-7 sm:left-8 top-16 sm:top-20 h-8 sm:h-12 w-0.5 bg-gradient-to-b from-blue-600 to-teal-600" />
               )}
             </M.div>
           ))}
@@ -140,12 +142,12 @@ export default function HowItWorksSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 text-center"
+          className="mt-12 sm:mt-16 text-center px-4"
         >
-          <p className="text-xl font-semibold italic text-slate-700">
+          <p className="text-lg sm:text-xl font-semibold italic text-slate-700">
             No hard sell. No pressure. Just exceptional talent when you need it.
           </p>
-  </M.div>
+        </M.div>
       </div>
     </section>
   );

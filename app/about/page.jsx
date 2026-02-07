@@ -255,71 +255,123 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Timeline Section - FIX: Add idx parameter */}
-      <section className="relative w-full py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-blue-50">
-        <div className="max-w-7xl mx-auto">
+
+
+  
+
+  {/* Timeline Section - FULLY RESPONSIVE FIX */}
+<section className="relative w-full py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-blue-50">
+  <div className="max-w-7xl mx-auto">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      viewport={{ once: true, margin: "-100px" }}
+      className="text-center mb-20"
+    >
+      <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-gray-900 mb-4">
+        Our <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">Journey</span>
+      </h2>
+      <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
+        From a vision to a thriving community of learners worldwide
+      </p>
+    </motion.div>
+
+    <div className="relative">
+      {/* Timeline line - hidden on mobile, visible on desktop */}
+      <div className="hidden lg:block absolute left-1/2 -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-400 via-teal-400 to-blue-400" />
+      
+      {/* Mobile timeline line - visible only on mobile */}
+      <div className="lg:hidden absolute left-4 top-0 w-1 h-full bg-gradient-to-b from-blue-400 via-teal-400 to-blue-400" />
+
+      <div className="space-y-8 lg:space-y-16">
+        {milestones.map((milestone, idx) => (
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            key={`${milestone.year}-${milestone.title}`}
+            initial={{ 
+              opacity: 0, 
+              y: 30,  // Mobile: animate from bottom only
+              x: typeof window !== 'undefined' && window.innerWidth >= 1024 
+                ? (idx % 2 === 0 ? -50 : 50)  // Desktop: horizontal animation
+                : 0  // Mobile: no horizontal animation
+            }}
+            whileInView={{ opacity: 1, y: 0, x: 0 }}
+            transition={{ duration: 0.6, delay: idx * 0.1 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-20"
+            className={`
+              flex flex-col lg:flex-row items-stretch gap-4 lg:gap-8
+              ${idx % 2 === 0 ? 'lg:flex-row-reverse' : ''}
+            `}
           >
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-4">
-              Our <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">Journey</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From a vision to a thriving community of learners worldwide
-            </p>
-          </motion.div>
-
-          <div className="relative">
-            <div className="absolute left-1/2 -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-400 via-teal-400 to-blue-400" />
-
-            <div className="space-y-16">
-              {milestones.map((milestone, idx) => (
-                <motion.div
-                  key={`${milestone.year}-${milestone.title}`}
-                  initial={{ opacity: 0, x: idx % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: idx * 0.1 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  className={`flex ${idx % 2 === 0 ? 'flex-row-reverse' : ''} items-stretch gap-8`}
-                >
-                  <div className={`w-5/12 flex`}>
-                    <div className={`w-full bg-white rounded-xl p-8 shadow-lg border border-gray-200 hover:border-blue-300 hover:shadow-2xl transition-all duration-300 flex flex-col justify-center ${idx % 2 === 0 ? 'text-right' : 'text-left'}`}>
-                      <div className={`text-sm font-bold bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent mb-2 ${idx % 2 === 0 ? 'justify-end' : 'justify-start'} flex`}>
-                        {milestone.year}
-                      </div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{milestone.title}</h3>
-                      <p className="text-gray-600 leading-relaxed">{milestone.description}</p>
-                    </div>
-                  </div>
-
-                  <div className="w-2/12 flex justify-center items-start pt-8">
-                    <motion.div
-                      animate={{ scale: [1, 1.15, 1] }}
-                      transition={{ duration: 2, repeat: Infinity, delay: idx * 0.2 }}
-                      className="relative"
-                    >
-                      <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-teal-500 shadow-lg border-4 border-white" />
-                      <motion.div
-                        animate={{ scale: [1, 1.4, 1], opacity: [1, 0.5, 1] }}
-                        transition={{ duration: 2, repeat: Infinity, delay: idx * 0.2 }}
-                        className="absolute inset-0 w-6 h-6 rounded-full border-2 border-blue-500 opacity-50"
-                      />
-                    </motion.div>
-                  </div>
-
-                  <div className="w-5/12" />
-                </motion.div>
-              ))}
+            {/* Content Card */}
+            <div className={`
+              w-full lg:w-5/12 flex
+              pl-12 lg:pl-0
+            `}>
+              <div className={`
+                w-full bg-white rounded-xl p-6 lg:p-8 
+                shadow-lg border border-gray-200 
+                hover:border-blue-300 hover:shadow-2xl 
+                transition-all duration-300 
+                flex flex-col justify-center
+                text-left lg:${idx % 2 === 0 ? 'text-right' : 'text-left'}
+              `}>
+                <div className={`
+                  text-sm font-bold 
+                  bg-gradient-to-r from-blue-600 to-teal-600 
+                  bg-clip-text text-transparent mb-2
+                  flex
+                  justify-start lg:${idx % 2 === 0 ? 'justify-end' : 'justify-start'}
+                `}>
+                  {milestone.year}
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-2">
+                  {milestone.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-sm lg:text-base">
+                  {milestone.description}
+                </p>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
 
- 
+            {/* Desktop Timeline Dot */}
+            <div className="hidden lg:flex w-2/12 justify-center items-start pt-8">
+              <motion.div
+                animate={{ scale: [1, 1.15, 1] }}
+                transition={{ duration: 2, repeat: Infinity, delay: idx * 0.2 }}
+                className="relative"
+              >
+                <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-teal-500 shadow-lg border-4 border-white" />
+                <motion.div
+                  animate={{ scale: [1, 1.4, 1], opacity: [1, 0.5, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: idx * 0.2 }}
+                  className="absolute inset-0 w-6 h-6 rounded-full border-2 border-blue-500 opacity-50"
+                />
+              </motion.div>
+            </div>
+
+            {/* Mobile Timeline Dot */}
+            <motion.div
+              animate={{ scale: [1, 1.15, 1] }}
+              transition={{ duration: 2, repeat: Infinity, delay: idx * 0.2 }}
+              className="lg:hidden absolute left-4 top-6 -translate-x-1/2"
+            >
+              <div className="w-4 h-4 rounded-full bg-gradient-to-br from-blue-500 to-teal-500 shadow-lg border-2 border-white" />
+              <motion.div
+                animate={{ scale: [1, 1.4, 1], opacity: [1, 0.5, 1] }}
+                transition={{ duration: 2, repeat: Infinity, delay: idx * 0.2 }}
+                className="absolute inset-0 w-4 h-4 rounded-full border-2 border-blue-500 opacity-50"
+              />
+            </motion.div>
+
+            {/* Spacer for desktop */}
+            <div className="hidden lg:block w-5/12" />
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
 
 <section className="relative w-full py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-50 via-blue-50/30 to-white overflow-hidden">
