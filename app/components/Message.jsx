@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-// import scr from "../images/scr.jpeg";
+// import scr from "../images/scr.webp";
 
 
 export default function AboutScrollReveal() {
@@ -61,7 +61,7 @@ export default function AboutScrollReveal() {
       <div
         className="absolute inset-0 w-full h-full z-0"
         style={{
-    backgroundImage: `url("/images/scr.jpeg")`,
+    backgroundImage: `url("/images/scr.webp")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           opacity: 0.25,

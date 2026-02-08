@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, CheckCircle, Users, Award, TrendingUp } from 'lucide-react';
 import Image from 'next/image';
-import hrImage from '../../images/hr.jpeg';
+import hrImage from '../../images/hr.webp';
 import PropTypes from 'prop-types';
 
 

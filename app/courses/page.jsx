@@ -17,7 +17,7 @@ const courses = {
       id: 'data-science',
       title: 'Data Science Mastery',
       description: 'Complete data science journey from Python basics to advanced machine learning, statistics, and real-world projects.',
-      thumbnail: '/images/courses/112.png',
+      thumbnail: '/images/courses/112.webp',
       duration: '60+ Hours',
       students: '25',
       price: '₹499',
@@ -29,7 +29,7 @@ const courses = {
       id: 'modern-ai',
       title: 'AI & Machine Learning',
       description: 'Master artificial intelligence and machine learning with deep learning, neural networks, NLP, and computer vision.',
-      thumbnail: '/images/courses/111.png',
+      thumbnail: '/images/courses/111.webp',
       duration: '60+ Hours',
       students: '28',
       price: '₹549',
@@ -43,7 +43,7 @@ const courses = {
       id: 'graphql',
       title: 'GraphQL Essentials',
       description: 'Modern API development with GraphQL',
-      thumbnail: '/images/courses/113.png',
+      thumbnail: '/images/courses/113.webp',
       duration: '15 Hours',
       price: '₹449',
       icon: <FiBarChart2 className="text-white" />,
@@ -55,7 +55,7 @@ const courses = {
       id: 'figma',
       title: 'Figma Design Pro',
       description: 'Create stunning UI/UX designs professionally',
-      thumbnail: '/images/courses/115.png',
+      thumbnail: '/images/courses/115.webp',
       duration: '18 Hours',
       price: '₹449',
       icon: <FaPaintBrush className="text-white" />,
@@ -67,7 +67,7 @@ const courses = {
       id: 'powerbi',
       title: 'Power BI Analytics',
       description: 'Transform data into actionable insights',
-      thumbnail: '/images/courses/116.png',
+      thumbnail: '/images/courses/116.webp',
       duration: '20 Hours',
       price: '₹349',
       icon: <FiTrendingUp className="text-white" />,
@@ -79,7 +79,7 @@ const courses = {
       id: 'docker',
       title: 'Docker ',
       description: 'Master container orchestration and deployment',
-      thumbnail: '/images/courses/114.png',
+      thumbnail: '/images/courses/114.webp',
       duration: '22 Hours',
       price: '₹549',
       icon: <FaDocker className="text-white" />,
@@ -167,13 +167,23 @@ export default function CoursesPage() {
             <div className="grid md:grid-cols-2 gap-8">
               {courses.mega.map((course, index) => (
                 <motion.div
-                  key={course.id}
+                  keykey={course.id}
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  transition={{ duration: 0.3, delay: index * 0.2 }}
                 >
                   <Link href={`/courses/${course.id}`}>
-                    <div className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 cursor-pointer border-t-4 border-transparent hover:border-teal-400">
+                  <motion.div 
+                      className="group bg-white rounded-3xl overflow-hidden shadow-xl transition-all duration-500 cursor-pointer border-t-4 border-transparent hover:border-teal-400"
+                      whileHover={{ 
+                        y: -8,
+                        boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                      }}
+                      transition={{ 
+                        duration: 0.2,
+                        ease: "easeOut"
+                      }}
+                    >
                       <div className="relative h-90 overflow-hidden">
                         <Image
                           src={course.thumbnail}
@@ -211,7 +221,7 @@ export default function CoursesPage() {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   </Link>
                 </motion.div>
               ))}

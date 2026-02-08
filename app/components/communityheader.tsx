@@ -7,9 +7,9 @@
 //   const [hoveredPerson, setHoveredPerson] = useState<number | null>(null);
 
 //   const communityMembers = [
-//     { id: 1, name: 'Sarah K.', role: 'Creator', color: 'from-cyan-400 to-blue-500', image: './images/c1.png' },
-//     { id: 2, name: 'Alex M.', role: 'Designer', color: 'from-teal-400 to-cyan-500', image: './images/2.png' },
-//     { id: 3, name: 'Jordan L.', role: 'Developer', color: 'from-blue-400 to-indigo-500', image: './images/1.png' },
+//     { id: 1, name: 'Sarah K.', role: 'Creator', color: 'from-cyan-400 to-blue-500', image: './images/c1.webp' },
+//     { id: 2, name: 'Alex M.', role: 'Designer', color: 'from-teal-400 to-cyan-500', image: './images/2.webp' },
+//     { id: 3, name: 'Jordan L.', role: 'Developer', color: 'from-blue-400 to-indigo-500', image: './images/1.webp' },
 //   ];
 
 //   const targetAudience = [
@@ -235,7 +235,7 @@
 //                   className="relative bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 p-2 rounded-[3rem] shadow-2xl"
 //                 >
 //                   <div className="w-120 h-160 bg-white rounded-[2.8rem] flex items-center justify-center overflow-hidden">
-//                  <img src="./images/4.png" alt="Mark" className="object-cover w-full h-full" />
+//                  <img src="./images/4.webp" alt="Mark" className="object-cover w-full h-full" />
 //                   </div>
 //                 </motion.div>
                 
@@ -400,9 +400,9 @@ const CommunityHero = () => {
   const [hoveredPerson, setHoveredPerson] = useState<number | null>(null);
 
   const communityMembers = [
-    { id: 1, name: 'Sarah K.', role: 'Creator', color: 'from-cyan-400 to-blue-500', image: './images/c1.png' },
-    { id: 2, name: 'Alex M.', role: 'Designer', color: 'from-teal-400 to-cyan-500', image: './images/2.png' },
-    { id: 3, name: 'Jordan L.', role: 'Developer', color: 'from-blue-400 to-indigo-500', image: './images/1.png' },
+    { id: 1, name: 'Sarah K.', role: 'Creator', color: 'from-cyan-400 to-blue-500', image: './images/c1.webp' },
+    { id: 2, name: 'Alex M.', role: 'Designer', color: 'from-teal-400 to-cyan-500', image: './images/2.webp' },
+    { id: 3, name: 'Jordan L.', role: 'Developer', color: 'from-blue-400 to-indigo-500', image: './images/1.webp' },
   ];
 
   const targetAudience = [
@@ -672,7 +672,7 @@ const CommunityHero = () => {
                   className="relative bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 p-1.5 sm:p-2 rounded-[2rem] sm:rounded-[3rem] shadow-2xl"
                 >
                   <div className="w-64 h-80 sm:w-80 sm:h-96 md:w-96 md:h-[28rem] lg:w-120 lg:h-160 bg-white rounded-[1.9rem] sm:rounded-[2.8rem] flex items-center justify-center overflow-hidden">
-                    <img src="./images/4.png" alt="Mark" className="object-cover w-full h-full" />
+                    <img src="./images/4.webp" alt="Mark" className="object-cover w-full h-full" />
                   </div>
                 </motion.div>
                 

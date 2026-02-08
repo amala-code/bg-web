@@ -141,7 +141,7 @@ export default function Community() {
           opacity: 1,
           y: 0,
           rotation: 0,
-          duration: 0.8,
+          duration: 0.2,
           delay: index * 0.15,
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -157,13 +157,13 @@ export default function Community() {
         gsap.to(feature, {
           y: -15,
           boxShadow: '0 30px 60px rgba(13, 148, 136, 0.15)',
-          duration: 0.4,
+          duration: 0.2,
         });
         const icon = feature.querySelector('.feature-icon');
         gsap.to(icon, {
           scale: 1.15,
           rotation: 5,
-          duration: 0.6,
+          duration: 0.2,
         });
       });
 
@@ -171,13 +171,13 @@ export default function Community() {
         gsap.to(feature, {
           y: 0,
           boxShadow: '0 10px 30px rgba(0, 0, 0, 0.05)',
-          duration: 0.4,
+          duration: 0.2,
         });
         const icon = feature.querySelector('.feature-icon');
         gsap.to(icon, {
           scale: 1,
           rotation: 0,
-          duration: 0.4,
+          duration: 0.2,
         });
       });
     });
@@ -261,7 +261,7 @@ export default function Community() {
                 ref={(el) => {
                   if (el) featureRefs.current[index] = el;
                 }}
-                className="bg-white rounded-2xl p-8 text-center border-2 border-slate-200 hover:border-teal-400 transition-all duration-300 shadow-lg"
+                className="bg-white rounded-2xl p-8 text-center border-2 border-slate-200 hover:border-teal-400 transition-all duration-200 shadow-lg"
               >
                 <div className="feature-icon inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-teal-500 to-blue-500 rounded-2xl mb-4">
                   <IconComponent className="text-white text-3xl" />
@@ -394,7 +394,7 @@ export default function Community() {
             {/* Close Button */}
             <button 
               onClick={closeModal}
-              className="absolute top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-colors"
+              className="absolute cursor-pointer top-4 right-4 p-2 rounded-full hover:bg-gray-100 transition-colors"
               aria-label="Close"
             >
               <HiXMark className="w-6 h-6 text-gray-500" />
@@ -489,17 +489,6 @@ export default function Community() {
                     </select>
                   </div>
 
-                  {/* Free E-book Banner */}
-                  <div className="bg-gradient-to-r from-teal-50 to-blue-50 border-2 border-teal-200 rounded-xl p-4 flex items-center gap-3">
-                    <div className="flex-shrink-0">
-                      <HiBookOpen className="w-8 h-8 text-teal-600" />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-teal-700 text-sm">🎁 Get a FREE E-book!</p>
-                      <p className="text-xs text-slate-600">Exclusive learning guide for founding members</p>
-                    </div>
-                  </div>
-
                   {/* WhatsApp Section */}
                   <div className="border-t-2 border-slate-100 pt-4 mt-4">
                     <div className="flex items-center gap-2 mb-2">
@@ -528,15 +517,11 @@ export default function Community() {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full py-4 bg-gradient-to-r from-teal-500 to-blue-500 text-white font-bold rounded-xl hover:scale-[1.02] transform transition-all duration-300 shadow-lg hover:shadow-xl mt-4"
+                    className="w-full py-4 cursor-pointer bg-gradient-to-r from-teal-500 to-blue-500 text-white font-bold rounded-xl hover:scale-[1.02] transform transition-all duration-300 shadow-lg hover:shadow-xl mt-4"
                   >
-                    Join Now & Get Free E-book
+                    Join Now & Be One Step Ahead
                   </button>
                 </form>
-
-                <p className="text-xs text-slate-400 text-center mt-4">
-                  By joining, you agree to receive updates from us. Unsubscribe anytime.
-                </p>
               </>
             )}
           </div>

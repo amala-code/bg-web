@@ -618,7 +618,7 @@ export default function Footer(): JSX.Element {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all"
+                    className="text-sm text-gray-300 hover:text-teal-300 inline-block transition-colors"
                   >
                     {item.label}
                   </Link>
@@ -639,7 +639,7 @@ export default function Footer(): JSX.Element {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all"
+                    className="text-sm text-gray-300 hover:text-teal-300 inline-block transition-colors"
                   >
                     {item.label}
                   </Link>

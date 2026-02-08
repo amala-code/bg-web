@@ -7,12 +7,12 @@ import { FaPaintBrush, FaRobot } from 'react-icons/fa';
 import './Testimonialcss.css';
 
 const avatarUrls = {
-  noubin: '/images/13.jpeg',
-  janet: '/images/14.jpeg',
-  ayline: '/images/16.jpeg',
-  leona: '/images/15.jpeg',
-  shiji: '/images/11.jpeg',
-  raman: '/images/12.jpeg',
+  noubin: '/images/13.webp',
+  janet: '/images/14.webp',
+  ayline: '/images/16.webp',
+  leona: '/images/15.webp',
+  shiji: '/images/11.webp',
+  raman: '/images/12.webp',
 };
 
 const testimonials = [

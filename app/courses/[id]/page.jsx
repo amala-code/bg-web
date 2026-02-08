@@ -348,7 +348,7 @@ careers: [
 const courseData = {
   'data-science': {
     "courseId": "data-science-mastery",
-    "thumbnail": "/images/courses/112.png",
+    "thumbnail": "/images/courses/112.webp",
     "title": "Data Science Mastery",
     "subtitle": "Your complete journey from beginner to job-ready data scientist",
     "description": "Master data science from scratch with our industry-aligned program. Progress through carefully structured modules combining Python, SQL, Statistics, and Machine Learning. Each lesson includes video + written guide for maximum learning.",
@@ -1920,7 +1920,7 @@ const courseData = {
   },
     "modern-ai": {
     "courseId": "modern-ai-mastery",
-    "thumbnail": "/images/courses/111.png",
+    "thumbnail": "/images/courses/111.webp",
     "title": "Modern AI Mastery",
     "subtitle": "Build real AI from Week 1 — LLMs, RAG, Diffusion, Deployment & Production Apps",
     "description": "Experience frontier AI magic immediately: build chatbots, semantic search, image classifiers and RAG apps in the first weeks, then deeply understand embeddings, transformers, fine-tuning, diffusion models, RAG systems, safety and deployment. Modern-first curriculum: play with powerful open models Day 1, reverse-engineer how they work, and ship portfolio-ready AI products by the end.",

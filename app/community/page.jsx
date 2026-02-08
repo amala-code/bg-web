@@ -44,7 +44,7 @@ const activities = [
     location: 'Tech Innovation Lab',
     participants: 24,
     maxParticipants: 40,
-    image: '/images/nx.jpeg',
+    image: '/images/nx.webp',
     description: 'Build and prototype AI-driven solutions in a 36 hour Online hackathon, post selection.  Participants get an opportunity to win conditioned cash prizes, certificates along with mentorship from industry experts. Join our community to stay updated on the latest news and announcements about Nexus 1.0, including registration details, event schedule, and prize information.',
     organizer: 'Sarah Johnson',
     rating: 4.8,
