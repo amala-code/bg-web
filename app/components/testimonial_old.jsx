@@ -5,17 +5,17 @@
 // // // // import React, { useEffect } from 'react';
 
 // // // // const avatarUrls = {
-// // // //   victoria: '/images/12.jpeg',
-// // // //   rebecca: '/images/15.jpeg',
-// // // //   martha: '/images/13.jpeg',
-// // // //   kelly: '/images/16.jpeg',
-// // // //   betty: '/images/11.jpeg',
-// // // //   matt: '/images/14.jpeg',
-// // // //   wesley: '/images/15.jpeg',
-// // // //   sarah: '/images/14.jpeg',
-// // // //   michael: '/images/11.jpeg',
-// // // //   naomi: '/images/11.jpeg',
-// // // //   jacob: '/images/11.jpeg'
+// // // //   victoria: '/images/12.webp',
+// // // //   rebecca: '/images/15.webp',
+// // // //   martha: '/images/13.webp',
+// // // //   kelly: '/images/16.webp',
+// // // //   betty: '/images/11.webp',
+// // // //   matt: '/images/14.webp',
+// // // //   wesley: '/images/15.webp',
+// // // //   sarah: '/images/14.webp',
+// // // //   michael: '/images/11.webp',
+// // // //   naomi: '/images/11.webp',
+// // // //   jacob: '/images/11.webp'
 // // // // };
 
 // // // // const TestimonialsSection = () => {
@@ -225,11 +225,11 @@
 // // // import React, { useEffect, useRef, useState } from 'react';
 
 // // // const avatarUrls = {
-// // //   noubin: '/images/12.jpeg',
-// // //   janet: '/images/15.jpeg',
-// // //   ayline: '/images/13.jpeg',
-// // //   leona: '/images/16.jpeg',
-// // //   shiji: '/images/11.jpeg'
+// // //   noubin: '/images/12.webp',
+// // //   janet: '/images/15.webp',
+// // //   ayline: '/images/13.webp',
+// // //   leona: '/images/16.webp',
+// // //   shiji: '/images/11.webp'
 // // // };
 
 // // // const TestimonialsSection = () => {
@@ -762,11 +762,11 @@
 // // import React, { useEffect, useRef, useState } from 'react';
 
 // // const avatarUrls = {
-// //   noubin: '/images/12.jpeg',
-// //   janet: '/images/15.jpeg',
-// //   ayline: '/images/13.jpeg',
-// //   leona: '/images/16.jpeg',
-// //   shiji: '/images/11.jpeg'
+// //   noubin: '/images/12.webp',
+// //   janet: '/images/15.webp',
+// //   ayline: '/images/13.webp',
+// //   leona: '/images/16.webp',
+// //   shiji: '/images/11.webp'
 // // };
 
 // // const TestimonialsSection = () => {
@@ -1327,11 +1327,11 @@
 // import React, { useEffect, useRef, useState } from 'react';
 
 // const avatarUrls = {
-//   noubin: '/images/12.jpeg',
-//   janet: '/images/15.jpeg',
-//   ayline: '/images/13.jpeg',
-//   leona: '/images/16.jpeg',
-//   shiji: '/images/11.jpeg'
+//   noubin: '/images/12.webp',
+//   janet: '/images/15.webp',
+//   ayline: '/images/13.webp',
+//   leona: '/images/16.webp',
+//   shiji: '/images/11.webp'
 // };
 
 // const TestimonialsSection = () => {
@@ -1856,11 +1856,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 const avatarUrls = {
-  noubin: '/images/12.jpeg',
-  janet: '/images/15.jpeg',
-  ayline: '/images/13.jpeg',
-  leona: '/images/16.jpeg',
-  shiji: '/images/11.jpeg'
+  noubin: '/images/12.webp',
+  janet: '/images/15.webp',
+  ayline: '/images/13.webp',
+  leona: '/images/16.webp',
+  shiji: '/images/11.webp'
 };
 
 const TestimonialsSection = () => {

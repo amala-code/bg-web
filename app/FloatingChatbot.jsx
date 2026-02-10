@@ -576,7 +576,7 @@ export default function FloatingChatbot() {
         <button
           onClick={() => setIsOpen(true)}
           className="
-            fixed bottom-4 right-4 sm:bottom-6 sm:right-6 
+            fixed cursor-pointer bottom-4 right-4 sm:bottom-6 sm:right-6 
             bg-gradient-to-r from-blue-600 to-blue-700
             hover:from-blue-700 hover:to-blue-800
             text-white rounded-full 

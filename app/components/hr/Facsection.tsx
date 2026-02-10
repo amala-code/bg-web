@@ -68,7 +68,7 @@ function FAQItem({
     >
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-between p-6 text-left transition-colors hover:bg-slate-50"
+        className="flex w-full cursor-pointer items-center justify-between p-6 text-left transition-colors hover:bg-slate-50"
       >
         <span className="pr-8 text-lg font-semibold text-slate-900">
           {faq.question}

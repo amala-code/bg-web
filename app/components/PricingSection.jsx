@@ -331,7 +331,7 @@ const PricingComponent = () => {
 
           {/* Right Side - Resume Preview (Sticky) - Hidden on mobile, visible on lg+ */}
           <div className="hidden lg:block lg:col-span-2">
-            <div className="sticky top-8">
+            <div className="sticky top-20">
               <div 
                 className={`bg-white/95 border-2 rounded-xl p-6 shadow-2xl transition-all duration-500 ${
                   hoveredCard ? 'border-blue-400 scale-105' : 'border-gray-200'

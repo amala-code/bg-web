@@ -1039,7 +1039,7 @@ const BlogReaderPage = () => {
 <p><strong>Ready to level up your workflow?</strong> Pick one tool from this list and try it for a week. You might be surprised at how much time you've been wasting on tasks that AI can handle in seconds.</p>`,
     excerpt:
       "Discover 18 AI tools that'll actually make you code faster and work smarter in 2026.",
-    author: "Amala Sebastian",
+    author: "Preethy Sebastian",
     date: "2025-10-08",
     readTime: "12 min read",
     tags: [
@@ -2083,7 +2083,7 @@ const BlogReaderPage = () => {
             {selectedPost ? (
               <button
                 onClick={handleBackToList}
-                className="flex items-center gap-2 text-teal-600 hover:text-teal-700 font-medium transition-colors"
+                className="flex cursor-pointer items-center gap-2 text-teal-600 hover:text-teal-700 font-medium transition-colors"
               >
                 <ArrowLeft className="w-5 h-5" />
                 Back to posts

@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Play, Star, Shield, Zap } from 'lucide-react';
 import Image from 'next/image';
-import img1 from '../../images/clg11.png'
+import img1 from '../../images/clg11.webp'
 
 export default function HeroWithBackgroundImage() {
   return (

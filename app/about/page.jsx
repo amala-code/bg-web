@@ -181,9 +181,9 @@ export default function AboutPage() {
       block: 'start',
     });
   }}
-  className="group relative px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold overflow-hidden hover:bg-blue-700 transition-colors"
+  className="group cursor-pointer relative px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold overflow-hidden hover:bg-blue-700 transition-colors"
 >
-  <span className="relative z-10 cursor-pointer">
+  <span className="relative z-10">
     Explore Our Story
   </span>
 </button>
