@@ -49,7 +49,7 @@ const activities = [
     organizer: 'Sarah Johnson',
     rating: 4.8,
     featured: true,
-    event_link:'https://unstop.com/p/nexus-10-nexus-10-bridgegapedge-solutions-pvt-ltd-1635186?lb=sbzaH9Dd&utm_medium=Share&utm_source=joxfhmkc55802&utm_campaign=Online_coding_challenge',
+    event_link:'/nexus',
     enddate:'2026-03-30'
   },
   {
