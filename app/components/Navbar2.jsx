@@ -44,6 +44,8 @@ export default function Navbar() {
         { href: '/recruiters', label: 'Recruiters' },
         { href: '/universities', label: 'Universities' },
         { href: '/blogs', label: 'Blogs' },
+         { href: '/nexus', label: 'Nexus 1.0 Hackathon' }
+
     ];
 
     return (
