@@ -1,5 +1,5 @@
 
-
+'use client';
 import React, { useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 // Alias motion to a loosely typed variable to avoid strict JSX generic issues in TSX
