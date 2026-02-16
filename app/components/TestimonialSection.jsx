@@ -1,5 +1,5 @@
 
-
+'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
 import {  FiStar, FiZap, FiBarChart2, FiDatabase } from 'react-icons/fi';

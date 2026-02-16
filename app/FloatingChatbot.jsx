@@ -467,7 +467,7 @@
 // }
 
 
-
+'use client';
 
 import { useState, useEffect, useRef } from 'react';
 import { X, Bot, Send, Mail, MessageCircle, ChevronDown, Sparkles } from 'lucide-react';

@@ -1,5 +1,5 @@
 
-
+'use client';
 
 import React, { useState } from 'react';
 import { Calendar, Users, MessageSquare, Clock, ArrowRight, Search, Filter, Star, TrendingUp, Award, Zap, Gift, Bell, Folder, Check } from 'lucide-react';
