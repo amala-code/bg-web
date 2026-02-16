@@ -1,6 +1,6 @@
 
 // FILE: components/ScrollFreezeText.tsx
-'use client';
+
 
 import React, { useState, useEffect, useRef } from 'react';
 

@@ -1,6 +1,6 @@
 
 
-// 'use client';
+// 
 
 // import { useEffect, useRef, useState } from 'react';
 // import { gsap } from 'gsap';
@@ -156,7 +156,7 @@
 
 // export default HorizontalScrollSection;
 
-'use client';
+
 
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';

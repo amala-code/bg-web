@@ -1,6 +1,6 @@
 
 
-// // // // 'use client';
+// // // // 
 
 // // // // import React, { useEffect } from 'react';
 
@@ -220,7 +220,7 @@
 
 // // // // export default TestimonialsSection;
 
-// // // 'use client';
+// // // 
 
 // // // import React, { useEffect, useRef, useState } from 'react';
 
@@ -757,7 +757,7 @@
 
 // // // export default TestimonialsSection;
 
-// // 'use client';
+// // 
 
 // // import React, { useEffect, useRef, useState } from 'react';
 
@@ -1322,7 +1322,7 @@
 
 // // export default TestimonialsSection;
 
-// 'use client';
+// 
 
 // import React, { useEffect, useRef, useState } from 'react';
 
@@ -1851,7 +1851,7 @@
 // };
 
 // export default TestimonialsSection;
-'use client';
+
 
 import React, { useEffect, useRef, useState } from 'react';
 

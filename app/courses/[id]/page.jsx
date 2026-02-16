@@ -1,6 +1,6 @@
 
 
-'use client';
+
 
 import { useState } from 'react';
 import { FiTarget, FiBookOpen, FiCheckCircle, FiLock, FiAward, FiCode, FiChevronDown, FiChevronUp } from 'react-icons/fi';

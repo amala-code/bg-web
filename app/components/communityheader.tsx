@@ -1,4 +1,4 @@
-// 'use client';
+// 
 
 // import React, { useState } from 'react';
 // import { motion } from 'framer-motion';
@@ -391,7 +391,7 @@
 
 // export default CommunityHero;
 
-'use client';
+
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';

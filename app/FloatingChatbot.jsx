@@ -1,4 +1,4 @@
-// // 'use client';
+// // 
 
 // // import { useState } from 'react';
 // // import { X, Bot, Send, Mail } from 'lucide-react';
@@ -213,7 +213,7 @@
 // // }
 
 
-// 'use client';
+// 
 
 // import { useState } from 'react';
 // import { X, Bot, Send, Mail } from 'lucide-react';
@@ -467,7 +467,7 @@
 // }
 
 
-'use client';
+
 
 import { useState, useEffect, useRef } from 'react';
 import { X, Bot, Send, Mail, MessageCircle, ChevronDown, Sparkles } from 'lucide-react';

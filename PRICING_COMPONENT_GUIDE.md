@@ -34,7 +34,7 @@ Place it where you want the pricing section to appear:
 
 ### Step 3: Example integration in page.jsx
 ```jsx
-'use client';
+
 
 import HorizontalScrollSection from './components/HorizontalScroll';
 import TestimonialsSection from './components/TestimonialSection';

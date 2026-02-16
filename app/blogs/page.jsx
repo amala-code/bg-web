@@ -1,4 +1,4 @@
-'use client';
+
 import { use } from 'react';
 import BlogReaderPage from '../components/Blog';
 import Navbar from '../components/Navbar';

@@ -209,7 +209,7 @@ Change grid columns in `TestimonialSection.jsx`:
 ### 2. Make Testimonials Dynamic from API
 
 ```jsx
-'use client';
+
 
 import React, { useState, useEffect } from 'react';
 

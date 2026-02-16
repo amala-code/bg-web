@@ -1,4 +1,4 @@
-'use client';
+
 
 import HorizontalScrollSection from './components/HorizontalScroll';
 import TestimonialsSection from './components/TestimonialSection';
