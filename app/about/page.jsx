@@ -1,6 +1,6 @@
 
 
-
+'use client';
 
 import { motion } from 'framer-motion';
 import { FaGraduationCap, FaRocket, FaLightbulb, FaHandshake,FaChalkboardTeacher, FaUsers, FaAward } from 'react-icons/fa';
